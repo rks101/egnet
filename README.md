@@ -2,6 +2,33 @@
 egnet => easy net shows tools or utilities for debugging and troubleshooting network
 
 
+ifconfig - to show and manage network interface. Caution: this is being replaced by ip.  
+
+ip - to show and manage network interface and devices.  
+
+```
+$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 54:bf:64:0d:d4:cc brd ff:ff:ff:ff:ff:ff
+3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 34:41:5d:b4:ce:ea brd ff:ff:ff:ff:ff:ff
+    inet 192.168.105.214/16 brd 192.168.255.255 scope global dynamic noprefixroute wlp3s0
+       valid_lft 16074sec preferred_lft 16074sec
+    inet6 fe80::2e9f:e4c6:8841:f732/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: gpd0: <POINTOPOINT,MULTICAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 500
+    link/none 
+
+```
+
+----
+
 Know - IP addressing using ipcalc  
 ```
 $ ipcalc 192.168.0.1/24
@@ -90,6 +117,7 @@ Keyboard interrupt received, exiting.
 
 ```
 The webserver started above can be opened in a web browser: http://0.0.0.0:8000/  
+This page can be opened before you close the server using Ctrl+C.  
 
 ----
 
