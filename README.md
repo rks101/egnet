@@ -1,5 +1,5 @@
 # egnet
-egnet => easy net shows commands for debugging and troubleshooting network
+egnet => easy net shows tools or utilities for debugging and troubleshooting network
 
 
 Know - IP addressing using ipcalc  
