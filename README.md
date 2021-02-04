@@ -56,7 +56,7 @@ Hosts/Net: 254                   Class A, Private Internet
 
 ----
 
-View and manage Wireless network settings, similar to ifconfig for wireless  
+View and manage Wireless network settings, similar to ifconfig, this one is for wireless  
 ```
 $ iwconfig
 lo        no wireless extensions.
