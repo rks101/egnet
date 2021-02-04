@@ -1,11 +1,42 @@
 # egnet
-egnet => easy net shows tools or utilities for debugging and troubleshooting network
+egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapter, devices, etc.  
 
 
 ifconfig - to show and manage network interface. Caution: this is being replaced by ip.  
 
-ip - to show and manage network interface and devices.  
+```
+$ ifconfig
+enp2s0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 54:bf:64:0d:d4:cc  txqueuelen 1000  (Ethernet)
+        RX packets 271060  bytes 197712851 (197.7 MB)
+        RX errors 0  dropped 837  overruns 0  frame 0
+        TX packets 10  bytes 180 (180.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 112695  bytes 9073702 (9.0 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 112695  bytes 9073702 (9.0 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.105.214  netmask 255.255.0.0  broadcast 192.168.255.255
+        inet6 fe80::2e9f:e4c6:8841:f732  prefixlen 64  scopeid 0x20<link>
+        ether 34:41:5d:b4:ce:ea  txqueuelen 1000  (Ethernet)
+        RX packets 5522437  bytes 3367406951 (3.3 GB)
+        RX errors 0  dropped 642  overruns 0  frame 0
+        TX packets 3673197  bytes 2487018132 (2.4 GB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+```
+
+ip - to show and manage network interface and devices. This is replacing ifconfig  
+Look for man pages for objects addr, link, neigh, route, maddress, vrf, etc.  
+
+The output below is compiled for illustration only. You may not find all details in your lab/office.  
 ```
 $ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -24,6 +55,27 @@ $ ip addr
        valid_lft forever preferred_lft forever
 4: gpd0: <POINTOPOINT,MULTICAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 500
     link/none 
+
+
+$ ip -all link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+    link/ether 54:bf:64:0d:d4:cc brd ff:ff:ff:ff:ff:ff
+3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+    link/ether 34:41:5d:b4:ce:ea brd ff:ff:ff:ff:ff:ff
+4: gpd0: <POINTOPOINT,MULTICAST,NOARP> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 500
+    link/none 
+
+
+$ ip neigh
+192.168.0.1 dev wlp3s0 lladdr 88:b1:e1:28:6f:e1 REACHABLE
+
+
+$ ip route
+default via 192.168.0.1 dev wlp3s0 proto dhcp metric 600 
+169.254.0.0/16 dev wlp3s0 scope link metric 1000 
+192.168.0.0/16 dev wlp3s0 proto kernel scope link src 192.168.105.214 metric 600 
 
 ```
 
