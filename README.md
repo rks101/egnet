@@ -173,3 +173,7 @@ This page can be opened before you close the server using Ctrl+C.
 
 ----
 
+Where and how to know more about /proc?  
+
+[Cheese on /proc](https://www.kernel.org/doc/Documentation/filesystems/proc.txt)   
+
