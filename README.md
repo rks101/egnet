@@ -192,7 +192,7 @@ $ dstat -n
 ```
 
 ----
-Dig into DNS, query A, NS, MX, TXT records  
+Dig into DNS and query A, SOA, NS, MX, TXT, CNAME records  
 
 $ dig hostname recort_type
 
