@@ -192,6 +192,41 @@ $ dstat -n
 ```
 
 ----
+NS Lookup  
+
+```
+$ nslookup
+> set q=ANY
+> iitjammu.ac.in 
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+iitjammu.ac.in
+	origin = ns1.iitjammu.ac.in
+	mail addr = cc\@iitjammu.ac.in
+	serial = 2020123155
+	refresh = 2800
+	retry = 3600
+	expire = 1604800
+	minimum = 86400
+iitjammu.ac.in	nameserver = ns1.iitjammu.ac.in.
+iitjammu.ac.in	nameserver = ns3.iitjammu.ac.in.
+iitjammu.ac.in	nameserver = ns2.iitjammu.ac.in.
+Name:	iitjammu.ac.in
+Address: 14.139.53.140
+iitjammu.ac.in	mail exchanger = 5 ALT2.ASPMX.L.GOOGLE.COM.
+iitjammu.ac.in	mail exchanger = 5 ALT1.ASPMX.L.GOOGLE.COM.
+iitjammu.ac.in	mail exchanger = 3 ASPMX.L.GOOGLE.COM.
+iitjammu.ac.in	text = "google-site-verification=FbfesMgJWj_x98cASxF4B3J5t9wr0ccF_LXLmKZI1d4"
+iitjammu.ac.in	text = "MS=0803D61A210443353771F37FAB6297221EF56F2E" "3600"
+iitjammu.ac.in	text = "v=spf1 include:_spf.google.com ~all"
+
+Authoritative answers can be found from:
+> exit
+```
+
+----
 Dig into DNS and query A, SOA, NS, MX, TXT, CNAME records  
 
 $ dig hostname recort_type
@@ -221,6 +256,9 @@ iitjammu.ac.in.		8600	IN	MX	5 ALT2.ASPMX.L.GOOGLE.COM.
 ;; MSG SIZE  rcvd: 119
 
 ```
+
+Public DNS  
+Type in web browser: 1.1.1.1 or 8.8.8.8  
 
 ----
 
