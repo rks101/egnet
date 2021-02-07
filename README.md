@@ -1,6 +1,42 @@
 # egnet
 egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapter, devices, etc.  
 
+Know your network adapters: product, provider, logical names, MAC, capacity in mbps or gbps, capabilities, etc.  
+
+```
+$ lshw -class network
+  *-network                 
+       description: Ethernet interface
+       product: RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
+       vendor: Realtek Semiconductor Co., Ltd.
+       physical id: 0
+       bus info: pci@0000:02:00.0
+       logical name: enp2s0
+       version: 15
+       serial: 54:bf:64:0d:d4:cc
+       capacity: 1Gbit/s
+       width: 64 bits
+       clock: 33MHz
+       capabilities: pm msi pciexpress msix bus_master cap_list ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
+       configuration: autonegotiation=on broadcast=yes driver=r8169 firmware=rtl8168h-2_0.0.2 02/26/15 latency=0 link=no multicast=yes port=MII
+       resources: irq:16 ioport:d000(size=256) memory:df104000-df104fff memory:df100000-df103fff
+  *-network
+       description: Wireless interface
+       product: Wireless 8265 / 8275
+       vendor: Intel Corporation
+       physical id: 0
+       bus info: pci@0000:03:00.0
+       logical name: wlp3s0
+       version: 78
+       serial: 34:41:5d:b4:ce:ea
+       width: 64 bits
+       clock: 33MHz
+       capabilities: pm msi pciexpress bus_master cap_list ethernet physical wireless
+       configuration: broadcast=yes driver=iwlwifi driverversion=5.4.0-65-generic firmware=36.77d01142.0 ip=10.10.28.48 latency=0 link=yes multicast=yes wireless=IEEE 802.11
+       resources: irq:130 memory:df000000-df001fff
+
+```
+
 
 ifconfig - to show and manage network interface. Caution: this is being replaced by ip.  
 
@@ -34,7 +70,7 @@ wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ```
 
 ip - to show and manage network interface and devices. This is replacing ifconfig  
-Look for man pages for objects addr, link, neigh, route, maddress, vrf, etc.  
+Ask man for objects addr, link, neigh, route, maddress, vrf, etc.  
 
 The output below is compiled for illustration only. You may not find all details in your lab/office.  
 ```
@@ -152,6 +188,37 @@ $ dstat -n
    0     0 
   66B   94B
  261B  405B^C
+
+```
+
+----
+Dig into DNS, query A, NS, MX, TXT records  
+
+$ dig hostname recort_type
+
+```
+dig iitjammu.ac.in MX
+
+; <<>> DiG 9.16.1-Ubuntu <<>> iitjammu.ac.in MX
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10684
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;iitjammu.ac.in.			IN	MX
+
+;; ANSWER SECTION:
+iitjammu.ac.in.		8600	IN	MX	3 ASPMX.L.GOOGLE.COM.
+iitjammu.ac.in.		8600	IN	MX	5 ALT1.ASPMX.L.GOOGLE.COM.
+iitjammu.ac.in.		8600	IN	MX	5 ALT2.ASPMX.L.GOOGLE.COM.
+
+;; Query time: 27 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Sun Feb 07 16:56:34 IST 2021
+;; MSG SIZE  rcvd: 119
 
 ```
 
