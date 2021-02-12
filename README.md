@@ -340,7 +340,7 @@ Type in web browser: 1.1.1.1 or 8.8.8.8
 
 ----
 
-One line webserver => a great and simplest way to show files from a directory  
+One line webserver => a great and simplest way to show files from a directory or local share  
 ```
 $ python3 -m http.server 
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
