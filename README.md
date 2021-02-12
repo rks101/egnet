@@ -257,6 +257,84 @@ iitjammu.ac.in.		8600	IN	MX	5 ALT2.ASPMX.L.GOOGLE.COM.
 
 ```
 
+----
+Use dig to query hostname using public DNS   
+```
+$ dig @8.8.8.8 iitjammu.ac.in
+
+; <<>> DiG 9.16.1-Ubuntu <<>> @8.8.8.8 iitjammu.ac.in
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52538
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;iitjammu.ac.in.			IN	A
+
+;; ANSWER SECTION:
+iitjammu.ac.in.		8599	IN	A	14.139.53.140
+
+;; Query time: 463 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Fri Feb 12 14:25:35 IST 2021
+;; MSG SIZE  rcvd: 59
+
+```
+
+Use dig to find DNS trace leading to hostname (like traceroute)   
+Pay attension to root name servers, DNS registrar, and intermediate authoritative servers.  
+This information is in public domain. DNS is a global public directory of public IPs and hostnames.   
+
+```
+$ dig +trace iitjammu.ac.in
+
+; <<>> DiG 9.16.1-Ubuntu <<>> +trace iitjammu.ac.in
+;; global options: +cmd
+.			72604	IN	NS	e.root-servers.net.
+.			72604	IN	NS	j.root-servers.net.
+.			72604	IN	NS	c.root-servers.net.
+.			72604	IN	NS	h.root-servers.net.
+.			72604	IN	NS	a.root-servers.net.
+.			72604	IN	NS	b.root-servers.net.
+.			72604	IN	NS	m.root-servers.net.
+.			72604	IN	NS	k.root-servers.net.
+.			72604	IN	NS	g.root-servers.net.
+.			72604	IN	NS	i.root-servers.net.
+.			72604	IN	NS	f.root-servers.net.
+.			72604	IN	NS	l.root-servers.net.
+.			72604	IN	NS	d.root-servers.net.
+;; Received 262 bytes from 127.0.0.53#53(127.0.0.53) in 7 ms
+
+in.			172800	IN	NS	ns1.registry.in.
+in.			172800	IN	NS	ns2.registry.in.
+in.			172800	IN	NS	ns3.registry.in.
+in.			172800	IN	NS	ns4.registry.in.
+in.			172800	IN	NS	ns5.registry.in.
+in.			172800	IN	NS	ns6.registry.in.
+in.			86400	IN	DS	54739 8 1 2B5CA455A0E65769FF9DF9E75EC40EE1EC1CDCA9
+in.			86400	IN	DS	54739 8 2 9F122CFD6604AE6DEDA0FE09F27BE340A318F06AFAC11714A73409D4 3136472C
+in.			86400	IN	RRSIG	DS 8 1 86400 20210225050000 20210212040000 42351 . lgk6+SUs00ldOZQLKKvskdt9680VM6ShM5aFmpp+LNsrHzMIFufwQ592 wOqMOxRcdpvjf6W3PvNNZ1SYeWj3ETBZAwRUicNbfaLAv3aVjpO/Rjke VkHt8h8b5AUrFqG3wPbmmYegESbdbg1MphFovL/LP/0b+HW1/RKcX1Wj OPHmwF9VTrbFovqxULB0M5pTnNqisLK3nYYFLLnrNVvhlyo+vFkmMY3/ ZYQCt0a+KlgS5efJEuKCAoxruICkOFh9fbCWiJtKGfYcKbNgfA4kZMe1 HzE1V9+OG/ctnwCJNdFyGP2hs4z1K8zPwJwBNFZa6d54VpCDHLbWgR2c gRQ19w==
+;; Received 795 bytes from 199.7.91.13#53(d.root-servers.net) in 279 ms
+
+iitjammu.ac.in.		3600	IN	NS	ns2.iitjammu.ac.in.
+iitjammu.ac.in.		3600	IN	NS	ns1.iitjammu.ac.in.
+idj3ou7anjce3n70hpktjgs1q54d9usj.ac.in.	1800 IN	NSEC3 1 1 1 F7BDE4B2 TV5S7T20F21KQV26R05RHMAECLP59H6U NS SOA RRSIG DNSKEY NSEC3PARAM TYPE65534
+idj3ou7anjce3n70hpktjgs1q54d9usj.ac.in.	1800 IN	RRSIG NSEC3 8 3 1800 20210311064755 20210209054755 5223 ac.in. WYooneOeJLAXxPUx8rxpFg8Ncvmairb6Ja4k4n9X3kClIrpgCxd2Cdn0 hHCBg+7ieNAf3j7E438d/oKFlsmpdESd3/TGzzy+3GZUwPKxJWGs3/xs QSEngsiaiJh2BxbxPMKW+TkJ+NfVQuYWhGwmGxasebov5L3yBMRueGOe ailqHPZwM8j5PkJGLdKVX+YZbun9WJfzWZw8hMQ1AX4coQ==
+;; Received 426 bytes from 37.209.196.12#53(ns3.registry.in) in 47 ms
+
+iitjammu.ac.in.		8600	IN	A	14.139.53.140
+iitjammu.ac.in.		8600	IN	NS	ns1.iitjammu.ac.in.
+iitjammu.ac.in.		8600	IN	NS	ns2.iitjammu.ac.in.
+iitjammu.ac.in.		8600	IN	NS	ns3.iitjammu.ac.in.
+;; Received 189 bytes from 14.139.53.133#53(ns2.iitjammu.ac.in) in 3 ms
+
+```
+
+----
+
 Public DNS  
 Type in web browser: 1.1.1.1 or 8.8.8.8  
 
