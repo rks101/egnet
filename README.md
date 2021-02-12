@@ -285,7 +285,7 @@ iitjammu.ac.in.		8599	IN	A	14.139.53.140
 ```
 
 Use dig to find DNS trace leading to hostname (like traceroute)   
-Pay attension to root name servers, DNS registrar, and intermediate authoritative servers.  
+Pay attension to root name servers, [DNS registrar](https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name-registrar/), and intermediate authoritative servers.  
 This information is in public domain. DNS is a global public directory of public IPs and hostnames.   
 
 ```
