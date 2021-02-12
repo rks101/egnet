@@ -227,9 +227,9 @@ Authoritative answers can be found from:
 ```
 
 ----
-Dig into DNS and query A, SOA, NS, MX, TXT, CNAME records  
+Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records  
 
-$ dig hostname recort_type
+$ dig @server hostname recort_type
 
 ```
 dig iitjammu.ac.in MX
