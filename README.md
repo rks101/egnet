@@ -247,7 +247,8 @@ Authoritative answers can be found from:
 ```
 
 ----
-## dig
+
+## dig into DNS
 
 Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records  
 
@@ -386,7 +387,7 @@ Where and how to know more about /proc?
 
 ----
 
-## wget 
+## Get files using wget 
 
 You can download files or documentation with large number of files using **wget**.  
 
