@@ -1,6 +1,18 @@
 # egnet
 egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapter, devices, etc.  
 
+   * [egnet](#egnet)
+      * [Network Adapters](#network-adapters)
+      * [ifconfig](#ifconfig)
+      * [ip](#ip)
+      * [ipcalc](#ipcalc)
+      * [iwconfig](#iwconfig)
+      * [dstat](#dstat)
+      * [NS Lookup](#ns-lookup)
+      * [dig into DNS](#dig)
+      * [Simple web server](#simple-web-server)
+      * [Get files using wget](#wget)
+
 
 ## Network Adapters
 Know your network adapters: product, provider, logical names, MAC, capacity in mbps or gbps, capabilities, etc.  
