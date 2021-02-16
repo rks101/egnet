@@ -1,6 +1,8 @@
 # egnet
 egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapter, devices, etc.  
 
+
+## Network Adapters
 Know your network adapters: product, provider, logical names, MAC, capacity in mbps or gbps, capabilities, etc.  
 
 ```
@@ -37,7 +39,7 @@ $ lshw -class network
 
 ```
 
-
+## ifconfig
 ifconfig - to show and manage network interface. Caution: this is being replaced by ip.  
 
 ```
@@ -69,6 +71,7 @@ wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 ```
 
+## ip
 ip - to show and manage network interface and devices. This is replacing ifconfig  
 Ask man for objects addr, link, neigh, route, maddress, vrf, etc.  
 
@@ -115,7 +118,7 @@ default via 192.168.0.1 dev wlp3s0 proto dhcp metric 600
 
 ```
 
-----
+## ipcalc
 
 Know - IP addressing using ipcalc  
 ```
@@ -144,6 +147,8 @@ Hosts/Net: 254                   Class A, Private Internet
 
 ----
 
+## iwconfig 
+
 View and manage Wireless network settings, similar to ifconfig, this one is for wireless  
 ```
 $ iwconfig
@@ -164,6 +169,8 @@ gpd0      no wireless extensions.
 ```
 
 ----
+
+## dstat 
 
 Use **dstat** - a tool for generating system resource statistics such as cpu usage, disk read/write, network data received/sent, etc. To exit type Ctrl+C.    
 ```
@@ -192,7 +199,8 @@ $ dstat -n
 ```
 
 ----
-NS Lookup  
+
+## NS Lookup  
 
 ```
 $ nslookup
@@ -227,6 +235,8 @@ Authoritative answers can be found from:
 ```
 
 ----
+## dig
+
 Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records  
 
 $ dig @server hostname recort_type
@@ -340,6 +350,8 @@ Type in web browser: 1.1.1.1 or 8.8.8.8
 
 ----
 
+## Simple web server
+
 One line webserver => a great and simplest way to show files from a directory or local share  
 ```
 $ python3 -m http.server 
@@ -362,10 +374,11 @@ Where and how to know more about /proc?
 
 ----
 
+## wget 
+
 You can download files or documentation with large number of files using **wget**.  
 
 ```
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages
 ```
-
 
