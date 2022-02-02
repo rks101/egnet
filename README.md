@@ -15,7 +15,9 @@ egnet => pronounced as "easy net" shows some tools or utilities for debugging an
 
 
 ## Network Adapters
-Know your network adapters: product, provider, logical names, MAC, capacity in mbps or gbps, capabilities, etc.  
+Know your network adapters: product, provider, logical names, MAC, capacity in mbps or gbps, capabilities, etc.   
+Knowledge of adapter and vendor can help with device driver related issues or to update driver.   
+Network adapter's logical name is visible in output of ip command.   
 
 ```
 $ lshw -class network
@@ -52,7 +54,8 @@ $ lshw -class network
 ```
 
 ## ifconfig
-ifconfig - to show and manage network interface. Caution: this is being replaced by ip.  
+ifconfig - to show and manage network interface. Caution: this has been replaced by ip.   
+Logical name of interface correponds to Network adapter's logical name in lshw output.   
 
 ```
 $ ifconfig
@@ -87,6 +90,7 @@ wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ip - to show and manage network interface and devices. This is replacing ifconfig  
 Ask man for objects addr, link, neigh, route, maddress, vrf, etc.  
 
+Logical name of interface correponds to Network adapter's logical name in lshw output.  
 The output below is compiled for illustration only. You may not find all details in your lab/office.  
 ```
 $ ip addr
@@ -129,6 +133,7 @@ default via 192.168.0.1 dev wlp3s0 proto dhcp metric 600
 192.168.0.0/16 dev wlp3s0 proto kernel scope link src 192.168.105.214 metric 600 
 
 ```
+The above ip options are available on modern switching and routing hardware supporting Software Defined Networking (SDN).  
 
 ## ipcalc
 
