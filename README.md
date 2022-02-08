@@ -1,6 +1,8 @@
 # egnet
 egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapter, devices, etc.  
 
+Voluntary Disclosure: The output shown for utilities mentioned below is compiled for illustration purpose only. You may not find all details in your lab/office/dungeon.   
+
    * [egnet](#egnet)
       * [Network Adapters](#network-adapters)
       * [ifconfig](#ifconfig)
@@ -87,11 +89,11 @@ wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ```
 
 ## ip
-ip - to show and manage network interface and devices. This is replacing ifconfig  
-Ask man for objects addr, link, neigh, route, maddress, vrf, etc.  
+ip - to show and manage network interface and devices. This has replaced ifconfig command.   
+Ask "man" for objects addr, link, neigh, route, maddress, vrf, etc.  
 
 Logical name of interface correponds to Network adapter's logical name in lshw output.  
-The output below is compiled for illustration only. You may not find all details in your lab/office.  
+The output below is compiled for illustration purpose only. You may not find all details in your lab/office/dungeon.  
 ```
 $ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
