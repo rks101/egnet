@@ -372,7 +372,8 @@ Type in web browser: 1.1.1.1 or 8.8.8.8
 
 ## Simple web server
 
-One line webserver => a great and simplest way to show files from a directory or local share  
+One line webserver => a great and simplest way to show files from a directory or local share.   
+Note the directory you start this server from and the content you want to share locally.   
 ```
 $ python3 -m http.server 
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
