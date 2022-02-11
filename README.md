@@ -15,6 +15,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [Simple web server](#simple-web-server)
       * [Get files using wget](#get-files-using-wget) 
       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
+      * [The One with LDAP](#the-one-with-ldap)
 
 
 ## Network Adapters
@@ -416,3 +417,10 @@ Domain Keys Identified Mail - [DKIM](https://support.google.com/a/answer/180504?
 
 Domain-based Message Authentication, Reporting, and Conformance - [DMARC](https://support.google.com/a/answer/2466563?hl=en) and check [DMARK](https://www.dmarcanalyzer.com/dmarc/) records   
 
+Sample yml files with "Show Original" option from mail client - adding soon    
+
+## The One with LDAP 
+
+Query and backup/dump LDIF tree   
+
+Sysad should practice and know LDAP related [command line tools](https://docs.oracle.com/cd/A97630_01/network.920/a96579/comtools.htm) to query, add, delete, modify LDAP entries. It's a different experience with command line :) and you can write scripts to automate the housekeeping!    
