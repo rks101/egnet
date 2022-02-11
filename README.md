@@ -14,7 +14,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [dig into DNS](#dig-into-dns)
       * [Simple web server](#simple-web-server)
       * [Get files using wget](#get-files-using-wget) 
-      * [The One with SPF, DKIM and DMARK](#the-one-with-spf,-dkim-and-dmark)
+      * [The One with SPF, DKIM and DMARK](#the-one-with-spf-,-dkim-and-dmark)
 
 
 ## Network Adapters
