@@ -11,10 +11,10 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [iwconfig](#iwconfig)
       * [dstat](#dstat)
       * [NS Lookup](#ns-lookup)
-      * [dig into DNS](#dig)
+      * [dig into DNS](#dig-into-dns)
       * [Simple web server](#simple-web-server)
-      * [Get files using wget](#wget) 
-      * [The One with Spam (SPF, DKIM and DMARK)](#the-one-with-spam)
+      * [Get files using wget](#get-files-using-wget) 
+      * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
 
 
 ## Network Adapters
