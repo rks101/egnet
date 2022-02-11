@@ -425,4 +425,4 @@ Query and backup/dump LDIF tree
 
 Sysad should practice and know LDAP related [command line tools](https://docs.oracle.com/cd/A97630_01/network.920/a96579/comtools.htm) to query, add, delete, modify LDAP entries. It's a different experience with command line :) and you can write scripts to automate the housekeeping!    
 
-[Web-based LDAP Schema viewer](http://phpldapadmin.sourceforge.net/wiki/index.php/Main_Page) for dummies   
+[Manage LDAP entries using LDAP Account Manager (LAM)](https://www.ldap-account-manager.org/lamcms/) and [Web-based LDAP Schema admin](http://phpldapadmin.sourceforge.net/wiki/index.php/Main_Page)   
