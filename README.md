@@ -14,7 +14,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [dig into DNS](#dig-into-dns)
       * [Simple web server](#simple-web-server)
       * [Get files using wget](#get-files-using-wget) 
-      * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
+      * [The One with SPF DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
 
 
 ## Network Adapters
@@ -404,7 +404,7 @@ You can download files or documentation with large number of files using **wget*
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages
 ```
 
-## The One with Spam (SPF, DKIM and DMARK) 
+## The One with SPF DKIM and DMARK 
 
 While you may have seen email Spam, you should be familiar with SPF, DKIM and DMARK records.  
 
