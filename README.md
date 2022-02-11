@@ -13,7 +13,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [NS Lookup](#ns-lookup)
       * [dig into DNS](#dig)
       * [Simple web server](#simple-web-server)
-      * [Get files using wget](#wget)
+      * [Get files using wget](#wget) 
 
 
 ## Network Adapters
@@ -402,4 +402,16 @@ You can download files or documentation with large number of files using **wget*
 ```
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages
 ```
+
+## The One with Spam (SPF, DKIM and DMARK) 
+
+While you may have seen email Spam, you should be familiar with SPF, DKIM and DMARK records.  
+
+A comic take on [SPF and DKIM](SPFhttps://wizardzines.com/comics/spf-dkim/) by Julia/bork   
+
+Sender Policy Framework - [SPF](https://www.dmarcanalyzer.com/spf/)   
+
+Domain Keys Identified Mail - [DKIM](https://support.google.com/a/answer/180504?hl=en&ref_topic=7564555) and check [DKIM](https://www.dmarcanalyzer.com/dkim/) records   
+
+Domain-based Message Authentication, Reporting, and Conformance - [DMARC](https://support.google.com/a/answer/2466563?hl=en) and check [DMARK](https://www.dmarcanalyzer.com/dmarc/) records   
 
