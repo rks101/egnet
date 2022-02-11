@@ -399,7 +399,7 @@ Where and how to know more about /proc?
 
 ## Get files using wget 
 
-You can download files or documentation with large number of files using **wget**.  
+You can download files or documentation with large number of files using **wget**. This is very much like your own web-doc-ripper!   
 
 ```
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages
