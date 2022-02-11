@@ -408,7 +408,7 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 While you may have seen email Spam, you should be familiar with SPF, DKIM and DMARK records.  
 
-A comic take on [SPF and DKIM](SPFhttps://wizardzines.com/comics/spf-dkim/) by Julia/bork   
+A comic take on [SPF and DKIM](https://wizardzines.com/comics/spf-dkim/) by Julia/bork   
 
 Sender Policy Framework - [SPF](https://www.dmarcanalyzer.com/spf/)   
 
