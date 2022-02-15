@@ -4,6 +4,7 @@ egnet => pronounced as "easy net" shows some tools or utilities for debugging an
 Voluntary Disclosure: The output shown for utilities mentioned below is compiled for illustration purpose only. You may not find all details in your lab/office/dungeon.   
 
    * [egnet](#egnet)
+      * [Introductory Concepts](introductory-concepts)
       * [Network Adapters](#network-adapters)
       * [ifconfig](#ifconfig)
       * [ip](#ip)
@@ -16,6 +17,14 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [Get files using wget](#get-files-using-wget) 
       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
       * [The One with LDAP](#the-one-with-ldap)
+
+
+## Introductory Concepts 
+Some [Introductory concepts in computer networking](http://intronetworks.cs.luc.edu/current/html/) online, skip this section and continue if you are already familiar with this domain or looking for the content below. A bookmark, reference or share is okay.  
+
+If you are more comfortable reading a paper book like me, see books - [Computer Networking A Top-Down Approach 8th edition by Kurose and Rose](https://gaia.cs.umass.edu/kurose_ross/online_lectures.htm) - they have added SDN, and [Computer Networks: A Systems Approach by Peterson and Davie](https://book.systemsapproach.org/) - they cover Congestion Control in an elegant manner.   
+
+If you are senior undergrad/postgrad student, explore [Reproducing Networking Research](https://reproducingnetworkresearch.wordpress.com/) blog, and [paper](https://web.stanford.edu/class/cs244/papers/learning-networking-research-by-reproducing.pdf), and [Some course topics with guests](https://web.stanford.edu/class/cs244/). Visit [Barefoot](https://barefootnetworks.com/resources/worlds-fastest-most-programmable-networks/) in the age of programmable networks   
 
 
 ## Network Adapters
