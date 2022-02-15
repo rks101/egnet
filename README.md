@@ -17,6 +17,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [Get files using wget](#get-files-using-wget) 
       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
       * [The One with LDAP](#the-one-with-ldap)
+      * [The One with Security](#the-one-with-security) 
 
 
 ## Introductory Concepts 
@@ -435,3 +436,11 @@ Query and backup/dump LDIF tree
 Sysad should practice and know LDAP related [command line tools](https://docs.oracle.com/cd/A97630_01/network.920/a96579/comtools.htm) to query, add, delete, modify LDAP entries. It's a different experience with command line :) and you can write scripts to automate the housekeeping!    
 
 [Manage LDAP entries using LDAP Account Manager (LAM)](https://www.ldap-account-manager.org/lamcms/) and [Web-based LDAP Schema admin](http://phpldapadmin.sourceforge.net/wiki/index.php/Main_Page)   
+
+## The One with Security 
+
+Some [security-related primer](http://intronetworks.cs.luc.edu/current/html/security.html) and [SSH and TLS](http://intronetworks.cs.luc.edu/current/html/publickey.html#ssh-and-tls)   
+
+Prof Wenliang Du's lab manual (Syracuse Univ) is one of the best ways to study, introduce, or teach security in labs.   
+
+Note:- There is a difference between Satefy and Security. Both are not the same. I believe no language is so poor to have two words for the exact same meaning.   
