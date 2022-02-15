@@ -4,7 +4,7 @@ egnet => pronounced as "easy net" shows some tools or utilities for debugging an
 Voluntary Disclosure: The output shown for utilities mentioned below is compiled for illustration purpose only. You may not find all details in your lab/office/dungeon.   
 
    * [egnet](#egnet)
-      * [Introductory Concepts](introductory-concepts)
+      * [Introductory Concepts](#introductory-concepts)
       * [Network Adapters](#network-adapters)
       * [ifconfig](#ifconfig)
       * [ip](#ip)
