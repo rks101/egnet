@@ -445,7 +445,7 @@ To provide identity (IDP), RADIUS is often used with LDAP. This combination is d
 
 Relevant posts:    
 1. [Cloud Radius](https://www.cloudradius.com/ldap-vs-radius/)    
-2. [OpenLDAP](https://wiki.freeradius.org/building/openldap) and [FreeRadius setup](https://laravel-example.blogspot.com/2019/01/setup-freeradius-authentication-with.html) and [LAM](https://www.ldap-account-manager.org/lamcms/)   
+2. [OpenLDAP](https://wiki.freeradius.org/building/openldap), [FreeRadius setup](https://laravel-example.blogspot.com/2019/01/setup-freeradius-authentication-with.html) and [LAM](https://www.ldap-account-manager.org/static/doc/manual-onePage/index.html)   
 
 ## The One with Security 
 
