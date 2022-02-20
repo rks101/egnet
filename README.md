@@ -17,6 +17,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [Get files using wget](#get-files-using-wget) 
       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
       * [The One with LDAP](#the-one-with-ldap)
+      * [The One with RADIUS](#the-one-with-radius)
       * [The One with Security](#the-one-with-security) 
 
 
@@ -436,6 +437,15 @@ Query and backup/dump LDIF tree
 Sysad should practice and know LDAP related [command line tools](https://docs.oracle.com/cd/A97630_01/network.920/a96579/comtools.htm) to query, add, delete, modify LDAP entries. It's a different experience with command line :) and you can write scripts to automate the housekeeping!    
 
 [Manage LDAP entries using LDAP Account Manager (LAM)](https://www.ldap-account-manager.org/lamcms/) and [Web-based LDAP Schema admin](http://phpldapadmin.sourceforge.net/wiki/index.php/Main_Page)   
+
+## The One with RADIUS 
+
+In network security, **AAA** term is used as an abstraction for authentication, authorization and accounting purposes in relation with WPA2-Enterprise or 802.1x standard for security. RADIUS (Remote Access Dial-In User Service) promises to provide this gold standard of security.    
+To provide identity (IDP), RADIUS is often used with LDAP. This combination is definitely fire for sysad not flower even in 2022.    
+
+Relevant posts:    
+1. [Cloud Radius](https://www.cloudradius.com/ldap-vs-radius/)    
+2. [OpenLDAP](https://wiki.freeradius.org/building/openldap) and [FreeRadius setup](https://laravel-example.blogspot.com/2019/01/setup-freeradius-authentication-with.html) and [LAM](https://www.ldap-account-manager.org/lamcms/)   
 
 ## The One with Security 
 
