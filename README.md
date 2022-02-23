@@ -15,6 +15,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [dig into DNS](#dig-into-dns)
       * [Simple web server](#simple-web-server)
       * [Get files using wget](#get-files-using-wget) 
+      * [The One with DNS root nameservers](#the-one-with-dns-root-nameservers) 
       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
       * [The One with LDAP](#the-one-with-ldap)
       * [The One with RADIUS](#the-one-with-radius)
@@ -415,6 +416,16 @@ You can download files or documentation with large number of files using **wget*
 ```
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages
 ```
+
+## The One with DNS root nameservers  
+
+Dyno or DNS remains one of the most interesting topics in networking.    
+
+Do you know each DNS resolver knows IP addresses of DNS root nameservers always! This is not a new thing, this has always been the case. This info is actually hardwired or better [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80)     
+You can find A type DNS records for these 13 root nameservers named from A to M (as on Jan 2022).   
+
+Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices, networks and to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
+
 
 ## The One with SPF DKIM and DMARK 
 
