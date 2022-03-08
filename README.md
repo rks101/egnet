@@ -20,6 +20,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [The One with LDAP](#the-one-with-ldap)
       * [The One with RADIUS](#the-one-with-radius)
       * [The One with Security](#the-one-with-security) 
+      * [The One with Wireshark](#the-one-with-wireshark) 
 
 
 ## Introductory Concepts 
@@ -465,3 +466,20 @@ Some [security-related primer](http://intronetworks.cs.luc.edu/current/html/secu
 Prof Wenliang Du's lab manual (Syracuse Univ) is one of the best ways to study, introduce, or teach security in labs.   
 
 Note:- There is a difference between Satefy and Security. Both are not the same. I believe no language is so poor to have two words for the exact same meaning.   
+
+---- 
+
+## The One with Wireshark 
+
+It is fun to see packets down to protocol level using wireshark - realtime packets or through a saved pcapng file.   
+
+[Download wireshark](https://www.wireshark.org/download.html)   
+Start wireshark with root, open a web browser and visit a website. Now, see the packets in wireshark.   
+You can filter using a protocol, analyze packets - byte stream or different headers and payload with them.   
+
+---- 
+
+## Thank you 
+
+I am grateful, if you have reached this far after reading the content above.    
+If you have learnt something new, that's awesome! Thank you!   
