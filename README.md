@@ -444,7 +444,11 @@ Sample yml files with "Show Original" option from mail client - adding soon
 
 ## The One with LDAP 
 
-Query and backup/dump LDIF tree   
+To query and backup/dump LDIF tree:    
+```
+ldapsearch -x -b "dc=iitx,dc=ac,dc=in" -H ldap://10.10.10.10 -D "cn=admin,dc=iitx,dc=ac,dc=in" -W > backup.ldif  
+```
+This can be useful to create another instance of LDAP. You need to mention root DN / domain name, LDAP server IP and admin user.    
 
 Sysad should practice and know LDAP related [command line tools](https://docs.oracle.com/cd/A97630_01/network.920/a96579/comtools.htm) to query, add, delete, modify LDAP entries. It's a different experience with command line :) and you can write scripts to automate the housekeeping!    
 
