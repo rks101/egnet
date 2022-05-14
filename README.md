@@ -481,9 +481,3 @@ It is fun to see packets down to protocol level using wireshark - realtime packe
 Start wireshark with root, open a web browser and visit a website. Now, see the packets in wireshark.   
 You can filter using a protocol, analyze packets - byte stream or different headers and payload with them.   
 
----- 
-
-## Thank you 
-
-I am grateful, if you have reached this far after reading the content above.    
-If you have learnt something new, that's awesome! Thank you!   
