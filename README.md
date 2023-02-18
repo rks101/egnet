@@ -12,7 +12,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [`iwconfig`](#iwconfig)
       * [`dstat`](#dstat)
       * [NS Lookup](#ns-lookup) 
-      * [Resolve DNS](#resolve DNS) 
+      * [Resolve DNS](#resolve-dns) 
       * [`dig` into DNS](#dig-into-dns)
       * [Simple web server](#simple-web-server)
       * [Get files using `wget`](#get-files-using-wget) 
@@ -274,7 +274,7 @@ Authoritative answers can be found from:
 
 ## Resolve DNS  
 
-You can check /etc/resolve.conf or use Resolve Domain Names using resolvectl.   
+You can check /etc/resolve.conf or use resolvectl Domain Names using resolvectl.  
 
 ```
 $ man resolvectl 
@@ -282,7 +282,7 @@ $ man resolvectl
 $ resolvectl dns
 Global:
 Link 2 (eno2):
-Link 3 (eno1): 14.139.53.132 8.8.8.8
+Link 3 (eno1): 14.139.53.132 8.8.8.8          <== list of DNS servers, note public DNS 
 
 $ resolvectl status
 Global
