@@ -431,7 +431,7 @@ Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming servi
 
 ## Email  
 
-* Gmail: [dots in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) do not matter for @gmail.com domain. Where else you see this in action?  
+* Gmail: [dots in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) do not matter for @gmail.com domain. Where else you see this in action? IRCTC emails!  
 * Gmail: [plus something in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) can be cool for @gmail.com domain.  
 
 
