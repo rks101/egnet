@@ -16,6 +16,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [Simple web server](#simple-web-server)
       * [Get files using `wget`](#get-files-using-wget) 
       * [The One with DNS root nameservers](#the-one-with-dns-root-nameservers) 
+      * [Email](#email) 
       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
       * [The One with LDAP](#the-one-with-ldap)
       * [The One with RADIUS](#the-one-with-radius)
@@ -426,6 +427,12 @@ Do you know each DNS resolver knows IP addresses of DNS root nameservers always!
 You can find A type DNS records for these 13 root nameservers named from A to M (as on Jan 2022).   
 
 Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices, networks and to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
+
+
+## Email  
+
+* Gmail: [dots in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) do not matter for @gmail.com domain. Where else you see this in action?  
+* Gmail: [plus something in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) can be cool for @gmail.com domain.  
 
 
 ## The One with SPF DKIM and DMARK 
