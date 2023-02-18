@@ -11,7 +11,8 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [`ipcalc`](#ipcalc)
       * [`iwconfig`](#iwconfig)
       * [`dstat`](#dstat)
-      * [NS Lookup](#ns-lookup)
+      * [NS Lookup](#ns-lookup) 
+      * [Resolve DNS](#resolve DNS) 
       * [`dig` into DNS](#dig-into-dns)
       * [Simple web server](#simple-web-server)
       * [Get files using `wget`](#get-files-using-wget) 
@@ -267,6 +268,37 @@ iitjammu.ac.in	text = "v=spf1 include:_spf.google.com ~all"
 
 Authoritative answers can be found from:
 > exit
+```
+
+----
+
+## Resolve DNS  
+
+You can check /etc/resolve.conf or use Resolve Domain Names using resolvectl.   
+
+```
+$ man resolvectl 
+
+$ resolvectl dns
+Global:
+Link 2 (eno2):
+Link 3 (eno1): 14.139.53.132 8.8.8.8
+
+$ resolvectl status
+Global
+       Protocols: -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+resolv.conf mode: stub
+
+Link 2 (eno2)
+Current Scopes: none
+     Protocols: -DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+
+Link 3 (eno1)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 14.139.53.132
+       DNS Servers: 14.139.53.132 8.8.8.8
+        DNS Domain: iitjammu.ac.in
 ```
 
 ----
