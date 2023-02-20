@@ -266,7 +266,10 @@ iitjammu.ac.in	text = "google-site-verification=FbfesMgJWj_x98cASxF4B3J5t9wr0ccF
 iitjammu.ac.in	text = "MS=0803D61A210443353771F37FAB6297221EF56F2E" "3600"
 iitjammu.ac.in	text = "v=spf1 include:_spf.google.com ~all"
 
-Authoritative answers can be found from:
+Authoritative answers can be found from:                         <== sample output, not guaranteed the same 
+ns1.iitjammu.ac.in	internet address = 14.139.53.132
+ns2.iitjammu.ac.in	internet address = 14.139.53.133
+ns3.iitjammu.ac.in	internet address = 182.76.238.118
 > exit
 ```
 
