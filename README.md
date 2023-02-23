@@ -511,7 +511,7 @@ Some [security-related primer](http://intronetworks.cs.luc.edu/current/html/secu
 
 Prof Wenliang Du's lab manual (Syracuse Univ) is one of the best ways to study, introduce, or teach security in labs.   
 
-Note:- There is a difference between Satefy and Security. Both are not the same. I believe no language is so poor to have two words for the exact same meaning.   
+Note:- Safety and Security are two different aspects. No language is so poor to have two such words for the exact same meaning. For digital infrastructure, compute, network - we discuss security aspects. Against fire, civil/electrical infrastructure, natural calamity, we discuss safety aspects.    
 
 ---- 
 
