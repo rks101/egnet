@@ -14,6 +14,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [NS Lookup](#ns-lookup) 
       * [Resolve DNS](#resolve-dns) 
       * [`dig` into DNS](#dig-into-dns)
+      * [Monitor Network](#monitor-network) 
       * [Simple web server](#simple-web-server)
       * [Get files using `wget`](#get-files-using-wget) 
       * [The One with DNS root nameservers](#the-one-with-dns-root-nameservers) 
@@ -420,6 +421,12 @@ Public DNS
 Type in web browser: 1.1.1.1 or 8.8.8.8  
 
 ----
+
+## Monitor Network    
+
+In Linux, [some CLI tools to monitor network traffic](https://www.binarytides.com/linux-commands-monitor-network/).    
+
+---- 
 
 ## Simple web server
 
