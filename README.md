@@ -342,7 +342,8 @@ iitjammu.ac.in.		8600	IN	MX	5 ALT2.ASPMX.L.GOOGLE.COM.
 You can use +nocmd +noall +answer flags for a clean and simple output.    
 
 ```
-$ dig +nocmd iitjammu.ac.in MX +noall +answer
+$ dig +nocmd iitjammu.ac.in MX +noall +answer   
+
 iitjammu.ac.in.		7174	IN	MX	5 ALT1.ASPMX.L.GOOGLE.COM.
 iitjammu.ac.in.		7174	IN	MX	5 ALT2.ASPMX.L.GOOGLE.COM.
 iitjammu.ac.in.		7174	IN	MX	3 ASPMX.L.GOOGLE.COM.
