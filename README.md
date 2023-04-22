@@ -23,6 +23,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [The One with LDAP](#the-one-with-ldap)
       * [The One with RADIUS](#the-one-with-radius)
       * [The One with Security](#the-one-with-security) 
+      * [The One with SSL/TLS Certificates](ssl-tls-certificates)  
       * [The One with Wireshark](#the-one-with-wireshark) 
 
 
@@ -533,6 +534,32 @@ Prof Wenliang Du's lab manual (Syracuse Univ) is one practical way to study, int
 Note:- Safety and Security are two different aspects. No language is so poor to have two such words for the exact same meaning. For digital infrastructure, compute, network - we discuss security aspects. Against fire, civil/electrical infrastructure, natural calamity, we discuss safety aspects.    
 
 ---- 
+
+## SSL TLS Certificates 
+
+[TLS v1.3](https://sectigostore.com/blog/tls-version-1-3-what-to-know-about-the-latest-tls-version/), [TLS v1.3 RFC](https://datatracker.ietf.org/doc/html/rfc8446) released in August 2018 
+[Browser support or compatiability matrix for TLS v1.3](https://caniuse.com/tls1-3). Upgrade your web-browser once and you should be fine.   
+
+[TLS versions](https://www.covetus.com/blog/different-versions-of-transfer-layer-security-tls-its-working-and-benefits)   
+[TLS versions comparison](https://thesecmaster.com/what-is-ssl-tls-how-ssl-tls-1-2-and-tls-1-3-differ-from-each-other/)   
+[Enable/Disable TLS versions on popular servers](https://thesecmaster.com/how-to-enable-tls-1-3-on-popular-web-servers/) and [disable older TLS versions](https://www.ssl.com/guide/disable-tls-1-0-and-1-1-apache-nginx/)   
+
+To disable obsolete versions of SSL/TLS supported by Apache on Ubuntu specify them as follows in /etc/apache2/mods-enabled/ssl.conf, e.g.:
+```
+SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1
+```
+and to allow TLSv1.2 and v1.3 only:   
+```
+SSLProtocol -all +TLSv1.2 +TLSv1.3
+```
+
+Finally, keep on checking sslscan output, TLS certificate checks like one by [SSL Labs](https://www.ssllabs.com/ssltest/) for TLS certs and some basic vulnerability checks.   
+
+At client side, do not ignore [SSL/TLS Certificate Errors and ways to address them](https://sematext.com/blog/ssl-certificate-error/)   
+For SendGrid domain whitelisting validation error [check Top-Level-Domain auto-appending](https://web.archive.org/web/20170706082258/https://sendgrid.com/docs/Classroom/Troubleshooting/Authentication/i_have_created_dns_records_but_the_whitelabel_wizard_is_not_validating_them.html). You should check existing entries in DNS too.   
+
+----
+
 
 ## The One with Wireshark 
 
