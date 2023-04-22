@@ -433,6 +433,9 @@ Type in web browser: 1.1.1.1 or 8.8.8.8
 
 ----
 
+On Ubuntu or similar distro: [DNS config using BIND](https://ubuntu.com/server/docs/service-domain-name-service-dns)   
+
+----
 
 ## The One with DNS root nameservers  
 
