@@ -470,12 +470,6 @@ This page can be opened before you close the server using Ctrl+C.
 
 ----
 
-Where and how to know more about /proc?  
-
-[Cheese on /proc](https://www.kernel.org/doc/Documentation/filesystems/proc.txt)   
-
-----
-
 ## Get files using wget 
 
 You can download files or documentation with large number of files using **wget**. This is very much like your own web-doc-ripper!   
@@ -531,7 +525,7 @@ Some [security-related primer](http://intronetworks.cs.luc.edu/current/html/secu
 
 Prof Wenliang Du's lab manual (Syracuse Univ) is one practical way to study, introduce, or teach security in labs.   
 
-Note:- Safety and Security are two different aspects. No language is so poor to have two such words for the exact same meaning. For digital infrastructure, compute, network - we discuss security aspects. Against fire, civil/electrical infrastructure, natural calamity, we discuss safety aspects.    
+Note:- Safety and Security are two different aspects. No language is so poor to have two such words for the exact same meaning. For digital infrastructure, compute, network - we discuss security aspects. Against fire, civil/electrical infrastructure, natural calamity, we discuss safety aspects. Remember safety check for fire, building, doors, accessibility and security check at main gate, for computer/mobile/network.    
 
 ---- 
 
