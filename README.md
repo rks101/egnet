@@ -437,6 +437,10 @@ On Ubuntu or similar distro: [DNS config using BIND](https://ubuntu.com/server/d
 
 ----
 
+[DNS playground](https://messwithdns.net/) by Julia Evans   
+
+----
+
 ## The One with DNS root nameservers  
 
 Dyno or DNS remains one of the most interesting topics in networking.    
