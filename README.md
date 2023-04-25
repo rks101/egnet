@@ -568,7 +568,7 @@ Notes:-
 * Paid TLS certificates do not use better cryptography than free certificates (e.g. Let's Encrypt). Paid TLS can give you an extended validity on certificates.    
 * Subject Alternate Name (SAN) or multi-domain TLS certificates allow additional host name to be protected by the same /single TLS certificate.   
 * Apache allows you to virtually host multiple HTTPS sites with a single public IP address using SAN certificates.    
-* Wildcard certificate can protect all sub-domains of the same suffix top-level domain (TLD), e.g. \*.mydomain.com - while for \*.mydomain.org you need a separate certificate.   
+* Wildcard certificate can protect all sub-domains of the same suffix top-level domain (TLD), e.g. *.mydomain.com - while for *.mydomain.org you need a separate certificate.   
 * SSL is only referred for historical reasons. Most of the SSL/TLS certificate use TLS v1.1 / v1.2 / v1.3 these days.   
 
 
