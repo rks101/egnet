@@ -563,6 +563,15 @@ For SendGrid domain whitelisting validation error [check Top-Level-Domain auto-a
 
 **System upgrade: You may need to upgrade Apache server to v2.4.38 or higher, open ssl to v1.1.1 or higher and Ubuntu OS for TLS v1.3    
 
+Notes:-    
+* SSL/TLS Certificates are valid for 398 days. You should take care of time-zone if issuer is not in the same time-zone as host.    
+* Paid TLS certificates do not use better cryptography than free certificates (e.g. Let's Encrypt). Paid TLS can give you an extended validity on certificates.    
+* Subject Alternate Name (SAN) or multi-domain TLS certificates allow additional host name to be protected by the same /single TLS certificate.   
+* Apache allows you to virtually host multiple HTTPS sites with a single public IP address using SAN certificates.    
+* Wildcard certificate can protect all sub-domains of the same suffix top-level domain (TLD), e.g. \*.mydomain.com - while for \*.mydomain.org you need a separate certificate.   
+* SSL is only referred for historical reasons. Most of the SSL/TLS certificate use TLS v1.1 / v1.2 / v1.3 these days.   
+
+
 ----
 
 
