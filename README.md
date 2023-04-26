@@ -532,7 +532,8 @@ Some [security-related primer](http://intronetworks.cs.luc.edu/current/html/secu
 
 Prof Wenliang Du's lab manual (Syracuse Univ) is one practical way to study, introduce, or teach security in labs.   
 
-Note:- Safety and Security are two different aspects. No language is so poor to have two such words for the exact same meaning. For digital infrastructure, compute, network - we discuss security aspects. Against fire, civil/electrical infrastructure, natural calamity, we discuss safety aspects. Remember safety check for fire, building, doors, accessibility and security check at main gate, for computer/mobile/network.    
+Note:- Safety and Security are two different aspects. No language is so poor to have two such words for the exact same meaning. For digital infrastructure, compute, network - we discuss security aspects. Against fire, civil/electrical infrastructure, natural calamity, we discuss safety aspects. Remember safety check for fire, building, doors, accessibility and security check at the entrance gate, airports, for computer/mobile/network. 
+Exception: In the context of formal verification of models, safety property asserts that a program execution does not reach to a bad state.    
 
 ---- 
 
