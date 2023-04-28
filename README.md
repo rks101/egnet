@@ -275,6 +275,49 @@ ns3.iitjammu.ac.in	internet address = 182.76.238.118
 > exit
 ```
 
+Another way to nslookup: use -debug for DNS record type.   
+
+```
+$ nslookup -type=ns -debug iitjammu.ac.in 
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+------------
+    QUESTIONS:
+	iitjammu.ac.in, type = NS, class = IN
+    ANSWERS:
+    ->  iitjammu.ac.in
+	nameserver = ns3.iitjammu.ac.in.
+	ttl = 8600
+    ->  iitjammu.ac.in
+	nameserver = ns1.iitjammu.ac.in.
+	ttl = 8600
+    ->  iitjammu.ac.in
+	nameserver = ns2.iitjammu.ac.in.
+	ttl = 8600
+    AUTHORITY RECORDS:
+    ADDITIONAL RECORDS:
+    ->  ns1.iitjammu.ac.in
+	internet address = 14.139.53.132
+	ttl = 8600
+    ->  ns2.iitjammu.ac.in
+	internet address = 14.139.53.133
+	ttl = 8600
+    ->  ns3.iitjammu.ac.in
+	internet address = 182.76.238.118
+	ttl = 8600
+------------
+Non-authoritative answer:
+iitjammu.ac.in	nameserver = ns3.iitjammu.ac.in.
+iitjammu.ac.in	nameserver = ns1.iitjammu.ac.in.
+iitjammu.ac.in	nameserver = ns2.iitjammu.ac.in.
+
+Authoritative answers can be found from:
+ns1.iitjammu.ac.in	internet address = 14.139.53.132
+ns2.iitjammu.ac.in	internet address = 14.139.53.133
+ns3.iitjammu.ac.in	internet address = 182.76.238.118
+```
+
 ----
 
 ## Resolve DNS  
@@ -310,7 +353,9 @@ Current DNS Server: 14.139.53.132
 
 ## dig into DNS
 
-Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records  
+Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records   
+
+Note:- Do not ignore DNS TTL values. Sys admin should set DNS TTL values appropriately. See a few [DNS TTL basics](https://www.varonis.com/blog/dns-ttl).    
 
 $ dig @server hostname recort_type
 
