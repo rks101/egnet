@@ -357,6 +357,11 @@ Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), 
 
 Note:- Do not ignore DNS TTL values. Sys admin should set DNS TTL values appropriately. See a few [DNS TTL basics](https://www.varonis.com/blog/dns-ttl) and [SOA TTL values](https://ns1.com/resources/understanding-ttl-values-in-dns-records).    
 
+Note:- Before making a major change or to make a change effected presumably faster,   
+i) lower the TTL of the concerned record to get it expired sooner,   
+ii) make the change, and   
+iii) edit TTL to a suitable value in the next 48-72 hours.    
+
 $ dig @server hostname recort_type
 
 ```
