@@ -34,6 +34,7 @@ If you are more comfortable reading a paper book like me, see books - [Computer 
 
 If you are senior undergrad/postgrad student, explore [Reproducing Networking Research](https://reproducingnetworkresearch.wordpress.com/) blog, and [paper](https://web.stanford.edu/class/cs244/papers/learning-networking-research-by-reproducing.pdf), and [Some course topics with guests](https://web.stanford.edu/class/cs244/). Visit [Barefoot](https://barefootnetworks.com/resources/worlds-fastest-most-programmable-networks/) in the age of programmable networks   
 
+---- 
 
 ## Network Adapters
 Know your network adapters: product, provider, logical names, MAC, capacity in mbps or gbps, capabilities, etc.   
@@ -73,6 +74,7 @@ $ lshw -class network
        resources: irq:130 memory:df000000-df001fff
 
 ```
+---- 
 
 ## ifconfig
 ifconfig - to show and manage network interface. Caution: this has been replaced by ip.   
@@ -106,6 +108,7 @@ wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
 ```
+---- 
 
 ## ip
 ip - to show and manage network interface and devices. This has replaced ifconfig command.   
@@ -155,6 +158,8 @@ default via 192.168.0.1 dev wlp3s0 proto dhcp metric 600
 
 ```
 The above ip options are available on modern switching and routing hardware supporting Software Defined Networking (SDN).  
+
+---- 
 
 ## ipcalc
 
@@ -426,6 +431,7 @@ iitjammu.ac.in.		8599	IN	A	14.139.53.140
 ;; MSG SIZE  rcvd: 59
 
 ```
+---- 
 
 Use dig to find DNS trace leading to hostname (like traceroute)   
 Pay attension to root name servers, [DNS registrar](https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name-registrar/), and intermediate authoritative servers.  
@@ -535,6 +541,8 @@ You can download files or documentation with large number of files using **wget*
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages
 ```
 
+---- 
+
 ## Email  
 
 * Gmail: [dots in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) do not matter for @gmail.com domain. Where else you see this in action? IRCTC emails!  
@@ -557,6 +565,8 @@ Domain-based Message Authentication, Reporting, and Conformance - [DMARC](https:
 
 Sample yml files with "Show Original" option from mail client - adding soon    
 
+---- 
+
 ## The One with LDAP 
 
 To query and backup/dump LDIF tree:    
@@ -569,6 +579,8 @@ Sysad should practice and know LDAP related [command line tools](https://docs.or
 
 [Manage LDAP entries using LDAP Account Manager (LAM)](https://www.ldap-account-manager.org/lamcms/) and [Web-based LDAP Schema admin](http://phpldapadmin.sourceforge.net/wiki/index.php/Main_Page)   
 
+---- 
+
 ## The One with RADIUS 
 
 In network security, **AAA** term is used as an abstraction for authentication, authorization and accounting purposes in relation with WPA2-Enterprise or 802.1x standard for security. RADIUS (Remote Access Dial-In User Service) promises to provide this gold standard of security.    
@@ -577,6 +589,8 @@ To provide identity (IDP), RADIUS is often used with LDAP. This combination is d
 Relevant posts:    
 1. [Cloud Radius](https://www.cloudradius.com/ldap-vs-radius/)    
 2. [OpenLDAP](https://wiki.freeradius.org/building/openldap), [FreeRadius setup](https://laravel-example.blogspot.com/2019/01/setup-freeradius-authentication-with.html) and [LAM](https://www.ldap-account-manager.org/static/doc/manual-onePage/index.html)   
+
+---- 
 
 ## The One with Security 
 
