@@ -539,7 +539,9 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * Gmail: [dots in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) do not matter for @gmail.com domain. Where else you see this in action? IRCTC emails!  
 * Gmail: [plus something in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) can be cool for @gmail.com domain.  
+* Auto-forward email: [username+caf@domain](https://support.google.com/mail/thread/25788054/auto-forward-mails-are-sent-with-username-caf-domain-instead-of-username-domain)   
 
+---- 
 
 ## The One with SPF DKIM and DMARK 
 
