@@ -10,6 +10,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [`ip`](#ip)
       * [`ipcalc`](#ipcalc)
       * [`iwconfig`](#iwconfig)
+      * [`iwlist`](#iwlist)
       * [`dstat`](#dstat)
       * [NS Lookup](#ns-lookup) 
       * [Resolve DNS](#resolve-dns) 
@@ -209,6 +210,45 @@ wlp3s0    IEEE 802.11  ESSID:"Test"
 enp2s0    no wireless extensions.
 
 gpd0      no wireless extensions.
+```
+
+----
+
+## iwlist    
+View wireless adapter settings and parameters.    
+
+```
+$ iwlist wlp0s20f3 scanning
+wlp0s20f3  Scan completed :
+          Cell 01 - Address: 88:B1:E1:28:AD:81
+                    Channel:48
+                    Frequency:5.24 GHz (Channel 48)
+                    Quality=63/70  Signal level=-47 dBm  
+                    Encryption key:on
+                    ESSID:"IIT_JMU"
+                    Bit Rates:12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s; 48 Mb/s
+                              54 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000027eee5ce0ec
+                    Extra: Last beacon: 105444ms ago
+                    IE: Unknown: 00074949545F4A4D55
+                    IE: Unknown: 01069824B048606C
+                    IE: Unknown: 030130
+                    IE: Unknown: 0754494E2024011E28011E2C011E30011E3401173801173C01174001176401186801186C01187001187401187801187C01188001188401188801188C011890011895011E99011E9D011EA1011EA5011EA9011EAD011E
+                    IE: Unknown: 0B05040007127A
+                    IE: Unknown: 2D1AEF0903FFFFFFFF00000000000000000100000000000000000000
+                    IE: Unknown: 3D1630070400000000000000000000000000000000000000
+                    IE: Unknown: 7F080400000200000040
+                    IE: Unknown: BF0CF2798333AAFF0000AAFF0020
+                    IE: Unknown: C005000000FCFF
+                    IE: Unknown: DD180050F2020101840003A4000027A4000042435E0062322F00
+                    IE: Unknown: DD390011740003003236333361336233316432616433313738663139326463316366373234393639000488B1E128ADAF42000702000104703D5A81
+                    IE: Unknown: DD0C001174000700030400000004
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : 802.1x
+                       Preauthentication Supported
 ```
 
 ----
