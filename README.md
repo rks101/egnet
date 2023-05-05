@@ -703,6 +703,8 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 * Gmail: [plus something in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) can be cool for @gmail.com domain.  
 * Auto-forward email: [username+caf@domain](https://support.google.com/mail/thread/25788054/auto-forward-mails-are-sent-with-username-caf-domain-instead-of-username-domain)   
 
+* [Add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.     
+
 ---- 
 
 ## The One with SPF DKIM and DMARK 
