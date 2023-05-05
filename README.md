@@ -17,6 +17,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [`dig` into DNS](#dig-into-dns)
       * [The One with DNS root nameservers](#the-one-with-dns-root-nameservers) 
       * [Monitor Network](#monitor-network) 
+      * [Know sub-domains they don't give you](#know-sub\-domains) 
       * [Simple web server](#simple-web-server)
       * [Get files using `wget`](#get-files-using-wget) 
       * [Email](#email) 
@@ -597,6 +598,73 @@ Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming servi
 ## Monitor Network    
 
 In Linux, [some CLI tools to monitor network traffic](https://www.binarytides.com/linux-commands-monitor-network/).    
+
+---- 
+
+## Know sub-domains    
+
+Sometimes you wish to know sub-domains and they don't tell you :) so let us knock the domain quietly.     
+[get knock](https://github.com/guelfoweb/knock)    
+
+```
+$ python3 knockpy.py iitjammu.ac.in 
+
+  _  __                 _                
+ | |/ /                | |   v6.1.0            
+ | ' / _ __   ___   ___| | ___ __  _   _ 
+ |  < | '_ \ / _ \ / __| |/ / '_ \| | | |
+ | . \| | | | (_) | (__|   <| |_) | |_| |
+ |_|\_\_| |_|\___/ \___|_|\_\ .__/ \__, |
+                            | |     __/ |
+                            |_|    |___/ 
+
+local: 10757 | remote: 33 .py                                                   
+
+Wordlist: 10790 | Target: iitjammu.ac.in | Ip: 14.139.53.140 
+
+12:48:27
+
+Ip address      Code Subdomain                              Server                                 Real hostname
+--------------- ---- -------------------------------------- -------------------------------------- --------------------------------------
+14.139.53.136   200  apply.iitjammu.ac.in                                                                                                
+10.10.120.180   200  beta.iitjammu.ac.in                                                                                                 
+10.10.120.101        console.iitjammu.ac.in                                                                                              
+174.138.122.103 200  ces.iitjammu.ac.in                     nginx/1.18.0 (Ubuntu)                                                        
+14.139.53.135        depo.iitjammu.ac.in                                                                                                 
+13.126.157.211  200  egdev.iitjammu.ac.in                   Apache                                                                       
+13.126.157.211  200  eg.iitjammu.ac.in                      Apache                                                                       
+13.126.157.211  200  egsec.iitjammu.ac.in                   Apache                                                                       
+10.10.10.42          archive.iitjammu.ac.in                                                                                              
+10.10.10.170    200  apc.iitjammu.ac.in                                                                                                  
+14.139.53.135        eservices.iitjammu.ac.in                                                                                            
+14.139.53.135   200  idp.iitjammu.ac.in                     nginx/1.14.0 (Ubuntu)                                                        
+10.10.10.44     200  intranet.iitjammu.ac.in                                                                                             
+10.10.120.55         elearn.iitjammu.ac.in                                                                                               
+10.10.10.43     200  list.iitjammu.ac.in                    nginx/1.14.0 (Ubuntu)                                                        
+14.139.53.139   200  lists.iitjammu.ac.in                   nginx/1.14.0 (Ubuntu)                                                        
+14.139.53.130   200  lms.iitjammu.ac.in                     Apache/2.4.41 (Ubuntu)                                                       
+142.250.194.179 404  mail.iitjammu.ac.in                    ghs                                    ghs.googlehosted.com
+10.10.10.53          ipa.iitjammu.ac.in                                                                                                  
+10.10.10.45     200  libopac.iitjammu.ac.in                 Apache/2.4.29 (Ubuntu)                                                       
+10.10.10.46          dspace.iitjammu.ac.in                                                                                               
+10.10.96.254         eye.iitjammu.ac.in                                                                                                  
+10.10.194.50         firewall.iitjammu.ac.in                                                                                             
+10.10.10.76          mrtg.iitjammu.ac.in                                                                                                 
+10.10.28.7           skt.iitjammu.ac.in                                                                                                  
+10.10.120.113   200  ssp.iitjammu.ac.in                     Apache/2.4.29 (Ubuntu)                                                       
+206.189.202.152      videoconf.iitjammu.ac.in                                                                                            
+10.10.120.196   200  wifi.iitjammu.ac.in                    Apache/2.4.41 (Ubuntu)                                                       
+14.139.53.140   200  www.iitjammu.ac.in                                                                                                  
+14.139.53.133        ns2.iitjammu.ac.in                                                                                                  
+182.76.238.118       ns3.iitjammu.ac.in                                                                                                  
+14.139.53.132        ns1.iitjammu.ac.in                                                                                                  
+14.139.53.129        vpn.iitjammu.ac.in                                                                                                  
+                                                                                
+12:48:49
+
+Ip address: 30 | Subdomain: 33 | elapsed time: 00:00:22 
+
+```
 
 ---- 
 
