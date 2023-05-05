@@ -215,7 +215,7 @@ gpd0      no wireless extensions.
 ----
 
 ## iwlist    
-View wireless adapter settings and parameters.    
+Work with wireless adapter settings and parameters (scanning, frequency, bitrate, power (on/off), transmit-power, auth) to get detailed wireless information from a wireless interface    
 
 ```
 $ iwlist wlp0s20f3 scanning
@@ -249,6 +249,52 @@ wlp0s20f3  Scan completed :
                         Pairwise Ciphers (1) : CCMP
                         Authentication Suites (1) : 802.1x
                        Preauthentication Supported
+```
+See channel frequency (e.g. in 2.4 Ghz and 5 Ghz)     
+```
+$ iwlist wlp0s20f3 frequency
+wlp0s20f3  32 channels in total; available frequencies :
+          Channel 01 : 2.412 GHz
+          Channel 02 : 2.417 GHz
+          Channel 03 : 2.422 GHz
+          Channel 04 : 2.427 GHz
+          Channel 05 : 2.432 GHz
+          Channel 06 : 2.437 GHz
+          Channel 07 : 2.442 GHz
+          Channel 08 : 2.447 GHz
+          Channel 09 : 2.452 GHz
+          Channel 10 : 2.457 GHz
+          Channel 11 : 2.462 GHz
+          Channel 12 : 2.467 GHz
+          Channel 13 : 2.472 GHz
+          Channel 36 : 5.18 GHz
+          Channel 40 : 5.2 GHz
+          Channel 44 : 5.22 GHz
+          Channel 48 : 5.24 GHz
+          Channel 52 : 5.26 GHz
+          Channel 56 : 5.28 GHz
+          Channel 60 : 5.3 GHz
+          Channel 64 : 5.32 GHz
+          Channel 100 : 5.5 GHz
+          Channel 104 : 5.52 GHz
+          Channel 108 : 5.54 GHz
+          Channel 112 : 5.56 GHz
+          Channel 116 : 5.58 GHz
+          Channel 120 : 5.6 GHz
+          Channel 124 : 5.62 GHz
+          Channel 128 : 5.64 GHz
+          Channel 132 : 5.66 GHz
+          Channel 136 : 5.68 GHz
+          Channel 140 : 5.7 GHz
+          Current Frequency:5.24 GHz (Channel 48)
+
+```
+Transmit power    
+```
+$ iwlist wlp0s20f3 txpower
+wlp0s20f3  unknown transmit-power information.
+
+          Current Tx-Power=22 dBm  	(158 mW)
 ```
 
 ----
