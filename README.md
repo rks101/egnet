@@ -250,7 +250,7 @@ wlp0s20f3  Scan completed :
                         Authentication Suites (1) : 802.1x
                        Preauthentication Supported
 ```
-See channel frequency (e.g. in 2.4 Ghz and 5 Ghz)     
+See channel frequency (in [2.4 Ghz and 5 Ghz RF bands](https://www.intel.in/content/www/in/en/products/docs/wireless/2-4-vs-5ghz.html))     
 ```
 $ iwlist wlp0s20f3 frequency
 wlp0s20f3  32 channels in total; available frequencies :
