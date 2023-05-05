@@ -604,7 +604,7 @@ In Linux, [some CLI tools to monitor network traffic](https://www.binarytides.co
 ## Know sub-domains    
 
 Sometimes you wish to know sub-domains and they don't tell you :) so let us knock the domain quietly.     
-[get knock](https://github.com/guelfoweb/knock)    
+[get knock](https://github.com/guelfoweb/knock) or [puredns](https://github.com/d3mondev/puredns)    
 
 ```
 $ python3 knockpy.py iitjammu.ac.in 
