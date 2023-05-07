@@ -163,7 +163,7 @@ The above ip options are available on modern switching and routing hardware supp
 
 ---- 
 
-## ipcalc
+## ipcalc   
 
 Note:-    
 1. Classful addressing was used well before 1993 with Class A, B, C, D (Multi-cast), E (reserved) IP addresses of 32 bits. Class A, B, C had 8, 16, 24 bits respectively for the network part and remaining bits for host iP addresses. To accommodate the need of assigning IP addresses for a flexible number of hosts and of managing them efficiently, Classless Inter-Domain Routing (CIDR) notation or /n notation came into existence.    
