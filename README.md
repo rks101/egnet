@@ -1,5 +1,5 @@
 # egnet
-egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapter, devices, etc.  
+egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapter, devices, etc. These notes first came out of my habit to write them down at one place and reference them as needed. Later, my curiosity asked me to bell the cat - "Lets do it". I got involved more while answering some questions and started asking people to refer this page.    
 
 Voluntary Disclosure: The output shown for utilities mentioned below is compiled for illustration purpose only. You may not find all details in your lab/office/dungeon.   
 
@@ -165,7 +165,13 @@ The above ip options are available on modern switching and routing hardware supp
 
 ## ipcalc
 
-Know - IP addressing using ipcalc  
+Note:-    
+1. Classful addressing was used well before 1993 with Class A, B, C, D (Multi-cast), E (reserved) IP addresses of 32 bits. Class A, B, C had 8, 16, 24 bits respectively for the network part and remaining bits for host iP addresses. To accommodate the need of assigning IP addresses for a flexible number of hosts and of managing them efficiently, Classless Inter-Domain Routing (CIDR) notation or /n notation came into existence.    
+2. There are three ranges of special private addresses (that are not used to host a service publicly):    
+10.x.x.x, 172.16.x.x -to- 172.31.x.x and 192.168.x.x    or better in CIDR notation 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16    
+
+You can learn a few things with ipcalc on IP addressing.      
+
 ```
 $ ipcalc 192.168.0.1/24
 Address:   192.168.0.1          11000000.10101000.00000000. 00000001
