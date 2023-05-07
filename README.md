@@ -173,6 +173,8 @@ Note:-
 1. Classful addressing was used well before 1993 with Class A, B, C, D (Multi-cast), E (reserved) IP addresses of 32 bits. Class A, B, C had 8, 16, 24 bits respectively for the network part and remaining bits for host iP addresses. To accommodate the need of assigning IP addresses for a flexible number of hosts and of managing them efficiently, Classless Inter-Domain Routing (CIDR) notation or /n notation came into existence.    
 2. There are three ranges of special private addresses (that are not used to host a service publicly):    
 10.x.x.x, 172.16.x.x -to- 172.31.x.x and 192.168.x.x    or better in CIDR notation 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16    
+3. Localhost or loopback address: 127.0.0.0/8 or 127.0.0.1 is used for testing locally on a system. It is configured in software such that it does not leave the network adapter buffers. It is used to test local server or services deployed. e.g. 127.0.0.1:8000 (when some service is running on port 8000)     
+4. Three private address ranges (all IPs in them) are not routed outside the local network because if response packets are routed back to these ips, router would not know not whom to forward to. In such case network address translation (NAT) is required.     
 
 You can learn a few things with ipcalc on IP addressing.      
 
@@ -686,7 +688,7 @@ Note the directory you start this server from and the content you want to share 
 $ python3 -m http.server 
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 127.0.0.1 - - [03/Feb/2021 23:33:21] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2021 23:33:31] "GET /myvideos/ HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2021 23:33:31] "GET /myvideos/ HTTP/1.1" 200 -http://127.0.0http://127.0.0.1:8000/Downloads/http://127.0.0.1:8000/Downloads/http://127.0.0.1:8000/Downloads/.1:8000/Downloads/
 127.0.0.1 - - [03/Feb/2021 23:33:36] "GET /Downloads/ HTTP/1.1" 200 -
 ^C 
 Keyboard interrupt received, exiting.
