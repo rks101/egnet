@@ -78,7 +78,8 @@ $ lshw -class network
 ```
 ---- 
 
-## ifconfig
+## ifconfig   
+
 ifconfig - to show and manage network interface. Caution: this has been replaced by ip.   
 Logical name of interface correponds to Network adapter's logical name in lshw output.   
 
@@ -112,7 +113,8 @@ wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ```
 ---- 
 
-## ip
+## ip   
+
 ip - to show and manage network interface and devices. This has replaced ifconfig command.   
 Ask "man" for objects addr, link, neigh, route, maddress, vrf, etc.  
 
@@ -198,7 +200,7 @@ Hosts/Net: 254                   Class A, Private Internet
 
 ----
 
-## iwconfig 
+## iwconfig   
 
 View and manage Wireless network settings, similar to ifconfig, this one is for wireless  
 ```
@@ -306,7 +308,7 @@ wlp0s20f3  unknown transmit-power information.
 
 ----
 
-## dstat 
+## dstat   
 
 Use **dstat** - a tool for generating system resource statistics such as cpu usage, disk read/write, network data received/sent, etc. To exit type Ctrl+C.    
 ```
