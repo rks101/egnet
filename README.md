@@ -581,6 +581,57 @@ iitjammu.ac.in.		8600	IN	NS	ns3.iitjammu.ac.in.
 
 ```
 
+You may have heard of recursive and iterative DNS queries. From your system to nearest local DNS server or authoritative DNS server queries are recursive - you are bound to get a DNS reply/response. In practice, local DNS server or authoritative DNS server makes iterative queries from the way up root server -> top-level-domain server -> next level DNS registrar where your domain name is registered. Try this iterative DNS query thing:    
+
+We ask a.root-servers.net (one of the 13 root DNS servers in entire DNS hierarchy):   
+Notice the sections in the output:   
+```
+$ dig @a.root-servers.net iitjammu.ac.in
+
+; <<>> DiG 9.18.12-1-Debian <<>> @a.root-servers.net iitjammu.ac.in
+; (2 servers found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51998
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 6, ADDITIONAL: 13
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;iitjammu.ac.in.                        IN      A
+
+;; AUTHORITY SECTION:
+in.                     172800  IN      NS      ns1.registry.in.
+in.                     172800  IN      NS      ns4.registry.in.
+in.                     172800  IN      NS      ns5.registry.in.
+in.                     172800  IN      NS      ns6.registry.in.
+in.                     172800  IN      NS      ns3.registry.in.
+in.                     172800  IN      NS      ns2.registry.in.
+
+;; ADDITIONAL SECTION:
+ns1.registry.in.        172800  IN      A       37.209.192.12
+ns1.registry.in.        172800  IN      AAAA    2001:dcd:1::12
+ns4.registry.in.        172800  IN      A       37.209.198.12
+ns4.registry.in.        172800  IN      AAAA    2001:dcd:4::12
+ns5.registry.in.        172800  IN      A       156.154.100.20
+ns5.registry.in.        172800  IN      AAAA    2001:502:2eda::20
+ns6.registry.in.        172800  IN      A       156.154.101.20
+ns6.registry.in.        172800  IN      AAAA    2001:502:ad09::20
+ns3.registry.in.        172800  IN      A       37.209.196.12
+ns3.registry.in.        172800  IN      AAAA    2001:dcd:3::12
+ns2.registry.in.        172800  IN      A       37.209.194.12
+ns2.registry.in.        172800  IN      AAAA    2001:dcd:2::12
+
+;; Query time: 159 msec
+;; SERVER: 198.41.0.4#53(a.root-servers.net) (UDP)
+;; WHEN: Sun May 07 23:47:41 EDT 2023
+;; MSG SIZE  rcvd: 424
+
+
+```
+Root a did not tell IP of our domain. However, it did return TLD registrar for in and their IP addresses.   
+
 ----
 
 Public DNS  
