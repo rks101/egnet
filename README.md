@@ -459,14 +459,14 @@ Current DNS Server: 14.139.53.132
 
 Dyno or DNS remains one of the most interesting topics in networking.    
 
-Do you know each DNS resolver knows IP addresses of DNS root nameservers always! This is not a new thing, this has always been the case. This info is actually hardwired or better [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80)     
+Do you know each DNS resolver knows IP addresses of DNS root nameservers always! This is not a new thing, this has always been the case. This info is actually hardwired or better [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80). Look at this code, there are 13 DNS root nameservers and the names are not case-sensitive.     
 You can find A type DNS records for these 13 root nameservers named from A to M (as on Jan 2022).   
 
 Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices, networks and to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
 
 ----
 
-There are some privately hosted **Public DNS Servers**, so that everyone does not need a DNS server:     
+There are some privately hosted **Public DNS Servers**, so that everyone does not need a local DNS server:     
 Type in web browser: 1.1.1.1 or 8.8.8.8   
 
 ----
@@ -481,7 +481,7 @@ On Ubuntu or similar distro: [DNS config using BIND](https://ubuntu.com/server/d
 
 ## dig into DNS
 
-Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records   
+Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records. Pay attention to QUESTION, ANSWER, AUTHORITY, and ADDITIONAL sections in the output of dig.    
 
 Note:- Do not ignore DNS TTL values. Sys admin should set DNS TTL values appropriately. See a few [DNS TTL basics](https://www.varonis.com/blog/dns-ttl) and [SOA TTL values](https://ns1.com/resources/understanding-ttl-values-in-dns-records).    
 
@@ -529,7 +529,8 @@ iitjammu.ac.in.		7174	IN	MX	3 ASPMX.L.GOOGLE.COM.
 ```
 
 ----
-Use dig to query hostname using public DNS   
+
+Use dig to query hostname IP address using public DNS, a faster way.    
 ```
 $ dig @8.8.8.8 iitjammu.ac.in
 
@@ -556,8 +557,8 @@ iitjammu.ac.in.		8599	IN	A	14.139.53.140
 ```
 ---- 
 
-Use dig to find DNS trace leading to hostname (like traceroute)   
-Pay attension to root name servers, [DNS registrar](https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name-registrar/), and intermediate authoritative servers.  
+Use dig to find DNS trace leading to hostname (much like traceroute).    
+Pay attention to root nameservers, [DNS registrar](https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name-registrar/), and intermediate authoritative servers.  
 This information is in public domain. DNS is a global public directory of public IPs and hostnames.   
 We will in see in the later section, another iterative way to reach the same answer - IP address of a domain name iitjammu.ac.in.   
 
@@ -606,7 +607,9 @@ iitjammu.ac.in.		8600	IN	NS	ns3.iitjammu.ac.in.
 
 ```
 
-You may have heard of recursive and iterative DNS queries. From your system to nearest local DNS server or authoritative DNS server queries are recursive - you are bound to get a DNS reply/answer. In practice, local DNS server or authoritative DNS server makes iterative queries from all the way up root server to-> top-level-domain server to-> next level DNS registrar where your domain name is registered. Try this iterative DNS query thing:    
+Let's tinker more!    
+
+You may have heard of recursive and iterative DNS queries. From your system to the nearest local DNS server or authoritative DNS nameserver queries are recursive - you are bound to get a DNS reply/answer. In practice, local DNS server or authoritative DNS nameserver makes iterative queries from all the way up root server to-> top-level-domain nameserver to-> next level DNS registrar where your domain name is registered. Try this iterative DNS query thing:    
 
 We ask a.root-servers.net (one of the 13 root DNS servers in entire DNS hierarchy):   
 Notice the sections in the output:   
