@@ -877,17 +877,30 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 ## The One with SPF DKIM and DMARK 
 
-While you may have seen email Spam, you should be familiar with SPF, DKIM and DMARK records.  
+While you may have seen email Spam, you should be familiar with SPF, DKIM and DMARK records. And more recently BIMI and VMC.    
 
 A comic take on [SPF and DKIM](https://wizardzines.com/comics/spf-dkim/) by Julia/bork   
 
-Sender Policy Framework - [SPF](https://www.dmarcanalyzer.com/spf/)   
+1. Sender Policy Framework - [SPF](https://www.dmarcanalyzer.com/spf/)   
+SPF can fail for forwarded or redirected emails.   
 
-Domain Keys Identified Mail - [DKIM](https://support.google.com/a/answer/180504?hl=en&ref_topic=7564555) and check [DKIM](https://www.dmarcanalyzer.com/dkim/) records   
+2. Domain Keys Identified Mail - [DKIM](https://support.google.com/a/answer/180504?hl=en&ref_topic=7564555) and check [DKIM](https://www.dmarcanalyzer.com/dkim/) records   
+DKIM can fail for anti-spam or content-filtering software updating subject in header or parts of the email messages with a disclaimer. DKIM can fail for [replay attack](https://wordtothewise.com/2014/05/dkim-replay-attacks/) or [by chance](https://noxxi.de/research/breaking-dkim-on-purpose-and-by-chance.html).    
 
-Domain-based Message Authentication, Reporting, and Conformance - [DMARC](https://support.google.com/a/answer/2466563?hl=en) and check [DMARK](https://www.dmarcanalyzer.com/dmarc/) records   
+3. Domain-based Message Authentication, Reporting, and Conformance - [DMARC](https://support.google.com/a/answer/2466563?hl=en) and check [DMARK](https://www.dmarcanalyzer.com/dmarc/) records   
+SPF or DKIM alone or both together are not sufficient to control spam. DMARC or ARC combined with SPF and DKIM are a good team to fight against spam.   
 
 Sample yml files with "Show Original" option from mail client - adding soon    
+
+4. [ARC Email authentication](https://support.google.com/a/answer/13198639)   
+
+[What email headers can be spoofed?](https://www.quora.com/Is-it-possible-to-fake-every-line-in-an-email-header-I-know-it-is-possible-to-fake-some-lines-but-what-about-the-signed-by-and-mailed-by-lines-How-secure-is-SPF-and-DKIM-authentication)     
+
+[Signed-by and emailed-by in email header](https://www.online-tech-tips.com/computer-tips/worry-verification-emails-google/)    
+A visible mailed-by field means that email was SPF-authenticated. A visible signed-by field means the email was DKIM-signed     
+
+5. BIMI and VMC - additional reputation    
+You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.    
 
 ---- 
 
