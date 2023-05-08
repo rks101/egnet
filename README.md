@@ -455,6 +455,30 @@ Current DNS Server: 14.139.53.132
 
 ----
 
+## The One with DNS root nameservers  
+
+Dyno or DNS remains one of the most interesting topics in networking.    
+
+Do you know each DNS resolver knows IP addresses of DNS root nameservers always! This is not a new thing, this has always been the case. This info is actually hardwired or better [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80)     
+You can find A type DNS records for these 13 root nameservers named from A to M (as on Jan 2022).   
+
+Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices, networks and to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
+
+----
+
+There are some privately hosted **Public DNS Servers**, so that everyone does not need a DNS server:     
+Type in web browser: 1.1.1.1 or 8.8.8.8   
+
+----
+
+On Ubuntu or similar distro: [DNS config using BIND](https://ubuntu.com/server/docs/service-domain-name-service-dns)   
+
+----
+
+[DNS playground](https://messwithdns.net/) by Julia Evans   
+
+----
+
 ## dig into DNS
 
 Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records   
@@ -535,6 +559,7 @@ iitjammu.ac.in.		8599	IN	A	14.139.53.140
 Use dig to find DNS trace leading to hostname (like traceroute)   
 Pay attension to root name servers, [DNS registrar](https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name-registrar/), and intermediate authoritative servers.  
 This information is in public domain. DNS is a global public directory of public IPs and hostnames.   
+We will in see in the later section, another iterative way to reach the same answer - IP address of a domain name iitjammu.ac.in.   
 
 ```
 $ dig +trace iitjammu.ac.in
@@ -581,10 +606,11 @@ iitjammu.ac.in.		8600	IN	NS	ns3.iitjammu.ac.in.
 
 ```
 
-You may have heard of recursive and iterative DNS queries. From your system to nearest local DNS server or authoritative DNS server queries are recursive - you are bound to get a DNS reply/response. In practice, local DNS server or authoritative DNS server makes iterative queries from the way up root server -> top-level-domain server -> next level DNS registrar where your domain name is registered. Try this iterative DNS query thing:    
+You may have heard of recursive and iterative DNS queries. From your system to nearest local DNS server or authoritative DNS server queries are recursive - you are bound to get a DNS reply/answer. In practice, local DNS server or authoritative DNS server makes iterative queries from all the way up root server to-> top-level-domain server to-> next level DNS registrar where your domain name is registered. Try this iterative DNS query thing:    
 
 We ask a.root-servers.net (one of the 13 root DNS servers in entire DNS hierarchy):   
 Notice the sections in the output:   
+
 ```
 $ dig @a.root-servers.net iitjammu.ac.in
 
@@ -628,33 +654,91 @@ ns2.registry.in.        172800  IN      AAAA    2001:dcd:2::12
 ;; WHEN: Sun May 07 23:47:41 EDT 2023
 ;; MSG SIZE  rcvd: 424
 
+```
+Dearest root server **a** did not tell us IP address of our domain. It also indicated that recursive query is not entertained. 
+
+However, the root server **a** did return TLD registrar for **in** domain (see TLD suffix in the domain name) and IP addresses to find those TLD registrars - as authoritative DNS server in AUTHORITY SECTION. Notice ADDITIONAL SECTION for IP addresses.     
+
+Further, let us ask the TLD in registrar ns1.registry.in:     
 
 ```
-Root a did not tell IP of our domain. However, it did return TLD registrar for in and their IP addresses.   
+$ dig @ns1.registry.in iitjammu.ac.in   
+
+; <<>> DiG 9.18.12-1-Debian <<>> @ns1.registry.in iitjammu.ac.in
+; (2 servers found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 63974
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 3, ADDITIONAL: 4
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;iitjammu.ac.in.                        IN      A
+
+;; AUTHORITY SECTION:
+iitjammu.ac.in.         3600    IN      NS      ns1.iitjammu.ac.in.
+iitjammu.ac.in.         3600    IN      NS      ns3.iitjammu.ac.in.
+iitjammu.ac.in.         3600    IN      NS      ns2.iitjammu.ac.in.
+
+;; ADDITIONAL SECTION:
+ns3.iitjammu.ac.in.     3600    IN      A       182.76.238.118
+ns2.iitjammu.ac.in.     3600    IN      A       14.139.53.133
+ns1.iitjammu.ac.in.     3600    IN      A       14.139.53.132
+
+;; Query time: 27 msec
+;; SERVER: 37.209.192.12#53(ns1.registry.in) (UDP)
+;; WHEN: Sun May 07 23:58:36 EDT 2023
+;; MSG SIZE  rcvd: 145
+
+```
+
+Wow! note the AUTHORITY SECTION ns1.iitjammu.ac.in, it is the local DNS server - its configured as authoritative DNS server. Let us ask him :)   
+
+```
+$ dig @ns1.iitjammu.ac.in iitjammu.ac.in
+
+; <<>> DiG 9.18.12-1-Debian <<>> @ns1.iitjammu.ac.in iitjammu.ac.in
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 11582
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 4
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;iitjammu.ac.in.                        IN      A
+
+;; ANSWER SECTION:
+iitjammu.ac.in.         10      IN      A       14.139.53.140
+
+;; AUTHORITY SECTION:
+iitjammu.ac.in.         8600    IN      NS      ns2.iitjammu.ac.in.
+iitjammu.ac.in.         8600    IN      NS      ns3.iitjammu.ac.in.
+iitjammu.ac.in.         8600    IN      NS      ns1.iitjammu.ac.in.
+
+;; ADDITIONAL SECTION:
+ns1.iitjammu.ac.in.     8600    IN      A       14.139.53.132
+ns2.iitjammu.ac.in.     8600    IN      A       14.139.53.133
+ns3.iitjammu.ac.in.     8600    IN      A       182.76.238.118
+
+;; Query time: 4 msec
+;; SERVER: 14.139.53.132#53(ns1.iitjammu.ac.in) (UDP)
+;; WHEN: Mon May 08 00:08:27 EDT 2023
+;; MSG SIZE  rcvd: 161
+
+```
+
+Bingo! note the ANSWER SECTION - this has IP address of iitjammu.ac.in and A record is returned. This compplete the journey of iterative DNS queries.     
+Compare these steps with the output of dig +trace iitjammu.ac.in to find IP addresses of the domain. This is what happens in practice every single day.    
 
 ----
 
-Public DNS  
-Type in web browser: 1.1.1.1 or 8.8.8.8  
+DNS Cache   
 
-----
 
-On Ubuntu or similar distro: [DNS config using BIND](https://ubuntu.com/server/docs/service-domain-name-service-dns)   
-
-----
-
-[DNS playground](https://messwithdns.net/) by Julia Evans   
-
-----
-
-## The One with DNS root nameservers  
-
-Dyno or DNS remains one of the most interesting topics in networking.    
-
-Do you know each DNS resolver knows IP addresses of DNS root nameservers always! This is not a new thing, this has always been the case. This info is actually hardwired or better [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80)     
-You can find A type DNS records for these 13 root nameservers named from A to M (as on Jan 2022).   
-
-Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices, networks and to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
 
 ----
 
