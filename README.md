@@ -897,7 +897,7 @@ Sample yml files with "Show Original" option from mail client - adding soon
 [What email headers can be spoofed?](https://www.quora.com/Is-it-possible-to-fake-every-line-in-an-email-header-I-know-it-is-possible-to-fake-some-lines-but-what-about-the-signed-by-and-mailed-by-lines-How-secure-is-SPF-and-DKIM-authentication)     
 
 [Signed-by and emailed-by in email header](https://www.online-tech-tips.com/computer-tips/worry-verification-emails-google/)    
-A visible mailed-by field means that email was SPF-authenticated. A visible signed-by field means the email was DKIM-signed     
+A visible mailed-by field in email header means that email was SPF-authenticated. A visible signed-by field in email header means the email was DKIM-signed.     
 
 5. BIMI and VMC - additional reputation    
 You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.    
