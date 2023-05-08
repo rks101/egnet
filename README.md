@@ -734,7 +734,7 @@ ns3.iitjammu.ac.in.     8600    IN      A       182.76.238.118
 
 ```
 
-Bingo! note the ANSWER SECTION - this has IP address of iitjammu.ac.in and A record is returned. This compplete the journey of iterative DNS queries.     
+Bingo! note the ANSWER SECTION - this has IP address of iitjammu.ac.in and A record is returned. This completes the journey of iterative DNS queries.     
 Compare these steps with the output of dig +trace iitjammu.ac.in to find IP addresses of the domain. This is what happens in practice every single day.    
 
 ----
@@ -742,6 +742,22 @@ Compare these steps with the output of dig +trace iitjammu.ac.in to find IP addr
 DNS Cache   
 
 
+----
+
+## New Domain 
+
+While you add a new domain name for your organisation/institute, the following steps are helpful:     
+- decide on a new domain name (e.g. iiitkota.ac.in or iitjammu.ac.in)    
+- register the domain at DNS registrar (ERNET in India) or get from a private domain service provider (e.g. godaddy.com)    
+- provide the new domain name and public IP address of authoritative nameserver (to find your new domain), this authoritative nameserver can be within another campus or with another ISP    
+- Domain registrar adds two resource records (RRs) into top-level-domain nameserver (e.g. ns1.registry.in), just guess the entries from the above discussion     
+e.g. 1) 
+- (iiitkota.ac.in, dns1.iiitkota.ac.in, NS, TTL1)    
+- (dns1.iiitkota.ac.in, 210.212.97.131, A, TTL2)     
+e.g. 2) 
+- (iitjammu.ac.in, dns8.iitd.ac.in, NS, TTL3)    
+- (dns8.iitd.ac.in, 103.27.8.1, A, TTL4)    
+DNS authoritative name server can be updated after registration.    
 
 ----
 
