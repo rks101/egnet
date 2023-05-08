@@ -464,6 +464,8 @@ You can find A type DNS records for these 13 root nameservers named from A to M 
 
 Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices, networks and to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
 
+Note:- How do we/local DNS servers reach to a particular root nameserver while they all are managed by different entities globally? Using IP Anycast => as long as we get response from any of them is fine to go ahead. No broadcast query or multi-cast query is used to locate a root nameserver.    
+
 ----
 
 There are some privately hosted **Public DNS Servers**, so that everyone does not need a local DNS server:     
