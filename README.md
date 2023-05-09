@@ -466,6 +466,71 @@ Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming servi
 
 Note:- How do we/local DNS servers reach to a particular root nameserver while they all are managed by different entities globally? Using IP Anycast => as long as we get response from any of them is fine to go ahead. No broadcast query or multi-cast query is used to locate a root nameserver.    
 
+To get a list of root nameserver and their IP addresses, just type dig and see the answer section and additional sections.   
+
+```
+$ dig 
+
+; <<>> DiG 9.18.12-1-Debian <<>>
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49409
+;; flags: qr rd ra; QUERY: 1, ANSWER: 13, AUTHORITY: 0, ADDITIONAL: 27
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;.                              IN      NS
+
+;; ANSWER SECTION:
+.                       7173    IN      NS      c.root-servers.net.
+.                       7173    IN      NS      e.root-servers.net.
+.                       7173    IN      NS      i.root-servers.net.
+.                       7173    IN      NS      b.root-servers.net.
+.                       7173    IN      NS      j.root-servers.net.
+.                       7173    IN      NS      g.root-servers.net.
+.                       7173    IN      NS      a.root-servers.net.
+.                       7173    IN      NS      d.root-servers.net.
+.                       7173    IN      NS      l.root-servers.net.
+.                       7173    IN      NS      k.root-servers.net.
+.                       7173    IN      NS      f.root-servers.net.
+.                       7173    IN      NS      h.root-servers.net.
+.                       7173    IN      NS      m.root-servers.net.
+
+;; ADDITIONAL SECTION:
+i.root-servers.net.     7173    IN      AAAA    2001:7fe::53
+d.root-servers.net.     7173    IN      A       199.7.91.13
+m.root-servers.net.     7173    IN      A       202.12.27.33
+b.root-servers.net.     7173    IN      A       199.9.14.201
+g.root-servers.net.     7173    IN      A       192.112.36.4
+m.root-servers.net.     7173    IN      AAAA    2001:dc3::35
+e.root-servers.net.     7173    IN      A       192.203.230.10
+l.root-servers.net.     7173    IN      AAAA    2001:500:9f::42
+e.root-servers.net.     7173    IN      AAAA    2001:500:a8::e
+f.root-servers.net.     7173    IN      A       192.5.5.241
+h.root-servers.net.     7173    IN      A       198.97.190.53
+a.root-servers.net.     7173    IN      A       198.41.0.4
+h.root-servers.net.     7173    IN      AAAA    2001:500:1::53
+a.root-servers.net.     7173    IN      AAAA    2001:503:ba3e::2:30
+d.root-servers.net.     7173    IN      AAAA    2001:500:2d::d
+k.root-servers.net.     7173    IN      AAAA    2001:7fd::1
+c.root-servers.net.     7173    IN      A       192.33.4.12
+j.root-servers.net.     7173    IN      AAAA    2001:503:c27::2:30
+i.root-servers.net.     7173    IN      A       192.36.148.17
+k.root-servers.net.     7173    IN      A       193.0.14.129
+g.root-servers.net.     7173    IN      AAAA    2001:500:12::d0d
+c.root-servers.net.     7173    IN      AAAA    2001:500:2::c
+b.root-servers.net.     7173    IN      AAAA    2001:500:200::b
+j.root-servers.net.     7173    IN      A       192.58.128.30
+l.root-servers.net.     7173    IN      A       199.7.83.42
+f.root-servers.net.     7173    IN      AAAA    2001:500:2f::f
+
+;; Query time: 0 msec
+;; SERVER: 10.0.2.3#53(10.0.2.3) (UDP)
+;; WHEN: Tue May 09 01:47:36 EDT 2023
+;; MSG SIZE  rcvd: 811
+```
+
 ----
 
 There are some privately hosted **Public DNS Servers**, so that everyone does not need a local DNS server:     
