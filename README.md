@@ -548,7 +548,17 @@ On Ubuntu or similar distro: [DNS config using BIND](https://ubuntu.com/server/d
 
 ## Top Level Domain TLD    
 
-A Top Level Domain or TLD is the most right-end part of a domain name. e.g. TLD for godaddy.com is .com. There are gTLD (Generic Top Level) and ccTLD (Country Code Top Level Domain). A gTLD is meant to describe the domain name's purpose. e.g. gTLD .com is for commercial entities, .edu for education, and .gov for government. A ccTLD is meant to describe some country or geography. e.g. .in for sites hosted/based in India, .co.uk for sites based in the United Kingdom. These days there are too many new gTLDs like .bank, .bharti, .biz, .coffee, .dell, etc. A full list of gTLDs is available on [IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) website.   
+A Top Level Domain or TLD is the most right-end part of a domain name. e.g. TLD for godaddy.com is .com. 
+
+There are gTLD (Generic Top Level) and ccTLD (Country Code Top Level Domain). 
+
+A gTLD is meant to describe the domain name's purpose. e.g. gTLD .com is for commercial entities, .edu for education, and .gov for government. 
+
+A ccTLD is meant to describe some country or geography. e.g. .in for sites hosted/based in India, .co.uk for sites based in the United Kingdom. 
+
+These days there are too many new gTLDs like .bank, .bharti, .biz, .coffee, .dell, etc. A full list of gTLDs is available on [IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) website.   
+
+Further, second level damains are registered by organizations. When registering a domain name, the second-level domain is limited to 63 characters + the TLD and can only use a-z 0-9 and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations.    
 
 ----
 
