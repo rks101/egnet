@@ -558,7 +558,7 @@ A ccTLD is meant to describe some country or geography. e.g. .in for sites hoste
 
 These days there are too many new gTLDs like .bank, .bharti, .biz, .coffee, .dell, etc. A full list of gTLDs is available on [IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) website.   
 
-Further, second level damains are registered by organizations. When registering a domain name, the second-level domain is limited to 63 characters + the TLD and can only use a-z 0-9 and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations.    
+Further, second-level damains are registered by organizations. When registering a domain name, the second-level domain name is limited to 63 characters + the TLD and can only use a-z 0-9 and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations. The maximum length of a domain name is 253 characters including multiple subdomain-prefixes like abc.def.lmn.pqrs.example.com     
 
 ----
 
