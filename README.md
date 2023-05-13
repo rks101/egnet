@@ -546,6 +546,12 @@ On Ubuntu or similar distro: [DNS config using BIND](https://ubuntu.com/server/d
 
 ----
 
+## Top Level Domain TLD    
+
+A Top Level Domain or TLD is the most right-end part of a domain name. e.g. TLD for godaddy.com is .com. There are gTLD (Generic Top Level) and ccTLD (Country Code Top Level Domain). A gTLD is meant to describe the domain name's purpose. e.g. gTLD .com is for commercial entities, .edu for education, and .gov for government. A ccTLD is meant to describe some country or geography. e.g. .in for sites hosted/based in India, .co.uk for sites based in the United Kingdom. These days there are too many new gTLDs like .bank, .bharti, .biz, .coffee, .dell, etc. A full list of gTLDs is available on [IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) website.   
+
+----
+
 ## dig into DNS
 
 Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records. Pay attention to QUESTION, ANSWER, AUTHORITY, and ADDITIONAL sections in the output of dig.    
