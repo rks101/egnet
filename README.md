@@ -954,6 +954,10 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * [Add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.     
 
+* [10,000 email accounts limit in GSuite/Workplace](https://owasp.org/blog/2023/03/23/gsuite-account-cleanup.html). After a while, someone has to invest in.    
+
+* [Google Workplace pricing plans](https://workspace.google.com/intl/en_in/pricing.html). Things get costly with per-user per-month plans :(   
+
 ---- 
 
 ## The One with SPF DKIM and DMARK 
