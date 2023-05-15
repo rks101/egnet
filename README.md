@@ -958,6 +958,8 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * [Google Workplace pricing plans](https://workspace.google.com/intl/en_in/pricing.html). Things get costly with per-user per-month plans :(   
 
+* [Gmail sending limits in Google Workspace](https://support.google.com/a/answer/166852)   
+
 ---- 
 
 ## The One with SPF DKIM and DMARK 
