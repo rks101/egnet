@@ -28,7 +28,8 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [The One with RADIUS](#the-one-with-radius)
       * [The One with Security](#the-one-with-security) 
       * [The One with SSL/TLS Certificates](#ssl-tls-certificates)  
-      * [The One with Wireshark](#the-one-with-wireshark) 
+      * [The One with Wireshark](#the-one-with-wireshark)  
+      * [The One with Disaster Recovery](#the-one-with-disaster-recovery)  
 
 
 ## Introductory Concepts 
@@ -1068,7 +1069,6 @@ Notes:-
 
 ----
 
-
 ## The One with Wireshark 
 
 It is fun to see packets down to protocol level using wireshark - realtime packets or through a saved pcapng file.   
@@ -1077,4 +1077,15 @@ It is fun to see packets down to protocol level using wireshark - realtime packe
 Start wireshark with root, open a web browser and visit a website. Now, see the packets in wireshark.   
 You can filter using a protocol, analyze packets - byte stream or different headers and payload with them.   
 See if you can build a meaningful context out of packets for protocols HTTP / TCP / UDP / IP / Ethernet, etc.   
+
+
+---- 
+
+## The One with Disaster Recovery    
+
+While working with a banking major serving multiple countries across multiple physical data centers, application had a solid daily overnight-processing (EoD) and offline availability (stand-in) setup for maintenance. For enterprise storage replication, a remote data facilty over synchonous/asynchronous distance upto 160 -to- 200 km may be provisioned.     
+
+For Disaster Recovery (DR), first, it is necessary to re-architect and design the transactional application itself for DR support in active/passive or active/active scenarios (based on Recovery Point Objectives/Recovery Time Objectives). Not only transactional data on the primary server, offline availability (stand-in), interfacing and support with 3rd-party applications (bank payment gateway, messaging gateway, payment/collection batch processing) are required in DR fashion. The load balancing and integration with the SendGrid like mailer in DR fashion are additional considerations. DR site is not just another copy, it is much more than that.     
+
+[A few sample scenarios](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html)     
 
