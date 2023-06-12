@@ -916,6 +916,11 @@ Ip address: 30 | Subdomain: 33 | elapsed time: 00:00:22
 
 ```
 
+There is another awesome Kali Linux tool: **dnsenum** that can reveal much more information about a domain. dnsenum can show domain, nameservers, MX records, zone transfers records for sub-domains, range of public IP addresses, etc.   
+``
+$dnsenum -r mydomain.ac.in   
+``
+
 ---- 
 
 ## Simple web server
