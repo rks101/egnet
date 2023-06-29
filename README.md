@@ -1,7 +1,7 @@
 # egnet
-egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapter, devices, etc.    
+egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapter, devices, etc., DNS and other sysadmin related self-notes.    
 
-These notes first came out of my habit to write them down at one place and reference them later anytime anywhere as needed. Later, my curiosity asked me to bell the cat - "Lets doc it". I got involved more while answering some questions and started asking people to refer this page.    
+These notes first came out of my habit to write them down at one place and reference them later anytime anywhere as needed. Later, my curiosity suggested - "Lets doc it". I got involved more while answering some questions and started asking people to refer this page.    
 
 Voluntary Disclosure: The output shown for utilities mentioned below is compiled for illustration purpose only. You may not find all details in your lab/office/dungeon.   
 
