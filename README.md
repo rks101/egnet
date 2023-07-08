@@ -966,6 +966,8 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * [Gmail sending limits in Google Workspace](https://support.google.com/a/answer/166852)   
 
+* [Enable MTA-STS and TLS reporting](https://support.google.com/a/answer/9276512) to inprove email security and reporting. 
+
 ---- 
 
 ## The One with SPF DKIM and DMARK 
@@ -994,6 +996,8 @@ A visible mailed-by field in email header means that email was SPF-authenticated
 
 5. BIMI and VMC - additional reputation    
 You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.    
+
+6. [Enable Mail Transfer Agent (MTA) Strict Transport Security (STS) and TLS reporting](https://support.google.com/a/answer/9276512) to inprove email security and reporting.    
 
 ---- 
 
