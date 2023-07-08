@@ -822,6 +822,38 @@ Bingo! note the ANSWER SECTION - this has IP address of iitjammu.ac.in and A rec
 Compare these steps with the output of dig +trace iitjammu.ac.in to find IP addresses of the domain. This is what happens in practice every single day.    
 
 ----
+DNS Software: What software DNS server is using?    
+Dig Dyno for version.bind, chaos class, and TXT retord type and see answer section.     
+
+```
+$ dig @ns1.iitjammu.ac.in version.bind chaos txt
+
+; <<>> DiG 9.18.12-0ubuntu0.22.04.2-Ubuntu <<>> @ns1.iitjammu.ac.in version.bind chaos txt
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 45153
+;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;version.bind.			CH	TXT
+
+;; ANSWER SECTION:
+version.bind.		0	CH	TXT	"9.9.4-RedHat-9.9.4-73.el7_6"
+
+;; AUTHORITY SECTION:
+version.bind.		0	CH	NS	version.bind.
+
+;; Query time: 16 msec
+;; SERVER: 14.139.53.132#53(ns1.iitjammu.ac.in) (UDP)
+;; WHEN: Sat Jul 08 09:40:45 IST 2023
+;; MSG SIZE  rcvd: 95
+```
+
+----
 
 DNS Cache   
 
