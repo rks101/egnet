@@ -7,6 +7,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
 
    * [egnet](#egnet)
       * [Introductory Concepts](#introductory-concepts)
+      * [PoE](#poe)   
       * [Network Adapters](#network-adapters)
       * [`ifconfig`](#ifconfig)
       * [`ip`](#ip)
@@ -39,6 +40,15 @@ Some [Introductory concepts in computer networking](http://intronetworks.cs.luc.
 If you are more comfortable reading a paper book like me, see books - [Computer Networking A Top-Down Approach 8th edition by Kurose and Rose](https://gaia.cs.umass.edu/kurose_ross/online_lectures.htm) - they have added SDN, and [Computer Networks: A Systems Approach by Peterson and Davie](https://book.systemsapproach.org/) - they cover Congestion Control in an elegant manner. Another reference book is [Computer & Internet Security: A Hands-on Approach by Wenliang Du](https://amzn.eu/d/hqd1Ncl) from Cyracuse university and maintains [Seed Labs](https://seedsecuritylabs.org/) to combine theory and practice.     
 
 If you are senior undergrad/postgrad student, explore [Reproducing Networking Research](https://reproducingnetworkresearch.wordpress.com/) blog, and [paper](https://web.stanford.edu/class/cs244/papers/learning-networking-research-by-reproducing.pdf), and [Some course topics with guests](https://web.stanford.edu/class/cs244/). Visit [Barefoot](https://barefootnetworks.com/resources/worlds-fastest-most-programmable-networks/) in the age of programmable networks   
+
+---- 
+
+## PoE    
+Power over Ethernet or PoE can provide DC power over ethernet cables - power and network over a single wire. It's cost effective. PoE is used for Access Points (APs), IP cameras and phones. Switch should have PoE ports enabled.    
+
+[What is PoE?](https://notes.networklessons.com/poe-what-is-it)    
+[Active or Standardized PoE](https://notes.networklessons.com/poe-standards-based)    
+[Passive PoE](https://notes.networklessons.com/poe-passive) - used in PoE injectors and supplied DC current to device is fixed.   
 
 ---- 
 
