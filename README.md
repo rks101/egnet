@@ -27,7 +27,8 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [The One with LDAP](#the-one-with-ldap)
       * [The One with RADIUS](#the-one-with-radius)
       * [The One with Security](#the-one-with-security) 
-      * [The One with SSL/TLS Certificates](#ssl-tls-certificates)  
+      * [The One with SSL/TLS Certificates](#ssl-tls-certificates)
+      * [QUIC](#quic)   
       * [The One with Wireshark](#the-one-with-wireshark)  
       * [The One with Disaster Recovery](#the-one-with-disaster-recovery)  
 
@@ -1107,6 +1108,12 @@ Notes:-
 * You can make a "self-signed" TLS certificate. Because that certificate is not signed by a trusted certificate authority, browsers won't accept it.   
 
 \citations for TLS notes: [1](https://questions.wizardzines.com/tls-certificates.html) and [2](https://www.digicert.com/faq/public-trust-and-certificates)   
+
+----
+
+## QUIC 
+
+QUIC (a transport layer protocol) can improve the performance of connection-oriented web applications (having sessions) by creating multi-plex UDP connections and eliminating TCP at transport layer! [See reduced RTTs in handshake](https://en.wikipedia.org/wiki/File:Tcp-vs-quic-handshake.svg).    
 
 ----
 
