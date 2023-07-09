@@ -823,6 +823,10 @@ Bingo! note the ANSWER SECTION - this has IP address of iitjammu.ac.in and A rec
 Compare these steps with the output of dig +trace iitjammu.ac.in to find IP addresses of the domain. This is what happens in practice every single day.    
 
 ----
+
+[See sample DNS request and reply packets using cloudshark](https://www.cloudshark.org/captures/de434abca073)    
+
+----
 DNS Software: What software DNS server is using?    
 Dig Dyno for version.bind, chaos class, and TXT retord type and see answer section.     
 
