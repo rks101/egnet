@@ -824,7 +824,7 @@ Compare these steps with the output of dig +trace iitjammu.ac.in to find IP addr
 
 ----
 
-[See sample DNS request and reply packets using cloudshark](https://www.cloudshark.org/captures/de434abca073)    
+[See sample DNS request and reply packets using **cloudshark**](https://www.cloudshark.org/captures/de434abca073)    
 
 ----
 DNS Software: What software DNS server is using?    
@@ -1131,6 +1131,8 @@ You can filter using a protocol, analyze packets - byte stream or different head
 See if you can build a meaningful context out of packets for protocols HTTP / TCP / UDP / IP / Ethernet, etc.   
 
 e.g. A nice visual lession of [TCP window size scaling](https://networklessons.com/cisco/ccie-routing-switching-written/tcp-window-size-scaling)    
+
+[Sample packet captures to visualize and understand protocol level details using **cloudshark**](https://www.cloudshark.org/collections/WTRpgLI-GQSDfgzkQixICg)    
 
 ---- 
 
