@@ -870,8 +870,9 @@ version.bind.		0	CH	NS	version.bind.
 
 ----
 
-DNS Cache   
+[**DNS Cache**](https://www.keycdn.com/support/dns-cache)    
 
+[View and flush DNS Cache on Linux](https://www.makeuseof.com/view-and-flush-dns-cache-on-linux/)    
 
 ----
 
