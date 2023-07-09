@@ -1126,6 +1126,7 @@ Start wireshark with root, open a web browser and visit a website. Now, see the 
 You can filter using a protocol, analyze packets - byte stream or different headers and payload with them.   
 See if you can build a meaningful context out of packets for protocols HTTP / TCP / UDP / IP / Ethernet, etc.   
 
+e.g. A nice visual lession of [TCP window size scaling](https://networklessons.com/cisco/ccie-routing-switching-written/tcp-window-size-scaling)    
 
 ---- 
 
