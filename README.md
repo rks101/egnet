@@ -872,7 +872,7 @@ version.bind.		0	CH	NS	version.bind.
 
 [**DNS Cache**](https://www.keycdn.com/support/dns-cache)    
 
-[View and flush DNS Cache on Linux](https://www.makeuseof.com/view-and-flush-dns-cache-on-linux/)    
+[View and flush DNS Cache on Linux](https://www.makeuseof.com/view-and-flush-dns-cache-on-linux/), [link2](https://unix.stackexchange.com/questions/28553/how-to-read-the-local-dns-cache-contents)     
 
 ----
 
