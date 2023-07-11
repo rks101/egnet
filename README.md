@@ -1014,7 +1014,7 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * [Gmail sending limits in Google Workspace](https://support.google.com/a/answer/166852)   
 
-* [Enable MTA-STS and TLS reporting](https://support.google.com/a/answer/9276512) to inprove email security and reporting. 
+* [Enable MTA-STS and TLS reporting](https://support.google.com/a/answer/9276512) to improve email security and reporting. 
 
 ---- 
 
