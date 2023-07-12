@@ -1,9 +1,9 @@
 # egnet
-egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapter, devices, etc., DNS and other sysadmin related self-notes.    
+egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapters, devices, etc., DNS, and other sysadmin-related self-notes.    
 
-These notes first came out of my habit to write them down at one place and reference them later anytime anywhere as needed. Later, my curiosity suggested - "Lets doc it". I got involved more while answering some questions and started asking people to refer this page.    
+These notes first came out of my habit of writing them down in one place and referencing them later anytime, anywhere, as needed. Later, my curiosity suggested - "Let's do it." I got involved more while answering some questions and started asking people to refer to this page.    
 
-Voluntary Disclosure: The output shown for utilities mentioned below is compiled for illustration purpose only. You may not find all details in your lab/office/hostel/dormitory.   
+Voluntary Disclosure: The output shown for utilities mentioned below is compiled for illustration purposes only. You may not find all details in your lab/office/hostel/dormitory.   
 
    * [egnet](#egnet)
       * [Introductory Concepts](#introductory-concepts)
@@ -31,31 +31,32 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [The One with SSL/TLS Certificates](#ssl-tls-certificates)
       * [QUIC](#quic)   
       * [The One with Wireshark](#the-one-with-wireshark)  
-      * [The One with Disaster Recovery](#the-one-with-disaster-recovery)  
+      * [The One with Disaster Recovery](#the-one-with-disaster-recovery)
+      * [The One with VPN](#the-one-with-vpn) 
 
 
 ## Introductory Concepts 
-Some [Introductory concepts in computer networking](http://intronetworks.cs.luc.edu/current/html/) online, skip this section and continue if you are already familiar with this domain or looking for the content below. A bookmark, reference or share is okay.  
+Some [Introductory concepts in computer networking](http://intronetworks.cs.luc.edu/current/html/) online, skip this section, and continue if you are already familiar with this domain or looking for the content below. A bookmark, reference, or share is okay.  
 
-If you are more comfortable reading a paper book like me, see books - [Computer Networking A Top-Down Approach 8th edition by Kurose and Rose](https://gaia.cs.umass.edu/kurose_ross/online_lectures.htm) - they have added SDN, and [Computer Networks: A Systems Approach by Peterson and Davie](https://book.systemsapproach.org/) - they cover Congestion Control in an elegant manner. Another reference book is [Computer & Internet Security: A Hands-on Approach by Wenliang Du](https://amzn.eu/d/hqd1Ncl) from Cyracuse university and maintains [Seed Labs](https://seedsecuritylabs.org/) to combine theory and practice.     
+If you are more comfortable reading a paper book like me, see books - [Computer Networking A Top-Down Approach 8th edition by Kurose and Rose](https://gaia.cs.umass.edu/kurose_ross/online_lectures.htm) - they have added SDN, and [Computer Networks: A Systems Approach by Peterson and Davie](https://book.systemsapproach.org/) - they cover Congestion Control in an elegant manner. Another reference book is [Computer & Internet Security: A Hands-on Approach by Wenliang Du](https://amzn.eu/d/hqd1Ncl) from Syracuse University and maintains [Seed Labs](https://seedsecuritylabs.org/) to combine theory and practice.     
 
-If you are senior undergrad/postgrad student, explore [Reproducing Networking Research](https://reproducingnetworkresearch.wordpress.com/) blog, and [paper](https://web.stanford.edu/class/cs244/papers/learning-networking-research-by-reproducing.pdf), and [Some course topics with guests](https://web.stanford.edu/class/cs244/). Visit [Barefoot](https://barefootnetworks.com/resources/worlds-fastest-most-programmable-networks/) in the age of programmable networks   
+If you are a senior undergrad/postgrad student, explore [Reproducing Networking Research](https://reproducingnetworkresearch.wordpress.com/) blog and [paper](https://web.stanford.edu/class/cs244/papers/learning-networking-research-by-reproducing.pdf), and [Some course topics with guests](https://web.stanford.edu/class/cs244/). Visit [Barefoot](https://barefootnetworks.com/resources/worlds-fastest-most-programmable-networks/) in the age of programmable networks   
 
 ---- 
 
 ## PoE    
-Power over Ethernet or PoE can provide DC power over ethernet cables - power and network over a single wire. It's cost effective. PoE is used for Access Points (APs), IP cameras and phones. Switch should have PoE ports enabled.    
+Power over Ethernet or PoE can provide DC power over ethernet cables - power and network over a single wire. It's cost-effective. PoE is used for Access Points (APs), IP cameras, and phones. The switch should have PoE ports enabled.    
 
 [What is PoE?](https://notes.networklessons.com/poe-what-is-it)    
 [Active or Standardized PoE](https://notes.networklessons.com/poe-standards-based)    
-[Passive PoE](https://notes.networklessons.com/poe-passive) - used in PoE injectors and supplied DC current to device is fixed.   
+[Passive PoE](https://notes.networklessons.com/poe-passive) - used in PoE injectors and supplied DC current to the device is fixed.   
 
 ---- 
 
 ## Network Adapters
-Know your network adapters: product, provider, logical names, MAC, capacity in mbps or gbps, capabilities, etc.   
-Knowledge of adapter and vendor can help with device driver related issues or to update driver.   
-Network adapter's logical name is visible in output of ip command.   
+Know your network adapters: product, provider, logical names, MAC, capacity in Mbps or Gbps, capabilities, etc.   
+Knowledge of adapters and vendors can help with device driver-related issues or update drivers.   
+The network adapter's logical name is visible in the output of the ip command.   
 
 ```
 $ lshw -class network
@@ -94,8 +95,8 @@ $ lshw -class network
 
 ## ifconfig   
 
-ifconfig - to show and manage network interface. Caution: this has been replaced by ip.   
-Logical name of interface correponds to Network adapter's logical name in lshw output.   
+ifconfig - to show and manage the network interface. Caution: this has been replaced by ip.   
+The logical name of the interface corresponds to the Network adapter's logical name in lshw output.   
 
 ```
 $ ifconfig
@@ -132,8 +133,8 @@ wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ip - to show and manage network interface and devices. This has replaced ifconfig command.   
 Ask "man" for objects addr, link, neigh, route, maddress, vrf, etc.  
 
-Logical name of interface correponds to Network adapter's logical name in lshw output.  
-The output below is compiled for illustration purpose only. You may not find all details in your lab/office/dungeon.  
+The logical name of the interface corresponds to the Network adapter's logical name in lshw output.  
+The output below is compiled for illustration purposes only. You may not find all details in your lab/office/dungeon.  
 ```
 $ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -182,11 +183,11 @@ The above ip options are available on modern switching and routing hardware supp
 ## ipcalc   
 
 Note:-    
-1. Classful addressing was used well before 1993 with Class A, B, C, D (Multi-cast), E (reserved) IP addresses of 32 bits. Class A, B, C had 8, 16, 24 bits respectively for the network part and remaining bits for host iP addresses. To accommodate the need of assigning IP addresses for a flexible number of hosts and of managing them efficiently, Classless Inter-Domain Routing (CIDR) notation or /n notation came into existence.    
+1. Classful addressing was used well before 1993 with Class A, B, C, D (Multi-cast), and E (reserved) IP addresses of 32 bits. Class A, B, and C had 8, 16, and 24 bits for the network part and the remaining bits for host iP addresses. To accommodate the need to assign IP addresses for a flexible number of hosts and to manage them efficiently, Classless Inter-Domain Routing (CIDR) notation or /n notation came into existence.    
 2. There are three ranges of special private addresses (that are not used to host a service publicly):    
 10.x.x.x, 172.16.x.x -to- 172.31.x.x and 192.168.x.x    or better in CIDR notation 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16    
-3. Localhost or loopback address: 127.0.0.0/8 or 127.0.0.1 is used for testing locally on a system. It is configured in software such that it does not leave the network adapter buffers. It is used to test local server or services deployed. e.g. 127.0.0.1:8000 (when some service is running on port 8000)     
-4. Three private address ranges (all IPs in them) are not routed outside the local network because if response packets are routed back to these ips, router would not know not whom to forward to. In such case network address translation (NAT) is required.     
+3. Localhost or loopback address: 127.0.0.0/8 or 127.0.0.1 is used for testing locally on a system. It is configured in software such that it does not leave the network adapter buffers. It is used to test local servers or services deployed. e.g., 127.0.0.1:8000 (when some service is running on port 8000)     
+4. Three private address ranges (all IPs in them) are not routed outside the local network because if response packets are routed back to these IPs, the router would not know not whom to forward to. In such cases, network address translation (NAT) is required.     
 
 You can learn a few things with ipcalc on IP addressing.      
 
@@ -218,7 +219,7 @@ Hosts/Net: 254                   Class A, Private Internet
 
 ## iwconfig   
 
-View and manage Wireless network settings, similar to ifconfig, this one is for wireless  
+View and manage Wireless network settings, similar to ifconfig; this command is for wireless.  
 ```
 $ iwconfig
 lo        no wireless extensions.
@@ -326,7 +327,7 @@ wlp0s20f3  unknown transmit-power information.
 
 ## dstat   
 
-Use **dstat** - a tool for generating system resource statistics such as cpu usage, disk read/write, network data received/sent, etc. To exit type Ctrl+C.    
+Use **dstat** - a tool for generating system resource statistics such as CPU usage, disk read/write, network data received/sent, etc. To exit type Ctrl+C.    
 ```
 $ dstat
 You did not select any stats, using -cdngy by default.
@@ -471,14 +472,14 @@ Current DNS Server: 14.139.53.132
 
 Dyno or DNS remains one of the most interesting topics in networking.    
 
-Do you know each DNS resolver knows IP addresses of DNS root nameservers always! This is not a new thing, this has always been the case. This info is actually hardwired or better [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80). Look at this code, there are 13 DNS root nameservers and the names are not case-sensitive.     
+Do you know each DNS resolver knows the IP addresses of DNS root nameservers always! This is not a new thing, this has always been the case. This info is actually hardwired or better [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80). Look at this code, there are 13 DNS root nameservers, and the names are not case-sensitive.     
 You can find A type DNS records for these 13 root nameservers named from A to M (as on Jan 2022).   
 
 Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices, networks and to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
 
-Note:- How do we/local DNS servers reach to a particular root nameserver while they all are managed by different entities globally? Using IP Anycast => as long as we get response from any of them is fine to go ahead. No broadcast query or multi-cast query is used to locate a root nameserver.    
+Note:- How do we/local DNS servers reach a particular root nameserver while they all are managed by different entities globally? Using IP Anycast => As long as we get a response from any of them is fine to go ahead. No broadcast query or multi-cast query is used to locate a root nameserver.    
 
-To get a list of root nameserver and their IP addresses, just type dig and see the answer section and additional sections.   
+To get a list of root nameservers and their IP addresses, just type dig and see the answer section and additional sections.   
 
 ```
 $ dig 
@@ -545,8 +546,8 @@ f.root-servers.net.     7173    IN      AAAA    2001:500:2f::f
 
 ----
 
-There are some privately hosted **Public DNS Servers**, so that everyone does not need a local DNS server:     
-Type in web browser: 1.1.1.1 or 8.8.8.8   
+There are some privately hosted **Public DNS Servers** so that everyone does not need a local DNS server:     
+Type in a web browser: 1.1.1.1 or 8.8.8.8   
 
 ----
 
@@ -564,24 +565,24 @@ A Top Level Domain or TLD is the most right-end part of a domain name. e.g. TLD 
 
 There are gTLD (Generic Top Level) and ccTLD (Country Code Top Level Domain). 
 
-A gTLD is meant to describe the domain name's purpose. e.g. gTLD .com is for commercial entities, .edu for education, and .gov for government. 
+A gTLD is meant to describe the domain name's purpose. e.g. gTLD .com is for commercial entities, .edu for education, and .gov for the government. 
 
 A ccTLD is meant to describe some country or geography. e.g. .in for sites hosted/based in India, .co.uk for sites based in the United Kingdom. 
 
 These days there are too many new gTLDs like .bank, .bharti, .biz, .coffee, .dell, etc. A full list of gTLDs is available on [IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) website.   
 
-Further, second-level damains are registered by organizations. When registering a domain name, the second-level domain name is limited to 63 characters + the TLD and can only use a-z 0-9 and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations. The maximum length of a domain name is 253 characters including multiple subdomain-prefixes like abc.def.lmn.pqrs.example.com     
+Further, second-level domains are registered by organizations. When registering a domain name, the second-level domain name is limited to 63 characters + the TLD and can only use a-z 0-9 and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations. The maximum length of a domain name is 253 characters including multiple subdomain prefixes like abc.def.lmn.pqrs.example.com     
 
 ----
 
 ## dig into DNS
 
-Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records. Pay attention to QUESTION, ANSWER, AUTHORITY, and ADDITIONAL sections in the output of dig.    
+Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), NS (name server), MX (mail server), TXT (domain ownership, to prevent mail spam), CNAME (canonical name or alias) records. Pay attention to the QUESTION, ANSWER, AUTHORITY, and ADDITIONAL sections in the output of dig.    
 
 Note:- Do not ignore DNS TTL values. Sys admin should set DNS TTL values appropriately. See a few [DNS TTL basics](https://www.varonis.com/blog/dns-ttl) and [SOA TTL values](https://ns1.com/resources/understanding-ttl-values-in-dns-records).    
 
 Note:- Before making a major change or to make a change effected presumably faster,   
-i) lower the TTL of the concerned record to get it expired sooner,   
+i) Lower the TTL of the concerned record to get it expired sooner,   
 ii) make the change, and   
 iii) edit TTL to a suitable value in the next 48-72 hours.    
 
@@ -652,10 +653,10 @@ iitjammu.ac.in.		8599	IN	A	14.139.53.140
 ```
 ---- 
 
-Use dig to find DNS trace leading to hostname (much like traceroute).    
+Use dig to find the DNS trace leading to a hostname (much like traceroute).    
 Pay attention to root nameservers, [DNS registrar](https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name-registrar/), and intermediate authoritative servers.  
-This information is in public domain. DNS is a global public directory of public IPs and hostnames.   
-We will in see in the later section, another iterative way to reach the same answer - IP address of a domain name iitjammu.ac.in.   
+This information is in the public domain. DNS is a global public directory of public IPs and hostnames.   
+We will in see in the later section another iterative way to reach the same answer - the IP address of a domain name iitjammu.ac.in.   
 
 ```
 $ dig +trace iitjammu.ac.in
@@ -704,9 +705,9 @@ iitjammu.ac.in.		8600	IN	NS	ns3.iitjammu.ac.in.
 
 Let's tinker more!    
 
-You may have heard of recursive and iterative DNS queries. From your system to the nearest local DNS server or authoritative DNS nameserver queries are recursive - you are bound to get a DNS reply/answer. In practice, local DNS server or authoritative DNS nameserver makes iterative queries from all the way up root server to-> top-level-domain nameserver to-> next level DNS registrar where your domain name is registered. Try this iterative DNS query thing:    
+You may have heard of recursive and iterative DNS queries. From your system to the nearest local DNS server, or authoritative DNS nameserver queries are recursive - you are bound to get a DNS reply/answer. In practice, a local DNS server or authoritative DNS nameserver makes iterative queries from all the way up the root server to-> top-level-domain nameserver to-> next-level DNS registrar where your domain name is registered. Try this iterative DNS query thing:    
 
-We ask a.root-servers.net (one of the 13 root DNS servers in entire DNS hierarchy):   
+We ask a.root-servers.net (one of the 13 root DNS servers in the entire DNS hierarchy):   
 Notice the sections in the output:   
 
 ```
@@ -753,9 +754,9 @@ ns2.registry.in.        172800  IN      AAAA    2001:dcd:2::12
 ;; MSG SIZE  rcvd: 424
 
 ```
-Dearest root server **a** did not tell us IP address of our domain. It also indicated that recursive query is not entertained. 
+Dearest root server **a** did not tell us the IP address of our domain. It also indicated that recursive query is not entertained. 
 
-However, the root server **a** did return TLD registrar for **in** domain (see TLD suffix in the domain name) and IP addresses to find those TLD registrars - as authoritative DNS server in AUTHORITY SECTION. Notice ADDITIONAL SECTION for IP addresses.     
+However, the root server **a** did return the TLD registrar for **in** domain (see TLD suffix in the domain name) and IP addresses to find those TLD registrars - as authoritative DNS server in AUTHORITY SECTION. Notice the ADDITIONAL SECTION for IP addresses.     
 
 Further, let us ask the TLD in registrar ns1.registry.in:     
 
@@ -792,7 +793,7 @@ ns1.iitjammu.ac.in.     3600    IN      A       14.139.53.132
 
 ```
 
-Wow! note the AUTHORITY SECTION ns1.iitjammu.ac.in, it is the local DNS server - its configured as authoritative DNS server. Let us ask him :)   
+Wow! Note the AUTHORITY SECTION ns1.iitjammu.ac.in, it is the local DNS server - it's configured as an authoritative DNS server. Let us ask him :)   
 
 ```
 $ dig @ns1.iitjammu.ac.in iitjammu.ac.in
@@ -829,8 +830,8 @@ ns3.iitjammu.ac.in.     8600    IN      A       182.76.238.118
 
 ```
 
-Bingo! note the ANSWER SECTION - this has IP address of iitjammu.ac.in and A record is returned. This completes the journey of iterative DNS queries.     
-Compare these steps with the output of dig +trace iitjammu.ac.in to find IP addresses of the domain. This is what happens in practice every single day.    
+Bingo! note the ANSWER SECTION - this has an IP address of iitjammu.ac.in, and A record is returned. This completes the journey of iterative DNS queries.     
+Compare these steps with the output of dig +trace iitjammu.ac.in to find the IP addresses of the domain. This is what happens in practice every single day.    
 
 ----
 
@@ -838,7 +839,7 @@ Compare these steps with the output of dig +trace iitjammu.ac.in to find IP addr
 
 ----
 DNS Software: What software DNS server is using?    
-Dig Dyno for version.bind, chaos class, and TXT retord type and see answer section.     
+Dig Dyno for version.bind, chaos class, and TXT record type, and see the answer section.     
 
 ```
 $ dig @ns1.iitjammu.ac.in version.bind chaos txt
@@ -878,15 +879,15 @@ version.bind.		0	CH	NS	version.bind.
 
 ## New Domain 
 
-While you add a new domain name for your organisation/institute, the following steps are helpful:     
-- decide on a new domain name (e.g. iiitkota.ac.in or iitjammu.ac.in)    
-- register the domain at DNS registrar (ERNET in India) or get from a private domain service provider (e.g. godaddy.com)    
-- provide the new domain name and public IP address of authoritative nameserver (to find your new domain), this authoritative nameserver can be within another campus or with another ISP    
-- Domain registrar adds two resource records (RRs) into top-level-domain nameserver (e.g. ns1.registry.in), just guess the entries from the above discussion     
-e.g. 1) 
+While you add a new domain name for your organization/institute, the following steps are helpful:     
+- decide on a new domain name (e.g., iiitkota.ac.in or iitjammu.ac.in)    
+- register the domain at the DNS registrar (ERNET in India) or get one from a private domain service provider (e.g., godaddy.com)    
+- provide the new domain name and public IP address of the authoritative nameserver (to find your new domain), this authoritative nameserver can be within another campus or with another ISP    
+- Domain registrar adds two resource records (RRs) into the top-level-domain nameserver (e.g. ns1.registry.in), just guess the entries from the above discussion     
+e.g., 1) 
 - (iiitkota.ac.in, dns1.iiitkota.ac.in, NS, TTL1)    
 - (dns1.iiitkota.ac.in, 210.212.97.131, A, TTL2)     
-e.g. 2) 
+e.g., 2) 
 - (iitjammu.ac.in, dns8.iitd.ac.in, NS, TTL3)    
 - (dns8.iitd.ac.in, 103.27.8.1, A, TTL4)    
 DNS authoritative name server can be updated after registration.    
@@ -901,7 +902,7 @@ In Linux, [some CLI tools to monitor network traffic](https://www.binarytides.co
 
 ## Know sub-domains    
 
-Sometimes you wish to know sub-domains and they don't tell you :) so let us knock the domain quietly.     
+Sometimes you wish to know sub-domains and they don't tell you :) so let us knock on the domain quietly.     
 [get knock](https://github.com/guelfoweb/knock) or [puredns](https://github.com/d3mondev/puredns)    
 
 ```
@@ -964,7 +965,7 @@ Ip address: 30 | Subdomain: 33 | elapsed time: 00:00:22
 
 ```
 
-There is another awesome Kali Linux tool: **dnsenum** that can reveal much more information about a domain. dnsenum can show domain, nameservers, MX records, zone transfers records for sub-domains, range of public IP addresses, etc.   
+There is another awesome Kali Linux tool: **dnsenum** that can reveal much more information about a domain. dnsenum can show domains, nameservers, MX records, zone transfer records for sub-domains, range of public IP addresses, etc.   
 ``
 $dnsenum -r mydomain.ac.in   
 ``
@@ -985,14 +986,14 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 Keyboard interrupt received, exiting.
 
 ```
-The webserver started above can be opened in a web browser: http://0.0.0.0:8000/  
+The web server started above can be opened in a web browser: http://0.0.0.0:8000/  
 This page can be opened before you close the server using Ctrl+C.  
 
 ----
 
 ## Get files using wget 
 
-You can download files or documentation with large number of files using **wget**. This is very much like your own web-doc-ripper!   
+You can download files or documentation with a large number of files using **wget**. This is very much like your own web-doc-ripper!   
 
 ```
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages
@@ -1002,13 +1003,13 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 ## Email  
 
-* Gmail: [dots in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) do not matter for @gmail.com domain. Where else you see this in action? IRCTC emails!  
+* Gmail: [dots in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) do not matter for @gmail.com domain. Where else do you see this in action? IRCTC emails!  
 * Gmail: [plus something in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) can be cool for @gmail.com domain.  
 * Auto-forward email: [username+caf@domain](https://support.google.com/mail/thread/25788054/auto-forward-mails-are-sent-with-username-caf-domain-instead-of-username-domain)   
 
 * [Add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.     
 
-* [10,000 email accounts limit in GSuite/Workplace](https://owasp.org/blog/2023/03/23/gsuite-account-cleanup.html). After a while, someone has to invest in.    
+* [10,000 email accounts limit in GSuite/Workplace](https://owasp.org/blog/2023/03/23/gsuite-account-cleanup.html). After a while, someone has to invest in it.    
 
 * [Google Workplace pricing plans](https://workspace.google.com/intl/en_in/pricing.html). Things get costly with per-user per-month plans :(   
 
@@ -1020,7 +1021,7 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 ## The One with SPF DKIM and DMARK 
 
-While you may have seen email Spam, you should be familiar with SPF, DKIM and DMARK records. And more recently BIMI and VMC.    
+While you may have seen email Spam, you should be familiar with SPF, DKIM, and DMARK records. And more recently, BIMI and VMC.    
 
 A comic take on [SPF and DKIM](https://wizardzines.com/comics/spf-dkim/) by Julia/bork   
 
@@ -1028,7 +1029,7 @@ A comic take on [SPF and DKIM](https://wizardzines.com/comics/spf-dkim/) by Juli
 SPF can fail for forwarded or redirected emails.   
 
 2. Domain Keys Identified Mail - [DKIM](https://support.google.com/a/answer/180504?hl=en&ref_topic=7564555) and check [DKIM](https://www.dmarcanalyzer.com/dkim/) records   
-DKIM can fail for anti-spam or content-filtering software updating subject in header or parts of the email messages with a disclaimer. DKIM can fail for [replay attack](https://wordtothewise.com/2014/05/dkim-replay-attacks/) or [by chance](https://noxxi.de/research/breaking-dkim-on-purpose-and-by-chance.html).    
+DKIM can fail for anti-spam or content-filtering software updating the subject in the header or parts of the email messages with a disclaimer. DKIM can fail for [replay attack](https://wordtothewise.com/2014/05/dkim-replay-attacks/) or [by chance](https://noxxi.de/research/breaking-dkim-on-purpose-and-by-chance.html).    
 
 3. Domain-based Message Authentication, Reporting, and Conformance - [DMARC](https://support.google.com/a/answer/2466563?hl=en) and check [DMARK](https://www.dmarcanalyzer.com/dmarc/) records   
 SPF or DKIM alone or both together are not sufficient to control spam. DMARC or ARC combined with SPF and DKIM are a good team to fight against spam.   
@@ -1040,24 +1041,24 @@ Sample yml files with "Show Original" option from mail client - adding soon
 [What email headers can be spoofed?](https://www.quora.com/Is-it-possible-to-fake-every-line-in-an-email-header-I-know-it-is-possible-to-fake-some-lines-but-what-about-the-signed-by-and-mailed-by-lines-How-secure-is-SPF-and-DKIM-authentication)     
 
 [Signed-by and emailed-by in email header](https://www.online-tech-tips.com/computer-tips/worry-verification-emails-google/)    
-A visible mailed-by field in email header means that email was SPF-authenticated. A visible signed-by field in email header means the email was DKIM-signed.     
+A visible mailed-by field in the email header means that the email was SPF-authenticated. A visible signed-by field in the email header means the email was DKIM-signed.     
 
 5. BIMI and VMC - additional reputation    
-You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.    
+You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this, you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.    
 
-6. [Enable Mail Transfer Agent (MTA) Strict Transport Security (STS) and TLS reporting](https://support.google.com/a/answer/9276512) to inprove email security and reporting.    
+6. [Enable Mail Transfer Agent (MTA) Strict Transport Security (STS) and TLS reporting](https://support.google.com/a/answer/9276512) to improve email security and reporting.    
 
 ---- 
 
 ## The One with LDAP 
 
-To query and backup/dump LDIF tree:    
+To query and backup/dump the LDIF tree:    
 ```
 ldapsearch -x -b "dc=iitx,dc=ac,dc=in" -H ldap://10.10.10.10 -D "cn=admin,dc=iitx,dc=ac,dc=in" -W > backup.ldif  
 ```
-This can be useful to create another instance of LDAP. You need to mention root DN / domain name, LDAP server IP and admin user.    
+This can be useful to create another instance of LDAP. You should mention the root DN / domain name, LDAP server IP, and admin user.    
 
-Sysad should practice and know LDAP related [command line tools](https://docs.oracle.com/cd/A97630_01/network.920/a96579/comtools.htm) to query, add, delete, modify LDAP entries. It's a different experience with command line :) and you can write scripts to automate the housekeeping!    
+Sysad should practice and know LDAP-related [command line tools](https://docs.oracle.com/cd/A97630_01/network.920/a96579/comtools.htm) to query, add, delete, and modify LDAP entries. It's a different experience with the command line :) and you can write scripts to automate the housekeeping!    
 
 [Manage LDAP entries using LDAP Account Manager (LAM)](https://www.ldap-account-manager.org/lamcms/) and [Web-based LDAP Schema admin](http://phpldapadmin.sourceforge.net/wiki/index.php/Main_Page)   
 
@@ -1065,8 +1066,8 @@ Sysad should practice and know LDAP related [command line tools](https://docs.or
 
 ## The One with RADIUS 
 
-In network security, **AAA** term is used as an abstraction for authentication, authorization and accounting purposes in relation with WPA2-Enterprise or 802.1x standard for security. RADIUS (Remote Access Dial-In User Service) promises to provide this gold standard of security.    
-To provide identity (IDP), RADIUS is often used with LDAP. This combination is definitely fire for sysad not flower even in 2022.    
+In network security, **AAA** term is used as an abstraction for authentication, authorization, and accounting purposes in relation to WPA2-Enterprise or 802.1x standard for security. RADIUS (Remote Access Dial-In User Service) promises to provide this gold standard of security.    
+To provide identity (IDP), RADIUS is often used with LDAP. This combination is definitely a fire for Sysad.   
 
 Relevant posts:    
 1. [Cloud Radius](https://www.cloudradius.com/ldap-vs-radius/)    
@@ -1080,8 +1081,8 @@ Some [security-related primer](http://intronetworks.cs.luc.edu/current/html/secu
 
 Prof Wenliang Du's lab manual (Syracuse Univ) is one practical way to study, introduce, or teach security in labs.   
 
-Note:- Safety and Security are two different aspects. No language is so poor to have two such words for the exact same meaning. For digital infrastructure, compute, network - we discuss security aspects. Against fire, civil/electrical infrastructure, natural calamity, we discuss safety aspects. Remember safety check for fire, building, doors, accessibility and security check at the entrance gate, airports, for computer/mobile/network. 
-Exception: In the context of formal verification of models, safety property asserts that a program execution does not reach to a bad state.    
+Note:- Safety and Security are two different aspects. No language is so poor to have two such words for the exact same meaning. For digital infrastructure, compute, and network - we discuss security aspects. We discuss safety aspects against fire, civil/electrical infrastructure, and natural calamity. Remember safety checks for fire, building, doors, accessibility, and security at the entrance gate, airports, and computer/mobile/network. 
+Exception: In the context of formal verification of models, safety property asserts that a program execution does not reach a bad state.    
 
 ---- 
 
@@ -1089,14 +1090,14 @@ Exception: In the context of formal verification of models, safety property asse
 
 [TLS v1.3](https://sectigostore.com/blog/tls-version-1-3-what-to-know-about-the-latest-tls-version/), [TLS v1.3 RFC](https://datatracker.ietf.org/doc/html/rfc8446) released in August 2018    
 
-[Browser support or compatiability matrix for TLS v1.3](https://caniuse.com/tls1-3). Upgrade your web-browser once and you should be fine.   
+[Browser support or compatibility matrix for TLS v1.3](https://caniuse.com/tls1-3). You can upgrade your web browser once, and you should be fine.   
 
 [TLS versions](https://www.covetus.com/blog/different-versions-of-transfer-layer-security-tls-its-working-and-benefits)   
 [TLS versions comparison](https://thesecmaster.com/what-is-ssl-tls-how-ssl-tls-1-2-and-tls-1-3-differ-from-each-other/)   
 
 [Enable/Disable TLS versions on popular servers](https://thesecmaster.com/how-to-enable-tls-1-3-on-popular-web-servers/) and [disable older TLS versions](https://www.ssl.com/guide/disable-tls-1-0-and-1-1-apache-nginx/)   
 
-To disable obsolete versions of SSL/TLS supported by Apache on Ubuntu specify them as follows in /etc/apache2/mods-enabled/ssl.conf, e.g.:
+To disable obsolete versions of SSL/TLS supported by Apache on Ubuntu, specify them as follows in /etc/apache2/mods-enabled/ssl.conf, e.g.:
 ```
 SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1
 ```
@@ -1105,22 +1106,22 @@ and to allow TLSv1.2 and v1.3 only:
 SSLProtocol -all +TLSv1.2 +TLSv1.3
 ```
 
-Finally, keep on checking sslscan output, TLS certificate checks like one by [SSL Labs](https://www.ssllabs.com/ssltest/) for TLS certs and some basic vulnerability checks.   
+Finally, keep on checking sslscan output, TLS certificate checks like one by [SSL Labs](https://www.ssllabs.com/ssltest/) for TLS certs, and some basic vulnerability checks.   
 
-At client side, do not ignore [SSL/TLS Certificate Errors and ways to address them](https://sematext.com/blog/ssl-certificate-error/)   
+On the client side, do not ignore [SSL/TLS Certificate Errors and ways to address them](https://sematext.com/blog/ssl-certificate-error/)   
 For SendGrid domain whitelisting validation error [check Top-Level-Domain auto-appending](https://web.archive.org/web/20170706082258/https://sendgrid.com/docs/Classroom/Troubleshooting/Authentication/i_have_created_dns_records_but_the_whitelabel_wizard_is_not_validating_them.html). You should check existing entries in DNS too.   
 
-**System upgrade: You may need to upgrade Apache server to v2.4.38 or higher, open ssl to v1.1.1 or higher and Ubuntu OS for TLS v1.3    
+**System upgrade: You may need to upgrade the Apache server to v2.4.38 or higher, open SSL to v1.1.1 or higher, and Ubuntu OS for TLS v1.3    
 
 Notes:-    
-* SSL/TLS Certificates are valid for a maximum of 398 days. You should take care of time-zone if issuer is not in the same time-zone as host.    
-* Paid TLS certificates do not use better cryptography than free certificates (e.g. Let's Encrypt). Paid TLS can give you an extended validity on certificates.    
-* Subject Alternate Name (SAN) or multi-domain TLS certificates allow additional host name to be protected by the same /single TLS certificate at the time of creation of the certificate.   
+* SSL/TLS Certificates are valid for a maximum of 398 days. You should take care of the time zone if the issuer is not in the same time zone as the host.    
+* Paid TLS certificates do not use better cryptography than free certificates (e.g., Let's Encrypt). Paid TLS can give you extended validity on certificates.    
+* Subject Alternate Name (SAN) or multi-domain TLS certificates allow additional host names to be protected by the same /single TLS certificate at the time of the creation of the certificate.   
 * Apache allows you to virtually host multiple HTTPS sites with a single public IP address using SAN certificates.    
-* Wildcard certificate can protect all sub-domains of the same suffix top-level domain (TLD), e.g. *.mydomain.com - while for *.mydomain.org you need a separate certificate.   
-* SSL is only referred for historical reasons. Most of the SSL/TLS certificate use TLS v1.1 / v1.2 / v1.3 these days.   
-* Web-browsers have a hardcoded list of trusted certificate authorities (CA) to check that your certificate is signed by someone it trusts.   
-* You can make a "self-signed" TLS certificate. Because that certificate is not signed by a trusted certificate authority, browsers won't accept it.   
+* Wildcard certificate can protect all sub-domains of the same suffix top-level domain (TLD), e.g., *.mydomain.com - while for *.mydomain.org, you need a separate certificate.   
+* SSL is only referred to for historical reasons. Most of the SSL/TLS certificates use TLS v1.1 / v1.2 / v1.3 these days.   
+* Web browsers have a hardcoded list of trusted certificate authorities (CA) to check that your certificate is signed by someone it trusts.   
+* You can make a "self-signed" TLS certificate. Because a trusted certificate authority does not sign that certificate, browsers won't accept it.   
 
 \citations for TLS notes: [1](https://questions.wizardzines.com/tls-certificates.html) and [2](https://www.digicert.com/faq/public-trust-and-certificates)   
 
@@ -1128,20 +1129,20 @@ Notes:-
 
 ## QUIC 
 
-QUIC (a transport layer protocol) can improve the performance of connection-oriented web applications (having sessions) by creating multi-plex UDP connections and eliminating TCP at transport layer! [See reduced RTTs in handshake](https://en.wikipedia.org/wiki/File:Tcp-vs-quic-handshake.svg).    
+QUIC (a transport layer protocol) can improve the performance of connection-oriented web applications (having sessions) by creating multi-plex UDP connections and eliminating TCP at the transport layer! [See reduced RTTs in handshake](https://en.wikipedia.org/wiki/File:Tcp-vs-quic-handshake.svg).    
 
 ----
 
 ## The One with Wireshark 
 
-It is fun to see packets down to protocol level using wireshark - realtime packets or through a saved pcapng file.   
+It is fun to see packets down to the protocol level using Wireshark - real-time packets or through a saved pcapng file.   
 
 [Download wireshark](https://www.wireshark.org/download.html) | [Docs](https://www.wireshark.org/docs/)   
-Start wireshark with root, open a web browser and visit a website. Now, see the packets in wireshark.   
-You can filter using a protocol, analyze packets - byte stream or different headers and payload with them.   
+Start Wireshark with root, open a web browser, and visit a website. Now, please take a look at the packets in Wireshark.   
+You can filter using a protocol, analyze packets - byte stream or different headers, and payload with them.   
 See if you can build a meaningful context out of packets for protocols HTTP / TCP / UDP / IP / Ethernet, etc.   
 
-e.g. A nice visual lesson of [TCP window size scaling](https://networklessons.com/cisco/ccie-routing-switching-written/tcp-window-size-scaling)    
+e.g., A nice visual lesson of [TCP window size scaling](https://networklessons.com/cisco/ccie-routing-switching-written/tcp-window-size-scaling)    
 
 [Sample packet captures to visualize and understand protocol level details using **cloudshark**](https://www.cloudshark.org/collections/WTRpgLI-GQSDfgzkQixICg)    
 
@@ -1149,9 +1150,18 @@ e.g. A nice visual lesson of [TCP window size scaling](https://networklessons.co
 
 ## The One with Disaster Recovery    
 
-While working with a banking major serving multiple countries across multiple physical data centers, application had a solid daily overnight-processing (EoD) and offline availability (stand-in) setup for maintenance. For enterprise storage replication, a remote data facilty over synchonous/asynchronous distance upto 160 -to- 200 km may be provisioned.     
+While working with a banking major serving multiple countries across multiple physical data centers, the application had a solid daily overnight processing (EoD) and offline availability (stand-in) setup for maintenance. For enterprise storage replication, a remote data facility over synchronous/asynchronous distances up to 160 to 200 km may be provisioned.     
 
-For Disaster Recovery (DR), first, it is necessary to re-architect and design the transactional application itself for DR support in active/passive or active/active scenarios (based on Recovery Point Objectives/Recovery Time Objectives). Not only transactional data on the primary server, offline availability (stand-in), interfacing and support with 3rd-party applications (bank payment gateway, messaging gateway, payment/collection batch processing) are required in DR fashion. The load balancing and integration with the SendGrid like mailer in DR fashion are additional considerations. DR site is not just another copy, it is much more than that.     
+For Disaster Recovery (DR), first, it is necessary to re-architect and design the transactional application itself for DR support in active/passive or active/active scenarios (based on Recovery Point Objectives/Recovery Time Objectives). Not only transactional data on the primary server, offline availability (stand-in), interfacing, and support with 3rd-party applications (bank payment gateway, messaging gateway, payment/collection batch processing) are required in DR fashion. The load balancing and integration with the SendGrid-like mailer in DR fashion are additional considerations. DR site is not just another copy; it is much more than that.     
 
 [A few sample scenarios](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html)     
 
+----
+
+## The One with VPN 
+
+[Linux VPN Myths](https://linuxsecurity.com/features/common-linux-vpn-myths-busted)    
+
+[How secure is Linux?](https://linuxsecurity.com/features/how-secure-is-linux) Do not miss The Bottom Line    
+
+----
