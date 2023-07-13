@@ -472,8 +472,10 @@ Current DNS Server: 14.139.53.132
 
 Dyno or DNS remains one of the most interesting topics in networking.    
 
-Do you know each DNS resolver knows the IP addresses of DNS root nameservers always! This is not a new thing, this has always been the case. This info is actually hardwired or better [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80). Look at this code, there are 13 DNS root nameservers, and the names are not case-sensitive.     
-You can find A type DNS records for these 13 root nameservers named from A to M (as on Jan 2022).   
+Do you know each DNS resolver knows the IP addresses of DNS root nameservers always! This is not a new thing; this has always been the case. This info is actually hardwired or better [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80). Look at this code, there are 13 DNS root nameservers, and the names are not case-sensitive.     
+You can find A type DNS records for these 13 root nameservers named from a to m (as on Jan 2022).    
+
+[IANA](https://www.iana.org/) has listed the [root name servers](https://www.iana.org/domains/root/servers), and [DNS root hint and root zone files](https://www.iana.org/domains/root/files). [Map](https://www.google.com/maps/d/u/0/viewer?mid=1LcHEpzl-7RzziWzDa4h3BxJcbEo&hl=en&ll=24.71341537554179%2C36.13137070989961&z=2) of geographically distributed root name servers reachable using anycast - the same IP mapped to multiple DNS root servers - the one reachable first is returned in DNS query's answer section.    
 
 Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices, networks and to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
 
