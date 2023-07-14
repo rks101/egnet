@@ -840,8 +840,14 @@ Compare these steps with the output of dig +trace iitjammu.ac.in to find the IP 
 [See sample DNS request and reply packets using **cloudshark**](https://www.cloudshark.org/captures/de434abca073)    
 
 ----
+
 DNS Software: What software DNS server is using?    
-Dig Dyno for version.bind, chaos class, and TXT record type, and see the answer section.     
+Dig Dyno for version.bind, chaos class, and TXT record type; see the answer section.     
+
+---- 
+## Under the hood of DNS   
+
+DJB on [Secure design and coding for DNS](https://cr.yp.to/talks/2009.03.04/slides.pdf)    
 
 ```
 $ dig @ns1.iitjammu.ac.in version.bind chaos txt
