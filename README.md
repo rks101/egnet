@@ -189,7 +189,7 @@ Note:-
 3. Localhost or loopback address: 127.0.0.0/8 or 127.0.0.1 is used for testing locally on a system. It is configured in software such that it does not leave the network adapter buffers. It is used to test local servers or services deployed. e.g., 127.0.0.1:8000 (when some service is running on port 8000)     
 4. Three private address ranges (all IPs in them) are not routed outside the local network because if response packets are routed back to these IPs, the router would not know not whom to forward to. In such cases, network address translation (NAT) is required.     
 
-You can learn a few things with ipcalc on IP addressing.      
+You can learn a few things with `ipcalc` on IP addressing.      
 
 ```
 $ ipcalc 192.168.0.1/24
@@ -214,6 +214,8 @@ HostMax:   10.10.50.254         00001010.00001010.00110010. 11111110
 Broadcast: 10.10.50.255         00001010.00001010.00110010. 11111111
 Hosts/Net: 254                   Class A, Private Internet
 ```
+
+The graphical counterpart of `ipcalc` is `ipqalc` 
 
 ----
 
