@@ -93,10 +93,10 @@ $ lshw -class network
 ```
 ---- 
 
-## ifconfig   
+## `ifconfig`   
 
-ifconfig - to show and manage the network interface. Caution: this has been replaced by ip.   
-The logical name of the interface corresponds to the Network adapter's logical name in lshw output.   
+`ifconfig` can be used to show and manage the network interface. Caution: this has been replaced by ip.   
+The logical name of the interface corresponds to the Network adapter's logical name in `lshw` output.   
 
 ```
 $ ifconfig
@@ -128,7 +128,7 @@ wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ```
 ---- 
 
-## ip   
+## `ip`   
 
 ip - to show and manage network interface and devices. This has replaced ifconfig command.   
 Ask "man" for objects addr, link, neigh, route, maddress, vrf, etc.  
@@ -180,7 +180,7 @@ The above ip options are available on modern switching and routing hardware supp
 
 ---- 
 
-## ipcalc   
+## `ipcalc`   
 
 Note:-    
 1. Classful addressing was used well before 1993 with Class A, B, C, D (Multi-cast), and E (reserved) IP addresses of 32 bits. Class A, B, and C had 8, 16, and 24 bits for the network part and the remaining bits for host iP addresses. To accommodate the need to assign IP addresses for a flexible number of hosts and to manage them efficiently, Classless Inter-Domain Routing (CIDR) notation or /n notation came into existence.    
@@ -219,7 +219,7 @@ The graphical counterpart of `ipcalc` is `ipqalc`
 
 ----
 
-## iwconfig   
+## `iwconfig`   
 
 View and manage Wireless network settings, similar to ifconfig; this command is for wireless.  
 ```
@@ -242,7 +242,8 @@ gpd0      no wireless extensions.
 
 ----
 
-## iwlist    
+## `iwlist`    
+
 Work with wireless adapter settings and parameters (scanning, frequency, bitrate, power (on/off), transmit-power, auth) to get detailed wireless information from a wireless interface    
 
 ```
