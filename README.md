@@ -844,11 +844,6 @@ Compare these steps with the output of dig +trace iitjammu.ac.in to find the IP 
 DNS Software: What software DNS server is using?    
 Dig Dyno for version.bind, chaos class, and TXT record type; see the answer section.     
 
----- 
-## Under the hood of DNS   
-
-DJB on [Secure design and coding for DNS](https://cr.yp.to/talks/2009.03.04/slides.pdf)    
-
 ```
 $ dig @ns1.iitjammu.ac.in version.bind chaos txt
 
@@ -899,6 +894,14 @@ e.g., 2)
 - (iitjammu.ac.in, dns8.iitd.ac.in, NS, TTL3)    
 - (dns8.iitd.ac.in, 103.27.8.1, A, TTL4)    
 DNS authoritative name server can be updated after registration.    
+
+----
+
+## Under the hood of DNS   
+
+DJB on [Secure design and coding for DNS](https://cr.yp.to/talks/2009.03.04/slides.pdf)    
+
+[DNS source tree using BIND9](https://gitlab.isc.org/isc-projects/bind9/-/tree/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns)    
 
 ----
 
