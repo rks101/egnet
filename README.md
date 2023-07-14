@@ -9,7 +9,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [Introductory Concepts](#introductory-concepts)
       * [PoE](#poe)   
       * [Network Adapters](#network-adapters)
-      * [`ifconfig`](#ifconfig)
+      * [`ifconfig`](#`ifconfig`)
       * [`ip`](#ip)
       * [`ipcalc`](#ipcalc)
       * [`iwconfig`](#iwconfig)
