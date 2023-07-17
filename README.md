@@ -1246,6 +1246,8 @@ e.g., A nice visual lesson of [TCP window size scaling](https://networklessons.c
 
 [Sample packet captures to visualize and understand protocol level details using **cloudshark**](https://www.cloudshark.org/collections/WTRpgLI-GQSDfgzkQixICg)    
 
+TCPDUMP - One can also rely on powerful [tcpdump](https://opensource.com/article/18/10/introduction-tcpdump). [tcpdump-cheat-sheet](https://www.comparitech.com/net-admin/tcpdump-cheat-sheet/)    
+
 ---- 
 
 ## The One with Disaster Recovery    
