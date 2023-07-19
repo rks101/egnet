@@ -1123,7 +1123,10 @@ SSLProtocol -all +TLSv1.2 +TLSv1.3
 Finally, keep on checking sslscan output, TLS certificate checks like one by [SSL Labs](https://www.ssllabs.com/ssltest/) for TLS certs, and some basic vulnerability checks.   
 
 On the client side, do not ignore [SSL/TLS Certificate Errors and ways to address them](https://sematext.com/blog/ssl-certificate-error/)   
+
 For SendGrid domain whitelisting validation error [check Top-Level-Domain auto-appending](https://web.archive.org/web/20170706082258/https://sendgrid.com/docs/Classroom/Troubleshooting/Authentication/i_have_created_dns_records_but_the_whitelabel_wizard_is_not_validating_them.html). You should check existing entries in DNS too.   
+
+[SSL and TLS Deployment Best Practices](https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)    
 
 **System upgrade: You may need to upgrade the Apache server to v2.4.38 or higher, open SSL to v1.1.1 or higher, and Ubuntu OS for TLS v1.3    
 
