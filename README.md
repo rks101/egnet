@@ -1,9 +1,9 @@
 # egnet
 egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapters, devices, etc., DNS, and other sysadmin-related self-notes.    
 
-These notes first came out of my habit of writing them down in one place and referencing them later anytime, anywhere, as needed. Later, my curiosity suggested - "Let's do it." I got involved more while answering some questions and started asking people to refer to this page.    
+These notes first came out of my habit of writing them down in one place and referencing them later anytime, anywhere. Later, I got involved more while answering some questions often and started asking people to refer to these notes.    
 
-Voluntary Disclosure: The output shown for utilities mentioned below is compiled for illustration purposes only. You may not find all details in your lab/office/hostel/dormitory.   
+Voluntary Disclosure: The output shown for utilities mentioned below is compiled for illustration purposes only. You may not find all details in your lab/office/dormitory.   
 
    * [egnet](#egnet)
       * [Introductory Concepts](#introductory-concepts)
@@ -42,6 +42,8 @@ If you are more comfortable reading a paper book like me, see books - [Computer 
 
 If you are a senior undergrad/postgrad student, explore [Reproducing Networking Research](https://reproducingnetworkresearch.wordpress.com/) blog and [paper](https://web.stanford.edu/class/cs244/papers/learning-networking-research-by-reproducing.pdf), and [Some course topics with guests](https://web.stanford.edu/class/cs244/). Visit [Barefoot](https://barefootnetworks.com/resources/worlds-fastest-most-programmable-networks/) in the age of programmable networks   
 
+You do not need to be a Computer Scientist or Computer Engineering graduate to understand and appreciate these topics 😅   
+
 ---- 
 
 ## PoE    
@@ -56,7 +58,7 @@ Power over Ethernet or PoE can provide DC power over ethernet cables - power and
 ## Network Adapters
 Know your network adapters: product, provider, logical names, MAC, capacity in Mbps or Gbps, capabilities, etc.   
 Knowledge of adapters and vendors can help with device driver-related issues or update drivers.   
-The network adapter's logical name is visible in the output of the ip command.   
+The network adapter's logical name is visible in the ip command output.   
 
 ```
 $ lshw -class network
@@ -343,7 +345,7 @@ usr sys idl wai stl| read  writ| recv  send|  in   out | int   csw
   3   1  96   0   0|   0     0 | 984B  786B|   0     0 |2378  3952 ^C
 
 ```
-Only looking for network bytes receives and sent  
+Only looking for network bytes received and sent =>  
 ```
 $ dstat -n
 -net/total-
@@ -480,7 +482,7 @@ You can find A type DNS records for these 13 root nameservers named from a to m 
 
 [IANA](https://www.iana.org/) has listed the [root name servers](https://www.iana.org/domains/root/servers), and [DNS root hint and root zone files](https://www.iana.org/domains/root/files). [Map](https://www.google.com/maps/d/u/0/viewer?mid=1LcHEpzl-7RzziWzDa4h3BxJcbEo&hl=en&ll=24.71341537554179%2C36.13137070989961&z=2) of geographically distributed root name servers reachable using anycast - the same IP mapped to multiple DNS root servers - the one reachable first is returned in DNS query's answer section.    
 
-Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices, networks and to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
+Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices and networks to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
 
 Note:- How do we/local DNS servers reach a particular root nameserver while they all are managed by different entities globally? Using IP Anycast => As long as we get a response from any of them is fine to go ahead. No broadcast query or multi-cast query is used to locate a root nameserver.    
 
@@ -566,17 +568,17 @@ On Ubuntu or similar distro: [DNS config using BIND](https://ubuntu.com/server/d
 
 ## Top Level Domain TLD    
 
-A Top Level Domain or TLD is the most right-end part of a domain name. e.g. TLD for godaddy.com is .com. 
+A Top Level Domain or TLD is the most right-end part of a domain name. e.g., TLD for godaddy.com is .com. 
 
 There are gTLD (Generic Top Level) and ccTLD (Country Code Top Level Domain). 
 
-A gTLD is meant to describe the domain name's purpose. e.g. gTLD .com is for commercial entities, .edu for education, and .gov for the government. 
+A gTLD is meant to describe the domain name's purpose. e.g., gTLD .com is for commercial entities, .edu for education, and .gov for the government. 
 
-A ccTLD is meant to describe some country or geography. e.g. .in for sites hosted/based in India, .co.uk for sites based in the United Kingdom. 
+A ccTLD is meant to describe some country or geography. e.g., .in for sites hosted/based in India, .co.uk for sites based in the United Kingdom. 
 
 These days there are too many new gTLDs like .bank, .bharti, .biz, .coffee, .dell, etc. A full list of gTLDs is available on [IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) website.   
 
-Further, second-level domains are registered by organizations. When registering a domain name, the second-level domain name is limited to 63 characters + the TLD and can only use a-z 0-9 and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations. The maximum length of a domain name is 253 characters including multiple subdomain prefixes like abc.def.lmn.pqrs.example.com     
+Further, second-level domains are registered by organizations. When registering a domain name, the second-level domain name is limited to 63 characters + the TLD and can only use a-z 0-9 and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations. The maximum length of a domain name is 253 characters, including multiple subdomain prefixes like abc.def.lmn.pqrs.example.com     
 
 ----
 
@@ -661,7 +663,7 @@ iitjammu.ac.in.		8599	IN	A	14.139.53.140
 Use dig to find the DNS trace leading to a hostname (much like traceroute).    
 Pay attention to root nameservers, [DNS registrar](https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name-registrar/), and intermediate authoritative servers.  
 This information is in the public domain. DNS is a global public directory of public IPs and hostnames.   
-We will in see in the later section another iterative way to reach the same answer - the IP address of a domain name iitjammu.ac.in.   
+We will see in the later section another iterative way to reach the same answer - the IP address of a domain name iitjammu.ac.in.   
 
 ```
 $ dig +trace iitjammu.ac.in
@@ -888,15 +890,15 @@ version.bind.		0	CH	NS	version.bind.
 While you add a new domain name for your organization/institute, the following steps are helpful:     
 - decide on a new domain name (e.g., iiitkota.ac.in or iitjammu.ac.in)    
 - register the domain at the DNS registrar (ERNET in India) or get one from a private domain service provider (e.g., godaddy.com)    
-- provide the new domain name and public IP address of the authoritative nameserver (to find your new domain), this authoritative nameserver can be within another campus or with another ISP    
-- Domain registrar adds two resource records (RRs) into the top-level-domain nameserver (e.g. ns1.registry.in), just guess the entries from the above discussion     
+- provide the new domain name and public IP address of the authoritative nameserver (to find your new domain); this authoritative nameserver can be within another campus or with another ISP    
+- Domain registrar adds two resource records (RRs) into the top-level-domain nameserver (e.g. ns1.registry.in), guess the entries from the above discussion, before you proceed further.     
 e.g., 1) 
-- (iiitkota.ac.in, dns1.iiitkota.ac.in, NS, TTL1)    
-- (dns1.iiitkota.ac.in, 210.212.97.131, A, TTL2)     
+  -> (iiitkota.ac.in, dns1.iiitkota.ac.in, NS, TTL1)    
+  -> (dns1.iiitkota.ac.in, 210.212.97.131, A, TTL2)     
 e.g., 2) 
-- (iitjammu.ac.in, dns8.iitd.ac.in, NS, TTL3)    
-- (dns8.iitd.ac.in, 103.27.8.1, A, TTL4)    
-DNS authoritative name server can be updated after registration.    
+  -> (iitjammu.ac.in, dns8.iitd.ac.in, NS, TTL1)    
+  -> (dns8.iitd.ac.in, 103.27.8.1, A, TTL2)    
+- DNS authoritative name server can be updated after registration.    
 
 ----
 
@@ -979,7 +981,7 @@ Ip address: 30 | Subdomain: 33 | elapsed time: 00:00:22
 
 ```
 
-There is another awesome Kali Linux tool: **dnsenum** that can reveal much more information about a domain. dnsenum can show domains, nameservers, MX records, zone transfer records for sub-domains, range of public IP addresses, etc.   
+There is another awesome Kali Linux tool: **dnsenum**, that can reveal much more information about a domain. dnsenum can show domains, nameservers, MX records, zone transfer records for sub-domains, a range of public IP addresses, etc.   
 ``
 $dnsenum -r mydomain.ac.in   
 ``
@@ -1007,7 +1009,7 @@ This page can be opened before you close the server using Ctrl+C.
 
 ## Get files using wget 
 
-You can download files or documentation with a large number of files using **wget**. This is very much like your own web-doc-ripper!   
+You can download files or documentation with many files using **wget**. This is very much like your own web-doc-ripper!   
 
 ```
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages
@@ -1046,7 +1048,7 @@ SPF can fail for forwarded or redirected emails.
 DKIM can fail for anti-spam or content-filtering software updating the subject in the header or parts of the email messages with a disclaimer. DKIM can fail for [replay attack](https://wordtothewise.com/2014/05/dkim-replay-attacks/) or [by chance](https://noxxi.de/research/breaking-dkim-on-purpose-and-by-chance.html).    
 
 3. Domain-based Message Authentication, Reporting, and Conformance - [DMARC](https://support.google.com/a/answer/2466563?hl=en) and check [DMARK](https://www.dmarcanalyzer.com/dmarc/) records   
-SPF or DKIM alone or both together are not sufficient to control spam. DMARC or ARC combined with SPF and DKIM are a good team to fight against spam.   
+SPF or DKIM alone or both together are not sufficient to control spam. DMARC or ARC, combined with SPF and DKIM, are together a good team to fight against spam.   
 
 Sample yml files with "Show Original" option from mail client - adding soon    
 
@@ -1055,7 +1057,7 @@ Sample yml files with "Show Original" option from mail client - adding soon
 [What email headers can be spoofed?](https://www.quora.com/Is-it-possible-to-fake-every-line-in-an-email-header-I-know-it-is-possible-to-fake-some-lines-but-what-about-the-signed-by-and-mailed-by-lines-How-secure-is-SPF-and-DKIM-authentication)     
 
 [Signed-by and emailed-by in email header](https://www.online-tech-tips.com/computer-tips/worry-verification-emails-google/)    
-A visible mailed-by field in the email header means that the email was SPF-authenticated. A visible signed-by field in the email header means the email was DKIM-signed.     
+A visible mailed-by field in the email header means the email was SPF-authenticated. A visible signed-by field in the email header means the email was DKIM-signed.     
 
 5. BIMI and VMC - additional reputation    
 You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this, you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.    
@@ -1080,7 +1082,7 @@ Sysad should practice and know LDAP-related [command line tools](https://docs.or
 
 ## The One with RADIUS 
 
-In network security, **AAA** term is used as an abstraction for authentication, authorization, and accounting purposes in relation to WPA2-Enterprise or 802.1x standard for security. RADIUS (Remote Access Dial-In User Service) promises to provide this gold standard of security.    
+In network security, **AAA** is used as an abstraction for authentication, authorization, and accounting purposes concerning WPA2-Enterprise or 802.1x standard for security. RADIUS (Remote Access Dial-In User Service) promises to provide this gold security standard.    
 To provide identity (IDP), RADIUS is often used with LDAP. This combination is definitely a fire for Sysad.   
 
 Relevant posts:    
@@ -1120,11 +1122,13 @@ and to allow TLSv1.2 and v1.3 only:
 SSLProtocol -all +TLSv1.2 +TLSv1.3
 ```
 
-Finally, keep on checking sslscan output, TLS certificate checks like one by [SSL Labs](https://www.ssllabs.com/ssltest/) for TLS certs, and some basic vulnerability checks.   
+Finally, check the sslscan output, TLS certificate checks like the one by [SSL Labs](https://www.ssllabs.com/ssltest) and [DigiCert](https://www.digicert.com/help/) for TLS certs, and some basic vulnerability checks.   
+
+[Understand Online Certificate Status Protocol (OCSP) and Certificate Revokation](https://www.thesslstore.com/blog/ocsp-ocsp-stapling-ocsp-must-staple/)    
 
 On the client side, do not ignore [SSL/TLS Certificate Errors and ways to address them](https://sematext.com/blog/ssl-certificate-error/)   
 
-For SendGrid domain whitelisting validation error [check Top-Level-Domain auto-appending](https://web.archive.org/web/20170706082258/https://sendgrid.com/docs/Classroom/Troubleshooting/Authentication/i_have_created_dns_records_but_the_whitelabel_wizard_is_not_validating_them.html). You should check existing entries in DNS too.   
+For **SendGrid domain whitelisting** validation error [check Top-Level-Domain auto-appending](https://web.archive.org/web/20170706082258/https://sendgrid.com/docs/Classroom/Troubleshooting/Authentication/i_have_created_dns_records_but_the_whitelabel_wizard_is_not_validating_them.html). You should check existing entries in DNS too.   
 
 [SSL and TLS Deployment Best Practices](https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)    
 
@@ -1133,10 +1137,10 @@ For SendGrid domain whitelisting validation error [check Top-Level-Domain auto-a
 Notes:-    
 * SSL/TLS Certificates are valid for a maximum of 398 days. You should take care of the time zone if the issuer is not in the same time zone as the host.    
 * Paid TLS certificates do not use better cryptography than free certificates (e.g., Let's Encrypt). Paid TLS can give you extended validity on certificates.    
-* Subject Alternate Name (SAN) or multi-domain TLS certificates allow additional host names to be protected by the same /single TLS certificate at the time of the creation of the certificate.   
+* Subject Alternate Name (SAN) or multi-domain TLS certificates allow additional host names to be protected by the same /single TLS certificate when creating the certificate.   
 * Apache allows you to virtually host multiple HTTPS sites with a single public IP address using SAN certificates.    
 * Wildcard certificate can protect all sub-domains of the same suffix top-level domain (TLD), e.g., *.mydomain.com - while for *.mydomain.org, you need a separate certificate.   
-* SSL is only referred to for historical reasons. Most of the SSL/TLS certificates use TLS v1.1 / v1.2 / v1.3 these days.   
+* SSL is only referred to for historical reasons. Most SSL/TLS certificates currently use TLS v1.2 / v1.3.   
 * Web browsers have a hardcoded list of trusted certificate authorities (CA) to check that your certificate is signed by someone it trusts.   
 * You can make a "self-signed" TLS certificate. Because a trusted certificate authority does not sign that certificate, browsers won't accept it.   
 
