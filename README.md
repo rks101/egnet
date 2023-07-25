@@ -1033,6 +1033,10 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * [Enable MTA-STS and TLS reporting](https://support.google.com/a/answer/9276512) to improve email security and reporting. 
 
+* Have you ever wondered to have a CLI for Google Workplace to manage accounts? Here is a simple guide for [Getting started with Google Apps Manager (GAM)](https://www.tricent.com/blog/getting-started-with-gam)
+
+* Google Apps Manager [GAM](https://github.com/GAM-team/GAM) and [GAM Wiki](https://github.com/GAM-team/GAM/wiki/)    
+ 
 ---- 
 
 ## The One with SPF DKIM and DMARK 
