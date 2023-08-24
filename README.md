@@ -1150,6 +1150,8 @@ Notes:-
 
 \citations for TLS notes: [1](https://questions.wizardzines.com/tls-certificates.html) and [2](https://www.digicert.com/faq/public-trust-and-certificates)   
 
+[Sample X.509 certificate for public key exchange](https://github.com/rks101/egnet/blob/main/_.sendgrid.net) and [another example on Wikipedia](https://en.wikipedia.org/wiki/X.509#Sample_X.509_certificates)    
+
 ----
 
 Using `openssl` for SSL/TLS certificates    
