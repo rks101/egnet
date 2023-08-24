@@ -1152,6 +1152,39 @@ Notes:-
 
 [Sample X.509 certificate for public key exchange](https://github.com/rks101/egnet/blob/main/_.sendgrid.net) and [another example on Wikipedia](https://en.wikipedia.org/wiki/X.509#Sample_X.509_certificates)    
 
+Decoded version of first X.509 certificate:   
+```
+Common Name: *.sendgrid.net
+
+Subject Alternative Names (SANs):
+
+*.sendgrid.net
+sendgrid.net
+Organization: N/A
+
+Locality: N/A
+
+State: N/A
+
+Country: N/A
+
+Valid From: 2022-12-14 18:12:57 UTC
+
+Valid To: 2024-01-15 17:57:31 UTC
+
+Issuer: Go Daddy Secure Certificate Authority - G2
+
+Serial Number: 8BD03870C3B67FB8
+
+Algorithm: sha256WithRSAEncryption
+
+Key size: 2048
+```
+
+[Help: Generate a Certificate Signing Request](https://www.geocerts.com/support/generate-csr)    
+[Help: Install SSL certificate](https://www.geocerts.com/support/install-ssl)    
+
+
 ----
 
 Using `openssl` for SSL/TLS certificates    
