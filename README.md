@@ -1084,9 +1084,9 @@ To query and backup/dump the LDIF tree:
 ldapsearch -x -b "dc=iitx,dc=ac,dc=in" -H ldap://10.10.10.10 -D "cn=admin,dc=iitx,dc=ac,dc=in" -W > backup.ldif  
 ```
 This can be useful to create another instance of LDAP. You should mention the root DN / domain name, LDAP server IP, and admin user.    
-**Lesson: Learn LDAP command line interface, it works, it's powerful and convenient way once you start using them.**    
 
 Sysad should practice and know LDAP-related [command line tools](https://docs.oracle.com/cd/A97630_01/network.920/a96579/comtools.htm) to query, add, delete, and modify LDAP entries. It's a different experience with the command line :) and you can write scripts to automate the housekeeping!    
+**Lesson: Learn LDAP command line interface, it works, it's open source, it's powerful and convenient way once you start using them.**    
 
 [Manage LDAP entries using LDAP Account Manager (LAM)](https://www.ldap-account-manager.org/lamcms/) and [Web-based LDAP Schema admin](http://phpldapadmin.sourceforge.net/wiki/index.php/Main_Page)   
 
