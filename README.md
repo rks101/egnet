@@ -1067,6 +1067,7 @@ Sample yml files with "Show Original" option from mail client - adding soon
 
 [Signed-by and emailed-by in email header](https://www.online-tech-tips.com/computer-tips/worry-verification-emails-google/)    
 A visible mailed-by field in the email header means the email was SPF-authenticated. A visible signed-by field in the email header means the email was DKIM-signed.    
+
 **Lesson: You need SPF, DKIM, and DMARC record entries in your DNS. Learn how to add them, it's simple one time job. This is also applicable for bulk email sending services and newsletter services. e.g. Sendgrid mailer on-behalf bulk emails, chipmunk on-behalf bulk emails. Onus is on DNS and Email administrators to ensure intended readers can find and read emails in Inbox, otherwise it can impact intended communication or organization branding.**    
 
 5. BIMI and VMC - additional reputation    
