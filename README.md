@@ -1039,7 +1039,7 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * Google Apps Manager [GAM](https://github.com/GAM-team/GAM), [GAM Wiki](https://github.com/GAM-team/GAM/wiki/), and [GAM cheatsheet](https://gamcheatsheet.com/GAM%20Cheat%20Sheet%20A4.pdf)    
 
-* **Understand how emails can be or are being harvested**: <From-field> For quite some time, spammers have been sending unsolicited communication and targeting more general audiences using increasingly aggressive techniques to harvest e-mail addresses from the web, public digital-domains, institute webpages of faculty, staff, and administrative mailboxes, etc. E-mail addresses may also be harvested by e-mail viruses from browser caches and mail spools, and then diffused further in falsified From: lines. <app-profile> One more variant has been seen for such spam through impersonating WhatsApp profile or other mobile apps having access to your contacts, calendars and email apps.
+* **Understand how emails can be or are being harvested**: <From-field> For quite some time, spammers have been sending unsolicited communication and targeting more general audiences using increasingly aggressive techniques to harvest e-mail addresses from the web, public digital-domains, institute webpages of faculty, staff, and administrative mailboxes, etc. E-mail addresses may also be harvested by e-mail viruses from browser caches and mail spools, and then diffused further in falsified From: lines. <app-profile> One more variant has been seen for such spam through impersonating WhatsApp profile or other mobile apps having access to your contacts, calendars and email apps.    
 **Lesson: Data-minimization - Avoid listing and sharing personal or official emails in bulk anywhere. Make it harder for spammers to harvest emails.**     
 
 ---- 
@@ -1066,8 +1066,8 @@ Sample yml files with "Show Original" option from mail client - adding soon
 [What email headers can be spoofed?](https://www.quora.com/Is-it-possible-to-fake-every-line-in-an-email-header-I-know-it-is-possible-to-fake-some-lines-but-what-about-the-signed-by-and-mailed-by-lines-How-secure-is-SPF-and-DKIM-authentication)     
 
 [Signed-by and emailed-by in email header](https://www.online-tech-tips.com/computer-tips/worry-verification-emails-google/)    
-A visible mailed-by field in the email header means the email was SPF-authenticated. A visible signed-by field in the email header means the email was DKIM-signed. 
-**Lesson: You need SPF, DKIM, and DMARC record entries in your DNS. Learn how to add them, it's simple one time job. This is also applicable for bulk email sending services and newsletter services. e.g. Sendgrid mailer on-behalf bulk emails, chipmunk on-behalf bulk emails**    
+A visible mailed-by field in the email header means the email was SPF-authenticated. A visible signed-by field in the email header means the email was DKIM-signed.    
+**Lesson: You need SPF, DKIM, and DMARC record entries in your DNS. Learn how to add them, it's simple one time job. This is also applicable for bulk email sending services and newsletter services. e.g. Sendgrid mailer on-behalf bulk emails, chipmunk on-behalf bulk emails. Onus is on DNS and Email administrators to ensure intended readers can find and read emails in Inbox, otherwise it can impact intended communication or organization branding.**    
 
 5. BIMI and VMC - additional reputation    
 You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this, you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.    
