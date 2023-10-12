@@ -921,6 +921,13 @@ In Linux, [some CLI tools to monitor network traffic](https://www.binarytides.co
 Sometimes you wish to know sub-domains and they don't tell you :) so let us knock on the domain quietly.     
 [get knock](https://github.com/guelfoweb/knock) or [puredns](https://github.com/d3mondev/puredns)    
 
+There is this another awesome tool: **dnsenum**, that can reveal much more information about a domain.     
+dnsenum can show domains, nameservers, MX records, zone transfer records for sub-domains, a range of public IP addresses, old records, etc.   
+``
+$dnsenum -r mydomain.ac.in   
+``
+
+You can knock :)     
 ```
 $ python3 knockpy.py iitjammu.ac.in 
 
@@ -981,11 +988,6 @@ Ip address: 30 | Subdomain: 33 | elapsed time: 00:00:22
 
 ```
 
-There is another awesome Kali Linux tool: **dnsenum**, that can reveal much more information about a domain. dnsenum can show domains, nameservers, MX records, zone transfer records for sub-domains, a range of public IP addresses, etc.   
-``
-$dnsenum -r mydomain.ac.in   
-``
-
 ---- 
 
 ## Simple web server
@@ -1037,7 +1039,8 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * Google Apps Manager [GAM](https://github.com/GAM-team/GAM), [GAM Wiki](https://github.com/GAM-team/GAM/wiki/), and [GAM cheatsheet](https://gamcheatsheet.com/GAM%20Cheat%20Sheet%20A4.pdf)    
 
-* **Understand how emails can be or are being harvested**: <From field> For quite some time, spammers have been sending unsolicited communication and targeting more general audiences using increasingly aggressive techniques to harvest e-mail addresses from the web, public digital-domains, institute webpages of faculty, staff, and administrative mailboxes, etc. E-mail addresses may also be harvested by e-mail viruses from browser caches and mail spools, and then diffused further in falsified From: lines. <app profile> One more variant has been seen for such spam through impersonating WhatsApp profile or other mobile apps having access to your contacts, calendars and email apps.     
+* **Understand how emails can be or are being harvested**: <From-field> For quite some time, spammers have been sending unsolicited communication and targeting more general audiences using increasingly aggressive techniques to harvest e-mail addresses from the web, public digital-domains, institute webpages of faculty, staff, and administrative mailboxes, etc. E-mail addresses may also be harvested by e-mail viruses from browser caches and mail spools, and then diffused further in falsified From: lines. <app-profile> One more variant has been seen for such spam through impersonating WhatsApp profile or other mobile apps having access to your contacts, calendars and email apps.
+**Lesson: Data-minimization - Avoid listing and sharing personal or official emails in bulk anywhere. Make it harder for spammers to harvest emails.**     
 
 ---- 
 
@@ -1063,7 +1066,8 @@ Sample yml files with "Show Original" option from mail client - adding soon
 [What email headers can be spoofed?](https://www.quora.com/Is-it-possible-to-fake-every-line-in-an-email-header-I-know-it-is-possible-to-fake-some-lines-but-what-about-the-signed-by-and-mailed-by-lines-How-secure-is-SPF-and-DKIM-authentication)     
 
 [Signed-by and emailed-by in email header](https://www.online-tech-tips.com/computer-tips/worry-verification-emails-google/)    
-A visible mailed-by field in the email header means the email was SPF-authenticated. A visible signed-by field in the email header means the email was DKIM-signed.     
+A visible mailed-by field in the email header means the email was SPF-authenticated. A visible signed-by field in the email header means the email was DKIM-signed. 
+**Lesson: You need SPF, DKIM, and DMARC record entries in your DNS. Learn how to add them, it's simple one time job. This is also applicable for bulk email sending services and newsletter services. e.g. Sendgrid mailer on-behalf bulk emails, chipmunk on-behalf bulk emails**    
 
 5. BIMI and VMC - additional reputation    
 You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this, you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.    
@@ -1079,6 +1083,7 @@ To query and backup/dump the LDIF tree:
 ldapsearch -x -b "dc=iitx,dc=ac,dc=in" -H ldap://10.10.10.10 -D "cn=admin,dc=iitx,dc=ac,dc=in" -W > backup.ldif  
 ```
 This can be useful to create another instance of LDAP. You should mention the root DN / domain name, LDAP server IP, and admin user.    
+**Lesson: Learn LDAP command line interface, it works, it's powerful and convenient way once you start using them.**    
 
 Sysad should practice and know LDAP-related [command line tools](https://docs.oracle.com/cd/A97630_01/network.920/a96579/comtools.htm) to query, add, delete, and modify LDAP entries. It's a different experience with the command line :) and you can write scripts to automate the housekeeping!    
 
