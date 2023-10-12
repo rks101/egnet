@@ -1036,7 +1036,9 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 * Have you ever wondered to have a CLI for Google Workplace to manage accounts? Here is a simple guide for [Getting started with Google Apps Manager (GAM)](https://www.tricent.com/blog/getting-started-with-gam)
 
 * Google Apps Manager [GAM](https://github.com/GAM-team/GAM), [GAM Wiki](https://github.com/GAM-team/GAM/wiki/), and [GAM cheatsheet](https://gamcheatsheet.com/GAM%20Cheat%20Sheet%20A4.pdf)    
- 
+
+* **Understand how emails can be or are being harvested**: <From field> For quite some time, spammers have been sending unsolicited communication and targeting more general audiences using increasingly aggressive techniques to harvest e-mail addresses from the web, public digital-domains, institute webpages of faculty, staff, and administrative mailboxes, etc. E-mail addresses may also be harvested by e-mail viruses from browser caches and mail spools, and then diffused further in falsified From: lines. <app profile> One more variant has been seen for such spam through impersonating WhatsApp profile or other mobile apps having access to your contacts, calendars and email apps.     
+
 ---- 
 
 ## The One with SPF DKIM and DMARK 
