@@ -1072,9 +1072,10 @@ A visible mailed-by field in the email header means the email was SPF-authentica
 **Lesson: You need SPF, DKIM, and DMARC record entries in your DNS. Learn how to add them, it's simple one time job. This is also applicable for bulk email sending services and newsletter services. e.g. Sendgrid mailer on-behalf bulk emails, chipmunk on-behalf bulk emails. Onus is on DNS and Email administrators to ensure intended readers can find and read emails in Inbox, otherwise it can impact intended communication or organization branding.**    
 
 5. BIMI and VMC - additional reputation    
-You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this, you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.    
+You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this, you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.
+[Verified Emails from signed-by domain](https://support.google.com/mail/answer/13130196)     
 
-6. [Enable Mail Transfer Agent (MTA) Strict Transport Security (STS) and TLS reporting](https://support.google.com/a/answer/9276512) to improve email security and reporting.    
+7. [Enable Mail Transfer Agent (MTA) Strict Transport Security (STS) and TLS reporting](https://support.google.com/a/answer/9276512) to improve email security and reporting.    
 
 ---- 
 
