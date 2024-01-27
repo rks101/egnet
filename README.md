@@ -128,6 +128,66 @@ wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
 ```
+----
+
+## nmcli 
+
+We can use nmcli command to get the status of all network connections - wired, wireless, and any other logical interfaces:   
+
+```
+$ nmcli device show
+GENERAL.DEVICE:                         enp0s31f6
+GENERAL.TYPE:                           ethernet
+GENERAL.HWADDR:                         38:14:28:58:3A:5A
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.CONNECTION:                     Wired connection 1
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveC>
+WIRED-PROPERTIES.CARRIER:               on
+IP4.ADDRESS[1]:                         10.10.163.232/24
+IP4.GATEWAY:                            10.10.163.1
+IP4.ROUTE[1]:                           dst = 10.10.163.0/24, nh = 0.0.0.0, mt >
+IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = 10.10.163.1, mt =>
+IP4.DNS[1]:                             14.139.53.132
+IP4.DNS[2]:                             14.139.53.133
+IP4.DOMAIN[1]:                          iitjammu.ac.in
+IP4.SEARCHES[1]:                        iitjammu.ac.in
+IP6.ADDRESS[1]:                         fe80::c895:8320:5054:d3b8/64
+IP6.GATEWAY:                            --
+IP6.ROUTE[1]:                           dst = fe80::/64, nh = ::, mt = 1024
+
+GENERAL.DEVICE:                         wlp0s20f3
+GENERAL.TYPE:                           wifi
+GENERAL.HWADDR:                         50:84:92:66:40:36
+```
+
+```
+$ nmcli 
+enp0s31f6: connected to Wired connection 1
+        "Intel I219-V"
+        ethernet (e1000e), 38:14:28:58:3A:5A, hw, mtu 1500
+        ip4 default
+        inet4 10.10.163.232/24
+        route4 10.10.163.0/24 metric 100
+        route4 default via 10.10.163.1 metric 100
+        inet6 fe80::c895:8320:5054:d3b8/64
+        route6 fe80::/64 metric 1024
+
+wlp0s20f3: connected to IIT_JAMMU
+        "Intel 6 AX201"
+        wifi (iwlwifi), 50:84:92:66:40:36, hw, mtu 1500
+        inet4 172.18.4.99/20
+        route4 172.18.0.0/20 metric 600
+        route4 169.254.0.0/16 metric 1000
+        route4 default via 172.18.0.1 metric 600
+        inet6 fe80::437c:dd6a:b7f2:7850/64
+        route6 fe80::/64 metric 1024
+
+p2p-dev-wlp0s20f3: disconnected
+        "p2p-dev-wlp0s20f3"
+        wifi-p2p, hw
+```
+
 ---- 
 
 ## `ip`   
