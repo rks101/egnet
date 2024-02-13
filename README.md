@@ -535,18 +535,18 @@ Current DNS Server: 14.139.53.132
 
 ## The One with DNS root nameservers  
 
-Dyno or DNS remains one of the most interesting topics in networking.    
+DNS remains one of the most interesting topics in networking.    
 
-Do you know each DNS resolver knows the IP addresses of DNS root nameservers always! This is not a new thing; this has always been the case. This info is actually hardwired or better [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80). Look at this code, there are 13 DNS root nameservers, and the names are not case-sensitive.     
-You can find A type DNS records for these 13 root nameservers named from a to m (as on Jan 2022).    
+Do you know each DNS resolver knows the IP addresses of DNS root nameservers always! This is not a new thing; this has always been the case. This info is actually hardwired or [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80). Look at this code, there are 13 DNS root nameservers, and the names are not case-sensitive.     
+You can find A type DNS records for these 13 root nameservers named from a to m (as of Jan 2022).    
 
 [IANA](https://www.iana.org/) has listed the [root name servers](https://www.iana.org/domains/root/servers), and [DNS root hint and root zone files](https://www.iana.org/domains/root/files). [Map](https://www.google.com/maps/d/u/0/viewer?mid=1LcHEpzl-7RzziWzDa4h3BxJcbEo&hl=en&ll=24.71341537554179%2C36.13137070989961&z=2) of geographically distributed root name servers reachable using anycast - the same IP mapped to multiple DNS root servers - the one reachable first is returned in DNS query's answer section.    
 
-Note:- BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices and networks to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
+Note: BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices and networks to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
 
-Note:- How do we/local DNS servers reach a particular root nameserver while they all are managed by different entities globally? Using IP Anycast => As long as we get a response from any of them is fine to go ahead. No broadcast query or multi-cast query is used to locate a root nameserver.    
+Note: How do we/local DNS servers reach a particular root nameserver while they are all managed by different entities globally? Using IP Anycast => As long as we get a response from any of them, it is fine to proceed further. No broadcast query or multi-cast query is used to locate a root nameserver.    
 
-To get a list of root nameservers and their IP addresses, just type dig and see the answer section and additional sections.   
+To get a list of root nameservers and their IP addresses, type dig and see the answer section and additional sections. An A-type record shows an IPv4 address, while an AAAA-type record shows an IPv6 address.    
 
 ```
 $ dig 
@@ -628,17 +628,17 @@ On Ubuntu or similar distro: [DNS config using BIND](https://ubuntu.com/server/d
 
 ## Top Level Domain TLD    
 
-A Top Level Domain or TLD is the most right-end part of a domain name. e.g., TLD for godaddy.com is .com. 
+A Top-level Domain or TLD is the most right-end part of a domain name. e.g., TLD for godaddy.com is .com. 
 
 There are gTLD (Generic Top Level) and ccTLD (Country Code Top Level Domain). 
 
-A gTLD is meant to describe the domain name's purpose. e.g., gTLD .com is for commercial entities, .edu for education, and .gov for the government. 
+A gTLD is meant to describe the domain name's purpose. e.g., gTLD .com is for commercial entities, .edu is for education, and .gov is for the government. 
 
 A ccTLD is meant to describe some country or geography. e.g., .in for sites hosted/based in India, .co.uk for sites based in the United Kingdom. 
 
-These days there are too many new gTLDs like .bank, .bharti, .biz, .coffee, .dell, etc. A full list of gTLDs is available on [IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) website.   
+These days, there are too many new gTLDs like .bank, .sbi, .bharti, .biz, .coffee, .dell, etc. A full list of gTLDs is available on [IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) website.   
 
-Further, second-level domains are registered by organizations. When registering a domain name, the second-level domain name is limited to 63 characters + the TLD and can only use a-z 0-9 and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations. The maximum length of a domain name is 253 characters, including multiple subdomain prefixes like abc.def.lmn.pqrs.example.com     
+Further, second-level domains are registered by organizations. When registering a domain name, the second-level domain name is limited to 63 characters + the TLD and can only use a-z, 0-9 and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations. The maximum length of a domain name is 253 characters, including multiple subdomain prefixes like abc.def.lmn.pqrs.example.com     
 
 ----
 
