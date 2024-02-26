@@ -156,13 +156,15 @@ $ lshw -class disk -class storage
           description: NVMe disk
           physical id: 1
           bus info: nvme@0:1
-          logical name: /dev/nvme0n1                           <== Disk logical name, partitions are suffixed as p1, p2, p3, ...
+          logical name: /dev/nvme0n1                           <== Disk logical name, partitions suffixed as p1, p2, p3, ...
           size: 476GiB (512GB)                                 <== Disk capacity 
           capabilities: gpt-1.00 partitioned partitioned:gpt
-          configuration: guid=90ac9bea-be65-4c42-8c6d-4ce4c1234567 logicalsectorsize=512 sectorsize=512 wwid=nvme. <truncated_due_to_cold>
+          configuration: guid=90ac9bea-be65-4c42-8c6d-4ce4c1234567 logicalsectorsize=512
+                         sectorsize=512 wwid=nvme. <truncated_due_to_cold>
 ```
 
 [NVMe and SATA - a brief comparison](https://www.kingston.com/en/blog/pc-performance/nvme-vs-sata)     
+
 [2 types of M.2 SSDs - SATA SSD and NVMe SSD](https://www.kingston.com/en/blog/pc-performance/two-types-m2-vs-ssd)     
 
 ----
