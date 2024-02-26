@@ -14,7 +14,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [`ip`](#ip)
       * [`ipcalc`](#ipcalc)
       * [`iwconfig`](#iwconfig)
-      * [`iwlist`](#iwlist)
+      * [`iwlist` know wireless interface](#iwlist)
       * [`dstat`](#dstat)
       * [NS Lookup](#ns-lookup) 
       * [Resolve DNS](#resolve-dns) 
