@@ -9,6 +9,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [Introductory Concepts](#introductory-concepts)
       * [PoE](#poe)   
       * [Network Adapters](#network-adapters)
+      * [Storage Controllers and Drives](#storage-controllers)
       * [`ifconfig`](#ifconfig) 
       * [`ip`](#ip)
       * [`ipcalc`](#ipcalc)
@@ -94,6 +95,73 @@ $ lshw -class network
 
 ```
 ---- 
+
+## Storage Controllers and Drives    
+
+To list drives and storage controllers:    
+```
+$ lshw -class disk -class storage
+  *-raid                    
+       description: RAID bus controller
+       product: Volume Management Device NVMe RAID Controller
+       vendor: Intel Corporation
+       physical id: e
+       bus info: pci@0000:00:0e.0
+       version: 00
+       width: 64 bits
+       clock: 33MHz
+       capabilities: raid msix pciexpress pm bus_master cap_list
+       configuration: driver=vmd latency=0
+       resources: iomemory:600-5ff iomemory:600-5ff irq:0 memory:6052000000-6053ffffff memory:a4000000-a5ffffff memory:6055100000-60551fffff
+  *-sata
+       description: SATA controller
+       product: Intel Corporation
+       vendor: Intel Corporation
+       physical id: 17
+       version: 20
+       width: 32 bits
+       clock: 66MHz
+       capabilities: sata msi pm ahci_1.0 bus_master cap_list
+       configuration: driver=ahci latency=0
+       resources: irq:168 memory:a4100000-a4101fff memory:a4102800-a41028ff memory:a4102000-a41027ff
+  *-nvme
+       description: Non-Volatile memory controller
+       product: Gold P31 SSD
+       vendor: SK hynix
+       physical id: 0
+       version: 00
+       width: 64 bits
+       clock: 33MHz
+       capabilities: nvme pm msi msix pciexpress nvm_express bus_master cap_list
+       configuration: driver=nvme latency=0
+       resources: irq:-2147483648 memory:a4000000-a4003fff memory:a4004000-a4004fff memory:a4005000-a4005fff
+  *-nvme0
+       description: NVMe device
+       product: BC711 NVMe SK hynix 512GB
+       physical id: 3
+       logical name: /dev/nvme0
+       version: 41002131
+       serial: FNB3N446110803ABC
+       configuration: nqn=nqn.2022-03.com.skhynix:nvme:nvm-subsystem-sn-FNB3N446110803ABC state=live
+     *-namespace:0
+          description: NVMe disk
+          physical id: 0
+          logical name: hwmon2
+     *-namespace:1
+          description: NVMe disk
+          physical id: 2
+          logical name: /dev/ng0n1
+     *-namespace:2
+          description: NVMe disk
+          physical id: 1
+          bus info: nvme@0:1
+          logical name: /dev/nvme0n1
+          size: 476GiB (512GB)
+          capabilities: gpt-1.00 partitioned partitioned:gpt
+          configuration: guid=90ac9bea-be65-4c42-8c6d-4ce4c6349709 logicalsectorsize=512 sectorsize=512 wwid=nvme. <truncated_due_to_cold>
+```
+
+----
 
 ## `ifconfig`   
 
