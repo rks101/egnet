@@ -9,7 +9,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [Introductory Concepts](#introductory-concepts)
       * [PoE](#poe)   
       * [Network Adapters](#network-adapters)
-      * [Storage Controllers and Drives](#storage-controllers)
+      * [Storage Controllers and Drives](#storage-controllers-and-drives)
       * [`ifconfig`](#ifconfig) 
       * [`ip`](#ip)
       * [`ipcalc`](#ipcalc)
@@ -98,7 +98,8 @@ $ lshw -class network
 
 ## Storage Controllers and Drives    
 
-To list drives and storage controllers:    
+To list drives and storage controllers, use lshw with class disk and storage. The sample output below shows RAID, SATA, NVMe controllers, and NVMe SSD disk.    
+
 ```
 $ lshw -class disk -class storage
   *-raid                    
@@ -127,22 +128,22 @@ $ lshw -class disk -class storage
   *-nvme
        description: Non-Volatile memory controller
        product: Gold P31 SSD
-       vendor: SK hynix
+       vendor: SK hynix                                    <== Vendor of NVMe controller 
        physical id: 0
        version: 00
        width: 64 bits
        clock: 33MHz
-       capabilities: nvme pm msi msix pciexpress nvm_express bus_master cap_list
+       capabilities: nvme pm msi msix pciexpress nvm_express bus_master cap_list          <== note NVMe, PCI express
        configuration: driver=nvme latency=0
        resources: irq:-2147483648 memory:a4000000-a4003fff memory:a4004000-a4004fff memory:a4005000-a4005fff
   *-nvme0
        description: NVMe device
-       product: BC711 NVMe SK hynix 512GB
+       product: BC711 NVMe SK hynix 512GB                   <== Disk Model 
        physical id: 3
        logical name: /dev/nvme0
        version: 41002131
-       serial: FNB3N446110803ABC
-       configuration: nqn=nqn.2022-03.com.skhynix:nvme:nvm-subsystem-sn-FNB3N446110803ABC state=live
+       serial: FNB3N446110803ABC                            <== Disk serial number
+       configuration: nqn=nqn.2022-03.com.skhynix:nvme:nvm-subsystem-sn-FNB3N446110803ABC state=live  <== similar to iqn for iSCSI 
      *-namespace:0
           description: NVMe disk
           physical id: 0
@@ -155,11 +156,14 @@ $ lshw -class disk -class storage
           description: NVMe disk
           physical id: 1
           bus info: nvme@0:1
-          logical name: /dev/nvme0n1
-          size: 476GiB (512GB)
+          logical name: /dev/nvme0n1                           <== Disk logical name, partitions are suffixed as p1, p2, p3, ...
+          size: 476GiB (512GB)                                 <== Disk capacity 
           capabilities: gpt-1.00 partitioned partitioned:gpt
-          configuration: guid=90ac9bea-be65-4c42-8c6d-4ce4c6349709 logicalsectorsize=512 sectorsize=512 wwid=nvme. <truncated_due_to_cold>
+          configuration: guid=90ac9bea-be65-4c42-8c6d-4ce4c1234567 logicalsectorsize=512 sectorsize=512 wwid=nvme. <truncated_due_to_cold>
 ```
+
+[NVMe and SATA - a brief comparison](https://www.kingston.com/en/blog/pc-performance/nvme-vs-sata)     
+[2 types of M.2 SSDs - SATA SSD and NVMe SSD](https://www.kingston.com/en/blog/pc-performance/two-types-m2-vs-ssd)     
 
 ----
 
