@@ -57,10 +57,11 @@ Power over Ethernet or PoE can provide DC power over ethernet cables - power and
 ---- 
 
 ## Network Adapters
-Know your network adapters: product, provider, logical names, MAC, capacity in Mbps or Gbps, capabilities, etc.   
-Knowledge of adapters and vendors can help with device driver-related issues or update drivers.   
+It's good to know your network adapters: product, provider, logical names, MAC, capacity in Mbps or Gbps, capabilities, etc.   
+Knowledge of adapters and vendors can help with device driver-related issues or updating drivers.   
 The network adapter's logical name is visible in the ip command output.   
 
+Sample output-1 with ethernet (Realtek) and Wireless (Intel)     
 ```
 $ lshw -class network
   *-network                 
@@ -94,6 +95,41 @@ $ lshw -class network
        resources: irq:130 memory:df000000-df001fff
 
 ```
+
+Sample output-2 with WiFi 6.0 and Ethernet interface   
+```
+$ lshw -class network
+  *-network:0               
+       description: Wireless interface
+       product: Wi-Fi 6 AX201                   <== Wi-Fi 6.0 - IEEE 802.11ax, 2x2 Antenna 
+       vendor: Intel Corporation
+       physical id: 14.3
+       bus info: pci@0000:00:14.3
+       logical name: wlp0s20f3
+       version: 20
+       serial: 50:84:92:66:40:36
+       width: 64 bits
+       clock: 33MHz
+       capabilities: bus_master cap_list ethernet physical wireless
+       configuration: broadcast=yes driver=iwlwifi driverversion=6.5.0-17-generic firmware=77.2df8986f.0 QuZ-a0-hr-b0-77.u ip=172.18.4.99 latency=0 link=yes multicast=yes wireless=IEEE 802.11
+       resources: iomemory:600-5ff irq:16 memory:6055294000-6055297fff
+  *-network:1
+       description: Ethernet interface
+       product: Ethernet Connection (13) I219-V    <== Ethernet interface (Intel) 
+       vendor: Intel Corporation
+       physical id: 1f.6
+       bus info: pci@0000:00:1f.6
+       logical name: enp0s31f6
+       version: 20
+       serial: 38:14:28:58:3a:5a
+       capacity: 1Gbit/s
+       width: 32 bits
+       clock: 33MHz
+       capabilities: bus_master cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
+       configuration: autonegotiation=on broadcast=yes driver=e1000e driverversion=6.5.0-17-generic firmware=0.8-4 latency=0 link=no multicast=yes port=twisted pair
+       resources: irq:190 memory:a6100000-a611ffff
+```
+
 ---- 
 
 ## Storage Controllers and Drives    
