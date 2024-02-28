@@ -34,6 +34,7 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [The One with Wireshark](#the-one-with-wireshark)  
       * [The One with Disaster Recovery](#the-one-with-disaster-recovery)
       * [The One with VPN](#the-one-with-vpn) 
+      * [The Privacy Conundrum](#The-Privacy-Conundrum)
 
 
 ## Introductory Concepts 
@@ -1211,7 +1212,8 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * Google Apps Manager [GAM](https://github.com/GAM-team/GAM), [GAM Wiki](https://github.com/GAM-team/GAM/wiki/), and [GAM cheatsheet](https://gamcheatsheet.com/GAM%20Cheat%20Sheet%20A4.pdf)    
 
-* **Understand how emails can be or are being harvested**: <From-field> For quite some time, spammers have been sending unsolicited communication and targeting more general audiences using increasingly aggressive techniques to harvest e-mail addresses from the web, public digital-domains, institute webpages of faculty, staff, and administrative mailboxes, etc. E-mail addresses may also be harvested by e-mail viruses from browser caches and mail spools, and then diffused further in falsified From: lines. <app-profile> One more variant has been seen for such spam through impersonating WhatsApp profile or other mobile apps having access to your contacts, calendars and email apps. I liked and have paraphrased [arXiv email protection](https://info.arxiv.org/help/email-protection.html) text as backlinking.       
+* **Understand how emails can be or are being harvested**: <From-field> For quite some time, spammers have been sending unsolicited communication and targeting more general audiences using increasingly aggressive techniques to harvest e-mail addresses from the web, public digital-domains, institute webpages of faculty, staff, and administrative mailboxes, etc. E-mail addresses may also be harvested by e-mail viruses from browser caches and mail spools, and then diffused further in falsified From: lines. <app-profile> One more variant has been seen for such spam through impersonating WhatsApp profile or other mobile apps having access to your contacts, calendars and email apps. I liked and have paraphrased [arXiv email protection](https://info.arxiv.org/help/email-protection.html) text as backlinking.      
+
 **Lesson: Data-minimization - Avoid listing and sharing personal or official emails in bulk anywhere. Make it harder for spammers to harvest emails. Good-enough measures work! show email without domain suffix, using [ ], at, dot, images, etc. and are better off than research on each possibility and not doing it.**
 **Privacy policies**: There is a need to work on privacy aspects for data collection. I liked structure of [HyperVerge's privacy policy](https://hyperverge.co/partner-privacy-policy/).     
 
@@ -1511,5 +1513,13 @@ For Disaster Recovery (DR), first, it is necessary to re-architect and design th
 [Linux VPN Myths](https://linuxsecurity.com/features/common-linux-vpn-myths-busted)    
 
 [How secure is Linux?](https://linuxsecurity.com/features/how-secure-is-linux) Do not miss The Bottom Line    
+
+----
+
+## The Privacy Conundrum    
+
+From l0pht testifying in court in 1999, to modern day-light robbery of our personal data by mobile Apps, to desire to automate and integrate everything into one identifier - there are several daily-activities and attack surfaces wherein our data privacy is at stake.   
+
+More information can be found on my repository [isdp](https://github.com/rks101/isdp)     
 
 ----
