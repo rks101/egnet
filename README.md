@@ -133,6 +133,8 @@ $ lshw -class network
        resources: irq:190 memory:a6100000-a611ffff
 ```
 
+[Different WiFi Standards and Data Rates](https://www.intel.com/content/www/us/en/support/articles/000005725/wireless/legacy-intel-wireless-products.html)     
+
 ---- 
 
 ## Storage Controllers and Drives    
