@@ -1016,7 +1016,6 @@ Bingo! note the ANSWER SECTION - this has an IP address of iitjammu.ac.in, and A
 Compare these steps with the output of dig +trace iitjammu.ac.in to find the IP addresses of the domain. This is what happens in practice every single day.    
 
 An illustration on [Life of a DNS query](https://github.com/rks101/egnet/blob/main/images/Life%20of%20a%20DNS%20query.png) summarizes DNS queries.     
-<a href="https://github.com/rks101/egnet/blob/main/images/Life%20of%20a%20DNS%20query.png" target="_blank">Life of a DNS query</a>    
 
 ----
 
