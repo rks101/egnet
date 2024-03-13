@@ -555,6 +555,32 @@ Nmap done: 1 IP address (1 host up) scanned in 8.66 seconds
 ```
 
 ```
+$ nmap -A -T4 eg.iitjammu.ac.in  
+Starting Nmap 7.80 ( https://nmap.org ) at 2024-03-13 20:36 IST
+Nmap scan report for eg.iitjammu.ac.in (13.126.157.211)
+Host is up (0.052s latency).
+rDNS record for 13.126.157.211: ec2-13-126-157-211.ap-south-1.compute.amazonaws.com
+Not shown: 998 filtered ports
+PORT    STATE SERVICE VERSION
+80/tcp  open  http    Apache httpd
+|_http-server-header: Apache
+443/tcp open  ssl/ssl Apache httpd (SSL-only mode)
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+|_http-server-header: Apache
+|_http-title: E-Governance
+| ssl-cert: Subject: commonName=eg.iitjammu.ac.in
+| Subject Alternative Name: DNS:eg.iitjammu.ac.in, DNS:www.eg.iitjammu.ac.in
+| Not valid before: 2023-10-03T05:31:25
+|_Not valid after:  2024-10-27T10:53:42
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 37.23 seconds
+```
+
+```
 $ nmap -A -T4 scanme.nmap.org
 Starting Nmap 7.80 ( https://nmap.org ) at 2024-03-13 20:30 IST
 Nmap scan report for scanme.nmap.org (45.33.32.156)
