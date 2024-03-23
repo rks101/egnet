@@ -356,8 +356,7 @@ default via 192.168.0.1 dev wlp3s0 proto dhcp metric 600
 ```
 The above ip options are available on modern switching and routing hardware supporting Software Defined Networking (SDN).   
 
-**WHOIS lookup**  At times, it may be interesting to look up whose ip address it is - while analyzing server logs or email yml files for a possible spammer, etc.    
-You can use [WHOIS Look up](https://www.whatismyip.com/ip-whois-lookup/)    
+**WHOIS lookup**  At times, it may be interesting to look up whose ip address it is - while analyzing server logs or email yml files for a possible spammer, etc. You can use [WHOIS Look up](https://www.whatismyip.com/ip-whois-lookup/)    
 
 ---- 
 
