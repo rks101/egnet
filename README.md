@@ -1242,6 +1242,81 @@ Ip address: 30 | Subdomain: 33 | elapsed time: 00:00:22
 
 ```
 
+There is another DNS enumeration and scanning tool **dnsrecon** - a Python script to collect DNS and sub-domain-related information as passive reconansance.    
+
+**With dig, dnsenum, and dnsrecon, you can figure out DNS entries in detail like TTL, record type, and record values for TXT.      **
+
+dnsrecon man page tells us the type of enumerations or queries:   
+```
+         -t TYPE, --type TYPE  Type of enumeration to perform.
+                      Possible types:
+                                   std:      SOA, NS, A, AAAA, MX and SRV.
+                                   rvl:      Reverse lookup of a given CIDR or IP range.
+                                   brt:      Brute force domains and hosts using a given dictionary.
+                                   srv:      SRV records.
+                                   axfr:     Test all NS servers for a zone transfer.
+                                   bing:     Perform Bing search for subdomains and hosts.
+                                   yand:     Perform Yandex search for subdomains and hosts.
+                                   crt:      Perform crt.sh search for subdomains and hosts.
+                                   snoop:    Perform cache snooping against all NS servers for a given domain, testing
+                                             all with file containing the domains, file given with -D option.
+                                   tld:      Remove the TLD of given domain and test against all TLDs registered in IANA.
+                                   zonewalk: Perform a DNSSEC zone walk using NSEC records.
+```
+
+Here is sample output from dnsrecon -t axfr -d domain.com 
+
+```
+$ dnsrecon -t axfr -d iitjammu.ac.in 
+[*] Checking for Zone Transfer for iitjammu.ac.in name servers
+[*] Resolving SOA Record
+[+] 	 SOA ns1.iitjammu.ac.in 14.139.53.132
+[*] Resolving NS Records
+[*] NS Servers found:
+[+] 	 NS ns3.iitjammu.ac.in 182.76.238.118
+[+] 	 NS ns2.iitjammu.ac.in 14.139.53.133
+[+] 	 NS ns1.iitjammu.ac.in 14.139.53.132
+[*] Removing any duplicate NS server IP Addresses...
+[*]  
+[*] Trying NS server 14.139.53.132
+[+] 14.139.53.132 Has port 53 TCP Open
+[+] Zone Transfer was successful!!
+[*] 	 NS ns1.iitjammu.ac.in 14.139.53.132
+[*] 	 NS ns2.iitjammu.ac.in 14.139.53.133
+[*] 	 NS ns3.iitjammu.ac.in 182.76.238.118
+[*] 	 TXT google-site-verification=FbfesMgJWj_x98cASxF4B3J5t9wr0ccF_LXLmKZI1d4
+[*] 	 TXT v=spf1 include:_spf.google.com ~all
+[*] 	 TXT google-site-verification=_CjOVWkrqVhYi2yABaGiRoYeJwkpyMdG6Ms1FW7VJu8
+[*] 	 TXT MS=0803D61A210443353771F37FAB6297221EF56F2E; 3600
+[*] 	 TXT v=DMARC1; p=none; rua=mailto:dmarc@iitjammu.ac.in
+[*] 	 TXT v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3vFaf45bo5qlObTebeNjatWQ3X372gQTM26tjrRsH3lVFYvj8dKe90thOpLcFM6w/lAA2PqPO/XenfuWtNVPg; G48ZN8zRh8MjnlSL4GCqkB1Ni+aewHjKUnfIsCUMWdjBdFm/l/gNx5q9IB+/wO56EUNrK4Y9yH9OJjq+mEeQlqHs8YA2qCGeN7csdW0Y75Izf+E0pX5dyHI3YjLb; etL3INS2hbgbX6nvegap7EaMSXgEH1znoQvUqA7qhkmbLGsec1C9lpahUeuWLtwiTulWg1dQQyEOTGzI1LOuVUdLnQCQiEn4+JUdwcWd7V7vHYZ58rwivGIblehaKsqPXcr/QIDAQAB
+[*] 	 TXT v=spf1 include:_spf.google.com ~all
+[*] 	 TXT 5C-P8ZVTFBylBN_fwdYQ2uirwgwm1NY9prAJVROJunc
+[*] 	 TXT v=spf1 a mx ip4:14.139.53.129 include:_spf.google.com ~all
+[*] 	 TXT v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAny/; YMsWkcHJ4Q4+sdycU74ISvZFFfsk7OtxXqV+uMFrUH+F7UF2yEdJtKLgFXnWIyPF2li5HHU4skJ3o2P1iujF/; HXRSw4E24n+Wfc0kErpSn0vDW05MyeApxZqvuMcwF6kq8TNRrnCTalw+zK6GdtLms+TdwOeWsQSaDFR0uxj9EkiNG5aCobiPAeThye0++toMBmCjSe7SKx86VStHE2p4mO/; kRCcW88twZgJLY+Ic8D039DM/cGF/oJf8DliAf3hbcbkFAd0Udl92/wgg+RQRNzKKOR1enAOlsts/; Il3MWvwiaUMXh6fcybWJSDkuikNRjm3QRhQGGRUSbauDOwIDAQAB
+[*] 	 TXT M6bwxKX9rA6bUfvapGe0mEaX6LGFMi8qB7Q5u8YxMjM
+[*] 	 MX @.iitjammu.ac.in ASPMX.L.GOOGLE.COM 172.217.194.26
+[*] 	 MX @.iitjammu.ac.in ASPMX.L.GOOGLE.COM 2404:6800:4003:c1c::1a
+[*] 	 MX @.iitjammu.ac.in ALT1.ASPMX.L.GOOGLE.COM 173.194.202.27
+[*] 	 MX @.iitjammu.ac.in ALT1.ASPMX.L.GOOGLE.COM 2607:f8b0:400e:c00::1b
+[*] 	 MX @.iitjammu.ac.in ALT2.ASPMX.L.GOOGLE.COM 173.194.65.26
+[*] 	 MX @.iitjammu.ac.in ALT2.ASPMX.L.GOOGLE.COM 2607:f8b0:4023:1c03::1b
+[*] 	 MX alumni.iitjammu.ac.in ASPMX.L.GOOGLE.COM 172.217.194.26
+[*] 	 MX alumni.iitjammu.ac.in ASPMX.L.GOOGLE.COM 2404:6800:4003:c1c::1a
+[*] 	 MX alumni.iitjammu.ac.in ALT1.ASPMX.L.GOOGLE.COM 173.194.202.27
+[*] 	 MX alumni.iitjammu.ac.in ALT1.ASPMX.L.GOOGLE.COM 2607:f8b0:400e:c00::1b
+[*] 	 MX alumni.iitjammu.ac.in ALT2.ASPMX.L.GOOGLE.COM 173.194.65.26
+[*] 	 MX alumni.iitjammu.ac.in ALT2.ASPMX.L.GOOGLE.COM 2607:f8b0:4023:1c03::1b
+[*] 	 A @.iitjammu.ac.in 14.139.53.140
+[*] 	 A acs1.iitjammu.ac.in 10.10.10.252
+[*] 	 A acs2.iitjammu.ac.in 10.10.120.229
+[*] 	 A agastya.iitjammu.ac.in 14.139.53.143
+[*] 	 A aicpmu.iitjammu.ac.in 14.139.53.138
+[*] 	 A aicpmudev.iitjammu.ac.in 10.10.120.154
+[*] 	 A akela.iitjammu.ac.in 10.10.52.6
+...........................
+```
+
 ---- 
 
 ## Simple web server
