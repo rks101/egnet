@@ -1414,7 +1414,7 @@ You can [add a brand logo to outgoing email with BIMI](https://support.google.co
 Malicious emails can be categorized as:    
 
 **Spam** - unsolicited junk emails sent in bulk to many harvested email recipients.    
-**Phishing** - emails sent to targets purporting to originate from a trusted entity to lure individuals into clicking links, downloading attachments, or providing sensitive information, like bank account or transaction details.    
+**Phishing** - emails sent to targets purporting to originate from a trusted entity (spoofed emails) to lure individuals into clicking links, downloading attachments, or providing sensitive information, like bank account or transaction details.    
 **Spear phishing** - emails targeting specific individuals or organizations seeking sensitive information, not random email recipients.    
 **Whaling** - emails targeting CXOs or high-position individuals (CEO, CFO, CTO - Fish to Whale) to seek sensitive information.    
 **Smishing** - phishing using text on mobile devices by targeting users with specially crafted text messages (SMS, chat).    
