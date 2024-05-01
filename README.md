@@ -356,7 +356,7 @@ default via 192.168.0.1 dev wlp3s0 proto dhcp metric 600
 ```
 The above ip options are available on modern switching and routing hardware supporting Software Defined Networking (SDN).   
 
-**WHOIS lookup**  At times, it may be interesting to look up whose ip address it is - while analyzing server logs or email yml files for a possible spammer, etc. You can use [WHOIS Look up](https://www.whatismyip.com/ip-whois-lookup/)    
+**WHOIS lookup**  At times, it may be interesting to look up whose ip address it is - while analyzing server logs or email yml files for a possible spammer, etc. You can use [WHOIS Look up](https://www.whatismyip.com/ip-whois-lookup/) or [Arin](https://www.arin.net/). [IPv4 blocks cleared](https://www.arin.net/resources/guide/ipv4/blocks_cleared/) can be seen on Arin.      
 
 ---- 
 
@@ -1366,7 +1366,8 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * Have you ever wondered to have a CLI for Google Workplace to manage accounts? Here is a simple guide for [Getting started with Google Apps Manager (GAM)](https://www.tricent.com/blog/getting-started-with-gam)
 
-* Google Apps Manager [GAM](https://github.com/GAM-team/GAM), [GAM Wiki](https://github.com/GAM-team/GAM/wiki/), and [GAM cheatsheet](https://gamcheatsheet.com/GAM%20Cheat%20Sheet%20A4.pdf)    
+* Google Apps Manager [GAM](https://github.com/GAM-team/GAM), [GAM Wiki](https://github.com/GAM-team/GAM/wiki/), and [GAM cheatsheet](https://gamcheatsheet.com/GAM%20Cheat%20Sheet%20A4.pdf)   
+* Email Client protocols and ports: [SMTP / IMAP / POP3](https://help.dreamhost.com/hc/en-us/articles/215612887-Email-client-protocols-and-port-numbers) - use secure versions.    
 
 * **Understand how emails can be or are being harvested**: <From-field> For quite some time, spammers have been sending unsolicited communication and targeting more general audiences using increasingly aggressive techniques to harvest e-mail addresses from the web, public digital-domains, institute webpages of faculty, staff, and administrative mailboxes, etc. E-mail addresses may also be harvested by e-mail viruses from browser caches and mail spools, and then diffused further in falsified From: lines. <app-profile> One more variant has been seen for such spam through impersonating WhatsApp profile or other mobile apps having access to your contacts, calendars and email apps. I liked and have paraphrased [arXiv email protection](https://info.arxiv.org/help/email-protection.html) text as backlinking.      
 
