@@ -1364,6 +1364,8 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 * [Enable MTA-STS and TLS reporting](https://support.google.com/a/answer/9276512) to improve email security and reporting. 
 
+* [SMTP](https://www.afternerd.com/blog/smtp/) - Email Transporter   
+
 * Have you ever wondered to have a CLI for Google Workplace to manage accounts? Here is a simple guide for [Getting started with Google Apps Manager (GAM)](https://www.tricent.com/blog/getting-started-with-gam)
 
 * Google Apps Manager [GAM](https://github.com/GAM-team/GAM), [GAM Wiki](https://github.com/GAM-team/GAM/wiki/), and [GAM cheatsheet](https://gamcheatsheet.com/GAM%20Cheat%20Sheet%20A4.pdf)   
