@@ -24,7 +24,8 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [Monitor Network](#monitor-network) 
       * [Know sub-domains they don't give you](#know-sub\-domains) 
       * [Simple web server](#simple-web-server)
-      * [Get files using `wget`](#get-files-using-wget) 
+      * [Get files using `wget`](#get-files-using-wget)
+      * [HTTP versions](#http-versions)
       * [Email](#email) 
       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
       * [The One with LDAP](#the-one-with-ldap)
@@ -1347,6 +1348,19 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 ```
 
 ---- 
+
+## HTTP versions   
+
+HTTP/0.9: First attempt to transfer generic resources by paths    
+HTTP/1.0: Adds status codes, headers, verbs    
+HTTP/1.1: Adds connection re-use so connections can be reused    
+HTTP/2: Switches from a text-based protocol to a binary    
+HTTP/3: Built on QUIC instead of TCP    
+
+Reference: [HTTP/0.9 from scratch](https://kmcd.dev/posts/http0.9-from-scratch/)    
+[HTTP versions](https://www.baeldung.com/cs/http-versions)   
+
+----
 
 ## Email  
 
