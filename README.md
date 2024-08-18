@@ -1353,7 +1353,7 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 **HTTP/0.9**: First attempt (in 1991) to transfer generic resources using GET method and path: e.g. GET /index.html    
 **HTTP/1.0**: In 1996, added [status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) (200=Success, 301=Resource Moved, 404=Resource not found, 500=Internal server error), PUT and HEAD methods, HTTP headers (Host, Content-* , Accept-*)     
-HTTP/1.1: Adds connection re-use so connections can be reused    
+**HTTP/1.1**: In 1997, added a Persistent Connection to allow multiple request/response pairs execution on the same connection without opening new connections each time, added PUT, DELETE methods     
 HTTP/2: Switches from a text-based protocol to a binary    
 HTTP/3: Built on QUIC instead of TCP    
 
