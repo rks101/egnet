@@ -1351,7 +1351,7 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 ## HTTP versions   
 
-HTTP is an application layer protocol that runs the internet (The World Wide Web). Hypertext docs include hyperlinks to other resources on the web pages/apps that can be accessed by clicking often using a mouse/trackpad or, these days, touch/tap on mobile devices.   
+HTTP is an application layer protocol that runs the internet (The World Wide Web). Hypertext docs include hyperlinks to other resources on the web pages/apps that can be accessed by clicking often using a mouse/trackpad or, these days, touch/tap on mobile devices - very much like while you are clicking links on this page online.   
 
 HTTP Versions over the years:    
 
