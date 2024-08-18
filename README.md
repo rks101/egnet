@@ -1351,8 +1351,8 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 ## HTTP versions   
 
-HTTP/0.9: First attempt to transfer generic resources by paths    
-HTTP/1.0: Adds status codes, headers, verbs    
+**HTTP/0.9**: First attempt (in 1991) to transfer generic resources using GET method and path: e.g. GET /index.html    
+**HTTP/1.0**: In 1996, added [status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) (200=Success, 301=Resource Moved, 404=Resource not found, 500=Internal server error), PUT and HEAD methods, HTTP headers (Host, Content-* , Accept-*)     
 HTTP/1.1: Adds connection re-use so connections can be reused    
 HTTP/2: Switches from a text-based protocol to a binary    
 HTTP/3: Built on QUIC instead of TCP    
