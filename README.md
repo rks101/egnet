@@ -1351,15 +1351,15 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 ## HTTP versions   
 
-HTTP is an application layer protocol that runs the internet (The World Wide Web). Hypertext docs include hyperlinks to other resources on the web that can be accessed by clicking.   
+HTTP is an application layer protocol that runs the internet (The World Wide Web). Hypertext docs include hyperlinks to other resources on the web pages/apps that can be accessed by clicking often using a mouse/trackpad or, these days, touch/tap on mobile devices.   
 
 HTTP Versions over the years:    
 
 **HTTP/0.9**: First attempt (in 1991) to transfer generic resources using GET method only and resource path: e.g. GET /index.html    
 **HTTP/1.0**: In 1996, added [status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) (200=Success, 301=Resource Moved, 404=Resource not found, 500=Internal server error), PUT and HEAD methods, HTTP headers (Content-* , Accept-*)     
 **HTTP/1.1**: In 1997, added a Persistent Connection to allow multiple request/response pairs execution on the same connection without opening new connections each time, added PUT, DELETE methods, added Host header (useful for proxies)     
-**HTTP/2**: In 2015, allowed the asynchronous execution of request and response pairs over a single connection (multiplexing), added auto GZip compression, switched from a text-based protocol to a binary protocol, use HTTP over TLS (HTTPS) always    
-**HTTP/3**: In IETF Draft status. Built on QUIC (Quick UDP Internet Connections) instead of TCP to allow quick handshake and to handle latency issues for slow connections     
+**HTTP/2**: In 2015, allowed the asynchronous execution of request and response pairs over a single connection (multiplexing), added auto GZip compression, switched from a text-based protocol to a binary protocol, uses HTTP over TLS (HTTPS) always    
+**HTTP/3**: In IETF Draft status. Built on QUIC (Quick UDP Internet Connections) instead of TCP to allow quick handshake and to handle latency issues for slow connections. No more HTTP or HTTPS and redirects; every connection is encrypted.     
 
 Reference: [HTTP/0.9 from scratch](https://kmcd.dev/posts/http0.9-from-scratch/)    
 [HTTP versions](https://www.baeldung.com/cs/http-versions)   
