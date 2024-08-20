@@ -541,7 +541,7 @@ $ dstat -n
 
 ## nmap    
 
-nmap can be used to study network and ports (services) that are open or functional.    
+Network Mapper nmap can be used to study networks and ports (services) that are open, closed, filtered, or functional.    
 
 ```
 $ nmap -p 1-1024 eg.iitjammu.ac.in  
@@ -610,6 +610,8 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 64.07 seconds
 ```
+
+man nmap - shows types of nmap scans, options and examples.   
 
 ----
 
