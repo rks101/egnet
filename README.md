@@ -1393,8 +1393,11 @@ Reference: [HTTP/0.9 from scratch](https://kmcd.dev/posts/http0.9-from-scratch/)
 
 * **Understand how emails can be or are being harvested**: <From-field> For quite some time, spammers have been sending unsolicited communication and targeting more general audiences using increasingly aggressive techniques to harvest e-mail addresses from the web, public digital-domains, institute webpages of faculty, staff, and administrative mailboxes, etc. E-mail addresses may also be harvested by e-mail viruses from browser caches and mail spools, and then diffused further in falsified From: lines. <app-profile> One more variant has been seen for such spam through impersonating WhatsApp profile or other mobile apps having access to your contacts, calendars and email apps. I liked and have paraphrased [arXiv email protection](https://info.arxiv.org/help/email-protection.html) text as backlinking.      
 
-**Lesson: Data-minimization - Avoid listing and sharing personal or official emails in bulk anywhere. Make it harder for spammers to harvest emails. Good-enough measures work! show email without domain suffix, using [ ], at, dot, images, etc. and are better off than research on each possibility and not doing it.**
+**Lesson: Data-minimization - Avoid listing and sharing personal or official emails in bulk anywhere. Make it harder for spammers to harvest emails. Good-enough measures work! show email without domain suffix, using [ ], at, dot, images, etc. are better off than research on each possibility and not doing it.**
 **Privacy policies**: There is a need to work on privacy aspects for data collection. I liked structure of [HyperVerge's privacy policy](https://hyperverge.co/partner-privacy-policy/).     
+
+* **[Don’t click on anything in an unsolicited email or text message.](https://www.forbes.com/sites/daveywinder/2025/02/09/most-sophisticated-gmail-attacks-ever-fbi-says-do-not-click-anything/)**     
+As AI-assisted phishing campaigns evolve, it is important that this dearly beloved tool of user messaging from decades is introduced with caution: pause and think before you click a link, especially in unsolicited emails, chat messages, SMS, etc.    
 
 ---- 
 
