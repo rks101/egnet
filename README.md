@@ -1448,6 +1448,9 @@ Malicious emails can be categorized as:
 **Smishing** - phishing using text on mobile devices by targeting users with specially crafted text messages (SMS, chat).    
 **Vishing** - similar to smishing; instead of sending text, the attack vector is a voice call.    
 
+Q. An email in Spam, passes all three SPF, DKIM, DMARK. Can it be still a Spam?     
+A. Absolutely possible. See the example Spam_all3passed.eml   
+
 ---- 
 
 ## The One with LDAP 
