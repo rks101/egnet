@@ -1399,6 +1399,9 @@ Reference: [HTTP/0.9 from scratch](https://kmcd.dev/posts/http0.9-from-scratch/)
 * **[Don’t click on anything in an unsolicited email or text message.](https://www.forbes.com/sites/daveywinder/2025/02/09/most-sophisticated-gmail-attacks-ever-fbi-says-do-not-click-anything/)**     
 As AI-assisted phishing campaigns evolve, it is important that this dearly beloved tool of user messaging from decades is introduced with caution: pause and think before you click a link, especially in unsolicited emails, chat messages, SMS, etc.    
 
+* **[Captcha scams - be careful when giving permissions or running commands](https://indianexpress.com/article/technology/tech-news-technology/fake-captcha-scams-how-im-not-a-robot-could-infect-your-device-10190466/)** 
+
+
 ---- 
 
 ## The One with SPF DKIM and DMARK 
