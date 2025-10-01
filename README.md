@@ -3,7 +3,7 @@ egnet => pronounced as "easy net" shows some tools or utilities for debugging an
 
 These notes first came out of my habit of writing them down in one place and referencing them later anytime, anywhere. Later, I got involved more while answering some questions often and started asking people to refer to these notes.    
 
-Voluntary Disclosure: The output shown for utilities mentioned below is compiled for illustration purposes only. You may not find all details in your lab/office/dormitory.   
+Disclosure: The output shown for utilities mentioned below is compiled for illustration purposes only. You may not find all details in your lab/office/dormitory.   
 
    * [egnet](#egnet)
       * [Introductory Concepts](#introductory-concepts)
