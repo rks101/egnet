@@ -16,6 +16,11 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [`iwconfig`](#iwconfig)
       * [`iwlist` know wireless interface](#iwlist)
       * [`dstat`](#dstat)
+      * [Simple web server](#simple-web-server)
+      * [HTTP versions](#http-versions)
+      * [Get files using `wget`](#get-files-using-wget)
+      * [The One with Wireshark](#the-one-with-wireshark)
+      * [`netstat`](#netstat)
       * [`nmap`](#nmap)
       * [NS Lookup](#ns-lookup) 
       * [Resolve DNS](#resolve-dns) 
@@ -23,9 +28,6 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [`dig` into DNS](#dig-into-dns) 
       * [Monitor Network](#monitor-network) 
       * [Know sub-domains they don't give you](#know-sub\-domains) 
-      * [Simple web server](#simple-web-server)
-      * [Get files using `wget`](#get-files-using-wget)
-      * [HTTP versions](#http-versions)
       * [Email](#email) 
       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
       * [The One with LDAP](#the-one-with-ldap)
@@ -33,25 +35,26 @@ Voluntary Disclosure: The output shown for utilities mentioned below is compiled
       * [The One with Security](#the-one-with-security) 
       * [The One with SSL/TLS Certificates](#ssl-tls-certificates)
       * [QUIC](#quic)   
-      * [The One with Wireshark](#the-one-with-wireshark)  
       * [The One with Disaster Recovery](#the-one-with-disaster-recovery)
       * [The One with VPN](#the-one-with-vpn) 
       * [The Privacy Conundrum](#The-Privacy-Conundrum)
 
 
 ## Introductory Concepts 
-Some [Introductory concepts in computer networking](http://intronetworks.cs.luc.edu/current/html/) online, skip this section, and continue if you are already familiar with this domain or looking for the content below. A bookmark, reference, or share is okay.  
 
-If you are more comfortable reading a paper book like me, see books - [Computer Networking A Top-Down Approach 8th edition by Kurose and Rose](https://gaia.cs.umass.edu/kurose_ross/online_lectures.htm) - they have added SDN, and [Computer Networks: A Systems Approach by Peterson and Davie](https://book.systemsapproach.org/) - they cover Congestion Control in an elegant manner. Another reference book is [Computer & Internet Security: A Hands-on Approach by Wenliang Du](https://amzn.eu/d/hqd1Ncl) from Syracuse University and maintains [Seed Labs](https://seedsecuritylabs.org/) to combine theory and practice.     
+Here are some [Introductory concepts in computer networking](http://intronetworks.cs.luc.edu/current/html/) online. You can skip this section and continue if you are already familiar with this domain or looking for the content below.    
 
-If you are a senior undergrad/postgrad student, explore [Reproducing Networking Research](https://reproducingnetworkresearch.wordpress.com/) blog and [paper](https://web.stanford.edu/class/cs244/papers/learning-networking-research-by-reproducing.pdf), and [Some course topics with guests](https://web.stanford.edu/class/cs244/). Visit [Barefoot](https://barefootnetworks.com/resources/worlds-fastest-most-programmable-networks/) in the age of programmable networks   
+If you are more comfortable reading a paper book like me, see books - [Computer Networking A Top-Down Approach 8th edition by Kurose and Rose](https://gaia.cs.umass.edu/kurose_ross/online_lectures.htm) - they have added SDN, and [Computer Networks: A Systems Approach by Peterson and Davie](https://book.systemsapproach.org/) - they cover Congestion Control in an elegant manner. Another reference book is [Computer & Internet Security: A Hands-on Approach by Wenliang Du](https://amzn.eu/d/hqd1Ncl) from Syracuse University and maintains [Seed Labs](https://seedsecuritylabs.org/) to combine theory and practice.    
+
+If you are a senior undergrad/postgrad student, you should explore [Reproducing Networking Research](https://reproducingnetworkresearch.wordpress.com/) blog and [paper](https://web.stanford.edu/class/cs244/papers/learning-networking-research-by-reproducing.pdf), and [Some course topics with guests](https://web.stanford.edu/class/cs244/). Visit [Barefoot](https://barefootnetworks.com/resources/worlds-fastest-most-programmable-networks/) in the age of programmable networks.    
 
 You do not need to be a Computer Scientist or Computer Engineering graduate to understand and appreciate these topics 😅   
 
 ---- 
 
 ## PoE    
-Power over Ethernet or PoE can provide DC power over ethernet cables - power and network over a single wire! It's cost-effective. PoE is used for Access Points (APs), IP cameras, and phones. Please look at them and notice they are without a separate power adapter.  The switch should have PoE ports enabled.    
+
+Power over Ethernet or PoE can provide DC power over Ethernet cables - power and network over a single wire! It's cost-effective. PoE is used for Access Points (APs), IP cameras, and phones. Please look at them and notice that they are without a separate power adapter.  The switch should have PoE ports enabled.    
 
 [What is PoE?](https://notes.networklessons.com/poe-what-is-it)    
 
@@ -497,7 +500,6 @@ wlp0s20f3  32 channels in total; available frequencies :
           Channel 136 : 5.68 GHz
           Channel 140 : 5.7 GHz
           Current Frequency:5.24 GHz (Channel 48)
-
 ```
 Transmit power    
 ```
@@ -522,7 +524,6 @@ usr sys idl wai stl| read  writ| recv  send|  in   out | int   csw
   3   1  96   0   0|   0     0 | 303B  405B|   0     0 |2150  3753 
   3   1  95   0   0|   0     0 |1266B 1246B|   0     0 |2272  3889 
   3   1  96   0   0|   0     0 | 984B  786B|   0     0 |2378  3952 ^C
-
 ```
 Only looking for network bytes received and sent =>  
 ```
@@ -534,14 +535,109 @@ $ dstat -n
    0     0 
   66B   94B
  261B  405B^C
-
 ```
 
 ----
 
+## Simple web server
+
+One-line web server => a great and simple way to show files from a directory or local share.   
+
+Note the directory you start this server from and the content you want to share locally.   
+```
+$ python3 -m http.server 
+Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
+127.0.0.1 - - [03/Feb/2021 23:33:21] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [03/Feb/2021 23:33:31] "GET /myvideos/ HTTP/1.1" 200 -http://127.0.0http://127.0.0.1:8000/Downloads/http://127.0.0.1:8000/Downloads/http://127.0.0.1:8000/Downloads/.1:8000/Downloads/
+127.0.0.1 - - [03/Feb/2021 23:33:36] "GET /Downloads/ HTTP/1.1" 200 -
+^C                                    <== to stop the HTTP server
+Keyboard interrupt received, exiting.
+```
+
+The web server started above can be opened in a web browser: http://0.0.0.0:8000/   
+
+This page can be opened before you close the server using Ctrl+C.  
+
+----
+
+## HTTP versions   
+
+HTTP is an application layer protocol that runs the internet (The World Wide Web). Hypertext docs include hyperlinks to other resources on the web pages/apps that can be accessed by clicking often using a mouse/trackpad or, these days, touch/tap on mobile devices - very much like while you are clicking links on this page online.   
+
+HTTP Versions over the years:    
+
+**HTTP/0.9**: First attempt (in 1991) to transfer generic resources using GET method only and resource path: e.g. GET /index.html    
+
+**HTTP/1.0**: In 1996, added [status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) (200=Success, 301=Resource Moved, 404=Resource not found, 500=Internal server error), PUT and HEAD methods, HTTP headers (Content-* , Accept-*)     
+
+**HTTP/1.1**: In 1997, added a Persistent Connection to allow multiple request/response pairs execution on the same connection without opening new connections each time, added PUT, DELETE methods, added Host header (useful for proxies)     
+
+**HTTP/2**: In 2015, allowed the asynchronous execution of request and response pairs over a single connection (multiplexing), added auto GZip compression, switched from a text-based protocol to a binary protocol, uses HTTP over TLS (HTTPS) always    
+
+**HTTP/3**: In IETF Draft status. Built on QUIC (Quick UDP Internet Connections) instead of TCP to allow quick handshake and to handle latency issues for slow connections. No more HTTP or HTTPS and redirects; every connection is encrypted.     
+
+Reference: [HTTP/0.9 from scratch](https://kmcd.dev/posts/http0.9-from-scratch/) | [HTTP versions](https://www.baeldung.com/cs/http-versions)   
+
+----
+
+## Get files using wget 
+
+You can download files or documentation with many files using **wget**. This is very much like your own web-doc-ripper!   
+
+```
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages  
+```
+
+---- 
+
+## The One with Wireshark 
+
+It is fun to see packets down to the protocol level using Wireshark, a real-time network traffic analyzer, or through a saved pcapng file containing packet capture.   
+
+[Download wireshark](https://www.wireshark.org/download.html) | [Docs](https://www.wireshark.org/docs/)   
+
+Start Wireshark with root privileges, open a web browser, and visit a website. Now, please take a look at the packets in Wireshark.   
+
+```
+sudo wireshark -i wlp0s20f3 -k          <== wlp0s20f3 is the WiFi interface to monitor, it can be Ethernet or the lo interface. 
+[sudo] password for rps: 
+ ** (wireshark:189164) 09:41:30.109036 [GUI WARNING] -- QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+ ** (wireshark:189164) 09:41:30.885545 [Capture MESSAGE] -- Capture Start ...
+ ** (wireshark:189164) 09:41:30.966181 [Capture MESSAGE] -- Capture started
+ ** (wireshark:189164) 09:41:30.966232 [Capture MESSAGE] -- File: "/tmp/wireshark_wlp0s20f38V89C3.pcapng"
+...............................
+```
+From the Wireshark GUI, you can stop live capture.    
+```
+ ** (wireshark:189164) 09:41:47.323455 [Capture MESSAGE] -- Capture Stop ...
+ ** (wireshark:189164) 09:41:47.343440 [Capture MESSAGE] -- Capture stopped.
+ ** (wireshark:189164) 09:41:47.343508 [Capture WARNING] ./ui/capture.c:722 -- capture_input_closed(): 
+```
+
+You can filter using a protocol, analyze packets - byte stream or different headers, and payload with them.   
+
+You can build a meaningful context out of a sequence of packets for protocols HTTP / TCP / UDP / IP / Ethernet, etc.   
+
+e.g., A nice visual lesson of [TCP window size scaling](https://networklessons.com/cisco/ccie-routing-switching-written/tcp-window-size-scaling)    
+
+[Sample packet captures to visualize and understand protocol-level details using **cloudshark**](https://www.cloudshark.org/collections/WTRpgLI-GQSDfgzkQixICg)    
+
+**TCPDUMP** - You can also rely on powerful [tcpdump](https://opensource.com/article/18/10/introduction-tcpdump). [tcpdump-cheat-sheet](https://www.comparitech.com/net-admin/tcpdump-cheat-sheet/)    
+
+```
+sudo tcpdump port 443 -w https_capture.pcap     <== monitor port 443 for HTTPS traffic over TCP
+tcpdump: listening on wlp0s20f3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+^C1308 packets captured                         <== ctrl+c to stop packet capture 
+1308 packets received by filter
+0 packets dropped by kernel
+```
+A packet capture file from tcpdump can be analyzed using Wireshark.    
+
+---- 
+
 ## nmap    
 
-Network Mapper nmap can be used to study networks and ports (services) that are open, closed, filtered, or functional.    
+Network Mapper `nmap` can be used to study networks and ports (services) that are open, closed, filtered, or functional.    
 
 ```
 $ nmap -p 1-1024 eg.iitjammu.ac.in  
@@ -611,7 +707,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 64.07 seconds
 ```
 
-man nmap - shows types of nmap scans, options and examples.   
+man nmap - shows types of nmap scans, options, and examples.   
 
 ----
 
@@ -1322,52 +1418,6 @@ $ dnsrecon -t axfr -d iitjammu.ac.in
 
 ---- 
 
-## Simple web server
-
-One line webserver => a great and simplest way to show files from a directory or local share.   
-Note the directory you start this server from and the content you want to share locally.   
-```
-$ python3 -m http.server 
-Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-127.0.0.1 - - [03/Feb/2021 23:33:21] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2021 23:33:31] "GET /myvideos/ HTTP/1.1" 200 -http://127.0.0http://127.0.0.1:8000/Downloads/http://127.0.0.1:8000/Downloads/http://127.0.0.1:8000/Downloads/.1:8000/Downloads/
-127.0.0.1 - - [03/Feb/2021 23:33:36] "GET /Downloads/ HTTP/1.1" 200 -
-^C 
-Keyboard interrupt received, exiting.
-
-```
-The web server started above can be opened in a web browser: http://0.0.0.0:8000/  
-This page can be opened before you close the server using Ctrl+C.  
-
-----
-
-## Get files using wget 
-
-You can download files or documentation with many files using **wget**. This is very much like your own web-doc-ripper!   
-
-```
-wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages
-```
-
----- 
-
-## HTTP versions   
-
-HTTP is an application layer protocol that runs the internet (The World Wide Web). Hypertext docs include hyperlinks to other resources on the web pages/apps that can be accessed by clicking often using a mouse/trackpad or, these days, touch/tap on mobile devices - very much like while you are clicking links on this page online.   
-
-HTTP Versions over the years:    
-
-**HTTP/0.9**: First attempt (in 1991) to transfer generic resources using GET method only and resource path: e.g. GET /index.html    
-**HTTP/1.0**: In 1996, added [status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) (200=Success, 301=Resource Moved, 404=Resource not found, 500=Internal server error), PUT and HEAD methods, HTTP headers (Content-* , Accept-*)     
-**HTTP/1.1**: In 1997, added a Persistent Connection to allow multiple request/response pairs execution on the same connection without opening new connections each time, added PUT, DELETE methods, added Host header (useful for proxies)     
-**HTTP/2**: In 2015, allowed the asynchronous execution of request and response pairs over a single connection (multiplexing), added auto GZip compression, switched from a text-based protocol to a binary protocol, uses HTTP over TLS (HTTPS) always    
-**HTTP/3**: In IETF Draft status. Built on QUIC (Quick UDP Internet Connections) instead of TCP to allow quick handshake and to handle latency issues for slow connections. No more HTTP or HTTPS and redirects; every connection is encrypted.     
-
-Reference: [HTTP/0.9 from scratch](https://kmcd.dev/posts/http0.9-from-scratch/)    
-[HTTP versions](https://www.baeldung.com/cs/http-versions)   
-
-----
-
 ## Email  
 
 * Gmail: [dots in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) do not matter for @gmail.com domain. Where else do you see this in action? IRCTC emails!  
@@ -1681,51 +1731,6 @@ CPUINFO: OPENSSL_ia32cap=0x7ffaf3bfffebffff:0x18c05fdef3bfa7eb
 QUIC (a transport layer protocol) can improve the performance of connection-oriented web applications (having sessions) by creating multi-plex UDP connections and eliminating TCP at the transport layer! [See reduced RTTs in handshake](https://en.wikipedia.org/wiki/File:Tcp-vs-quic-handshake.svg).    
 
 ----
-
-## The One with Wireshark 
-
-It is fun to see packets down to the protocol level using Wireshark, a real-time network traffic analyzer, or through a saved pcapng file containing packet capture.   
-
-[Download wireshark](https://www.wireshark.org/download.html) | [Docs](https://www.wireshark.org/docs/)   
-
-Start Wireshark with root privileges, open a web browser, and visit a website. Now, please take a look at the packets in Wireshark.   
-
-```
-sudo wireshark -i wlp0s20f3 -k          <== wlp0s20f3 is the WiFi interface to monitor, it can be Ethernet or the lo interface. 
-[sudo] password for rps: 
- ** (wireshark:189164) 09:41:30.109036 [GUI WARNING] -- QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
- ** (wireshark:189164) 09:41:30.885545 [Capture MESSAGE] -- Capture Start ...
- ** (wireshark:189164) 09:41:30.966181 [Capture MESSAGE] -- Capture started
- ** (wireshark:189164) 09:41:30.966232 [Capture MESSAGE] -- File: "/tmp/wireshark_wlp0s20f38V89C3.pcapng"
-...............................
-```
-From the Wireshark GUI, you can stop live capture.    
-```
- ** (wireshark:189164) 09:41:47.323455 [Capture MESSAGE] -- Capture Stop ...
- ** (wireshark:189164) 09:41:47.343440 [Capture MESSAGE] -- Capture stopped.
- ** (wireshark:189164) 09:41:47.343508 [Capture WARNING] ./ui/capture.c:722 -- capture_input_closed(): 
-```
-
-You can filter using a protocol, analyze packets - byte stream or different headers, and payload with them.   
-
-You can build a meaningful context out of a sequence of packets for protocols HTTP / TCP / UDP / IP / Ethernet, etc.   
-
-e.g., A nice visual lesson of [TCP window size scaling](https://networklessons.com/cisco/ccie-routing-switching-written/tcp-window-size-scaling)    
-
-[Sample packet captures to visualize and understand protocol-level details using **cloudshark**](https://www.cloudshark.org/collections/WTRpgLI-GQSDfgzkQixICg)    
-
-**TCPDUMP** - You can also rely on powerful [tcpdump](https://opensource.com/article/18/10/introduction-tcpdump). [tcpdump-cheat-sheet](https://www.comparitech.com/net-admin/tcpdump-cheat-sheet/)    
-
-```
-sudo tcpdump port 443 -w https_capture.pcap     <== monitor port 443 for HTTPS traffic over TCP
-tcpdump: listening on wlp0s20f3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
-^C1308 packets captured                         <== ctrl+c to stop packet capture 
-1308 packets received by filter
-0 packets dropped by kernel
-```
-A packet capture file from tcpdump can be analyzed using Wireshark.    
-
----- 
 
 ## The One with Disaster Recovery    
 
