@@ -1684,18 +1684,46 @@ QUIC (a transport layer protocol) can improve the performance of connection-orie
 
 ## The One with Wireshark 
 
-It is fun to see packets down to the protocol level using Wireshark - real-time packets or through a saved pcapng file.   
+It is fun to see packets down to the protocol level using Wireshark, a real-time network traffic analyzer, or through a saved pcapng file containing packet capture.   
 
 [Download wireshark](https://www.wireshark.org/download.html) | [Docs](https://www.wireshark.org/docs/)   
-Start Wireshark with root, open a web browser, and visit a website. Now, please take a look at the packets in Wireshark.   
+
+Start Wireshark with root privileges, open a web browser, and visit a website. Now, please take a look at the packets in Wireshark.   
+
+```
+sudo wireshark -i wlp0s20f3 -k          <== wlp0s20f3 is the WiFi interface to monitor, it can be Ethernet or the lo interface. 
+[sudo] password for rps: 
+ ** (wireshark:189164) 09:41:30.109036 [GUI WARNING] -- QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+ ** (wireshark:189164) 09:41:30.885545 [Capture MESSAGE] -- Capture Start ...
+ ** (wireshark:189164) 09:41:30.966181 [Capture MESSAGE] -- Capture started
+ ** (wireshark:189164) 09:41:30.966232 [Capture MESSAGE] -- File: "/tmp/wireshark_wlp0s20f38V89C3.pcapng"
+...............................
+```
+From the Wireshark GUI, you can stop live capture.    
+```
+ ** (wireshark:189164) 09:41:47.323455 [Capture MESSAGE] -- Capture Stop ...
+ ** (wireshark:189164) 09:41:47.343440 [Capture MESSAGE] -- Capture stopped.
+ ** (wireshark:189164) 09:41:47.343508 [Capture WARNING] ./ui/capture.c:722 -- capture_input_closed(): 
+```
+
 You can filter using a protocol, analyze packets - byte stream or different headers, and payload with them.   
-See if you can build a meaningful context out of packets for protocols HTTP / TCP / UDP / IP / Ethernet, etc.   
+
+You can build a meaningful context out of a sequence of packets for protocols HTTP / TCP / UDP / IP / Ethernet, etc.   
 
 e.g., A nice visual lesson of [TCP window size scaling](https://networklessons.com/cisco/ccie-routing-switching-written/tcp-window-size-scaling)    
 
-[Sample packet captures to visualize and understand protocol level details using **cloudshark**](https://www.cloudshark.org/collections/WTRpgLI-GQSDfgzkQixICg)    
+[Sample packet captures to visualize and understand protocol-level details using **cloudshark**](https://www.cloudshark.org/collections/WTRpgLI-GQSDfgzkQixICg)    
 
-TCPDUMP - One can also rely on powerful [tcpdump](https://opensource.com/article/18/10/introduction-tcpdump). [tcpdump-cheat-sheet](https://www.comparitech.com/net-admin/tcpdump-cheat-sheet/)    
+**TCPDUMP** - You can also rely on powerful [tcpdump](https://opensource.com/article/18/10/introduction-tcpdump). [tcpdump-cheat-sheet](https://www.comparitech.com/net-admin/tcpdump-cheat-sheet/)    
+
+```
+sudo tcpdump port 443 -w https_capture.pcap     <== monitor port 443 for HTTPS traffic over TCP
+tcpdump: listening on wlp0s20f3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+^C1308 packets captured                         <== ctrl+c to stop packet capture 
+1308 packets received by filter
+0 packets dropped by kernel
+```
+A packet capture file from tcpdump can be analyzed using Wireshark.    
 
 ---- 
 
