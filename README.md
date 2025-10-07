@@ -1571,17 +1571,23 @@ For **SendGrid domain whitelisting** validation error [check Top-Level-Domain au
 
 [SSL and TLS Deployment Best Practices](https://github.com/ssllabs/research/wiki/SSL-and-TLS-Deployment-Best-Practices)    
 
-**System upgrade: You may need to upgrade the Apache server to v2.4.38 or higher, open SSL to v1.1.1 or higher, and Ubuntu OS for TLS v1.3    
+**System upgrade: You may need to upgrade the Apache server to v2.4.38 or higher, OpenSSL to v1.1.1 or higher, and Ubuntu OS for TLS v1.3    
 
 Notes:-    
 * SSL/TLS Certificates are valid for a maximum of 398 days. You should take care of the time zone if the issuer is not in the same time zone as the host.    
 * Paid TLS certificates do not use better cryptography than free certificates (e.g., Let's Encrypt). Paid TLS can give you extended validity on certificates.    
 * Subject Alternate Name (SAN) or multi-domain TLS certificates allow additional host names to be protected by the same /single TLS certificate when creating the certificate.   
 * Apache allows you to virtually host multiple HTTPS sites with a single public IP address using SAN certificates.    
-* Wildcard certificate can protect all sub-domains of the same suffix top-level domain (TLD), e.g., *.mydomain.com - while for *.mydomain.org, you need a separate certificate.   
+* A wildcard certificate can protect all sub-domains of the same suffix top-level domain (TLD), e.g., *.mydomain.com - while for *.mydomain.org, you need a separate certificate.   
 * SSL is only referred to for historical reasons. Most SSL/TLS certificates currently use TLS v1.2 / v1.3.   
 * Web browsers have a hardcoded list of trusted certificate authorities (CA) to check that your certificate is signed by someone it trusts.   
 * You can make a "self-signed" TLS certificate. Because a trusted certificate authority does not sign that certificate, browsers won't accept it.   
+
+[List of Trusted Certifying Authorities](https://developer.visa.com/pages/trusted_certifying_authorities)    
+[Chrome Root Store](https://chromium.googlesource.com/chromium/src/+/main/net/data/ssl/chrome_root_store/root_store.md)   
+[Mozilla Root Store]()    
+[Common CA Database](https://www.ccadb.org/resources)    
+[CCADB - Root Certificate List](https://ccadb.my.salesforce-sites.com/mozilla/IncludedRootCertificateReport)    
 
 \citations for TLS notes: [1](https://questions.wizardzines.com/tls-certificates.html) and [2](https://www.digicert.com/faq/public-trust-and-certificates)   
 
