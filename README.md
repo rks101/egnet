@@ -27,7 +27,7 @@ Disclosure: The output shown for utilities mentioned below is compiled for illus
       * [The One with DNS root nameservers](#the-one-with-dns-root-nameservers) 
       * [`dig` into DNS](#dig-into-dns) 
       * [Monitor Network](#monitor-network) 
-      * [Know sub-domains they don't give you](#know-sub\-domains) 
+      * [Know sub-domains](#know-sub\-domains) 
       * [Email](#email) 
       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
       * [The One with LDAP](#the-one-with-ldap)
