@@ -822,6 +822,8 @@ Current DNS Server: 14.139.53.132
         DNS Domain: iitjammu.ac.in
 ```
 
+When you type a URL in a web browser and get a DNS_PROBE_FINISHED_NXDOMAIN error, this suggests that the domain name you are requesting is not found, not registered, or has expired.    
+
 ----
 
 ## The One with DNS root nameservers  
