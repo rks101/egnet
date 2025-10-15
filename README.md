@@ -1,16 +1,17 @@
 # egnet
 egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapters, devices, etc., DNS, and other sysadmin-related self-notes.    
 
-These notes first came out of my habit of writing them down in one place and referencing them later anytime, anywhere. Later, I got involved more while answering some questions often and started asking people to refer to these notes.    
+These notes first came out of my habit of writing them down in one place and referencing them later, anytime, anywhere. Later, I got involved more while answering some questions often, and started asking people to refer to these notes.    
 
-Disclosure: The output shown for utilities mentioned below is compiled for illustration purposes only. You may not find all details in your lab/office/dormitory.   
+Disclosure: The output shown for the utilities mentioned below is compiled for illustration purposes only. You may not find all the details in your lab/office/dormitory.   
 
    * [egnet](#egnet)
       * [Introductory Concepts](#introductory-concepts)
       * [PoE](#poe)   
       * [Network Adapters](#network-adapters)
       * [Storage Controllers and Drives](#storage-controllers-and-drives)
-      * [`ifconfig`](#ifconfig) 
+      * [`ifconfig`](#ifconfig)
+      * [`nmcli`](#nmcli)
       * [`ip`](#ip)
       * [`ipcalc`](#ipcalc)
       * [`iwconfig`](#iwconfig)
@@ -306,6 +307,27 @@ wlp0s20f3: connected to IIT_JAMMU
 p2p-dev-wlp0s20f3: disconnected
         "p2p-dev-wlp0s20f3"
         wifi-p2p, hw
+```
+
+```
+$ nmcli dev wifi
+IN-USE  BSSID              SSID                          MODE   CHAN  RATE        SIGNAL  BARS  SECURITY    
+        88:B1:E1:28:B8:90  IIT_JMU                       Infra  44    540 Mbit/s  72      ▂▄▆_  WPA2 802.1X 
+        88:B1:E1:28:B8:91  IITJMU_Guest                  Infra  44    540 Mbit/s  72      ▂▄▆_  --          
+        88:B1:E1:28:B8:92  IIT_JMU                       Infra  1     260 Mbit/s  70      ▂▄▆_  WPA2 802.1X 
+        88:B1:E1:28:B8:93  IIT_JAMMU                     Infra  1     260 Mbit/s  69      ▂▄▆_  WPA2 802.1X 
+        88:B1:E1:28:B8:94  IITJMU_Guest                  Infra  1     260 Mbit/s  67      ▂▄▆_  --          
+        88:B1:E1:28:77:95  IIT_JAMMU                     Infra  11    260 Mbit/s  62      ▂▄▆_  WPA2 802.1X 
+```
+
+```
+$ nmcli connection show 
+NAME                          UUID                                  TYPE      DEVICE    
+IITX                          c111ce11-1ee1-1111-b11c-01111c11e1f1  wifi      wlp0s20f3 
+lo                            8223145f-2e59-4071-a819-69591583cbc7  loopback  lo        
+DIRECT-KUDESKTOP-KJ8OU2HmsTW  3e0c4018-019e-4571-afbc-eae635d030ec  wifi      --        
+IITH-Guest-PWD-IITH@2020      a925d747-7042-4453-b9a5-1e91af399b38  wifi      --        
+Wired connection 1            90c3df94-7333-30d5-a3e4-020734106b9c  ethernet  --    
 ```
 
 ---- 
