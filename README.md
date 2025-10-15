@@ -731,6 +731,25 @@ Nmap done: 1 IP address (1 host up) scanned in 64.07 seconds
 
 man nmap - shows types of nmap scans, options, and examples.   
 
+Using nmap, find the nearest DHCP server with the help of the broadcast-dhcp-discover script.   
+```
+$ sudo nmap --script broadcast-dhcp-discover -e wlp0s20f3
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-15 16:20 IST
+Pre-scan script results:
+| broadcast-dhcp-discover: 
+|   Response 1 of 1: 
+|     Interface: wlp0s20f3
+|     IP Offered: 172.18.10.145
+|     DHCP Message Type: DHCPOFFER
+|     Server Identifier: 172.18.0.1
+|     IP Address Lease Time: 5h00m00s
+|     Subnet Mask: 255.255.240.0
+|     Router: 172.18.0.1
+|_    Domain Name Server: 14.139.53.132, 8.8.8.8
+WARNING: No targets were specified, so 0 hosts scanned.
+Nmap done: 0 IP addresses (0 hosts up) scanned in 10.16 seconds
+```
+
 ----
 
 ## NS Lookup  
