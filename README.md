@@ -828,14 +828,13 @@ Current DNS Server: 14.139.53.132
 
 DNS remains one of the most interesting topics in networking.    
 
-Do you know each DNS resolver knows the IP addresses of DNS root nameservers always! This is not a new thing; this has always been the case. This info is actually hardwired or [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80). Look at this code, there are 13 DNS root nameservers, and the names are not case-sensitive.     
-You can find A type DNS records for these 13 root nameservers named from a to m (as of Jan 2022).    
+Do you know that each DNS resolver always knows the IP addresses of DNS root nameservers? This is not a new thing; this has always been the case. This info is actually hardwired or [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80) (bind9/lib/dns/rootns.c). Look at this code; there are 13 DNS root nameservers, and the names are not case-sensitive. You can find A type DNS records for these 13 root nameservers named from a to m (as of Jan 2022).    
 
-[IANA](https://www.iana.org/) has listed the [root name servers](https://www.iana.org/domains/root/servers), and [DNS root hint and root zone files](https://www.iana.org/domains/root/files). [Map](https://www.google.com/maps/d/u/0/viewer?mid=1LcHEpzl-7RzziWzDa4h3BxJcbEo&hl=en&ll=24.71341537554179%2C36.13137070989961&z=2) of geographically distributed root name servers reachable using anycast - the same IP mapped to multiple DNS root servers - the one reachable first is returned in DNS query's answer section.    
+[IANA](https://www.iana.org/) has listed the [root name servers](https://www.iana.org/domains/root/servers), and [DNS root hint and root zone files](https://www.iana.org/domains/root/files). [Map](https://www.google.com/maps/d/u/0/viewer?mid=1LcHEpzl-7RzziWzDa4h3BxJcbEo&hl=en&ll=24.71341537554179%2C36.13137070989961&z=2) of geographically distributed root name servers reachable using anycast - the same IP mapped to multiple DNS root servers - the one reachable first is returned in the DNS query's answer section.    
 
-Note: BIND (Berkeley Internet Name Domain) is an implementation of naming service or DNS used in our end-point devices and networks to connect or bind the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed in UCB in 1984 and later maintained by ISC.     
+Note: BIND (Berkeley Internet Name Domain) is an implementation of a naming service or DNS used in our endpoint devices and networks to connect to the internet. [BIND source code](https://gitlab.isc.org/isc-projects/bind9) is hosted by ISC (Internet Systems Consortium). It was developed at UCB in 1984 and later maintained by ISC.     
 
-Note: How do we/local DNS servers reach a particular root nameserver while they are all managed by different entities globally? Using IP Anycast => As long as we get a response from any of them, it is fine to proceed further. No broadcast query or multi-cast query is used to locate a root nameserver.    
+Note: How do we/local DNS servers reach a particular root nameserver while they are all managed by different entities globally? Using IP Anycast => As long as we get a response from any of them, it is fine to proceed further. No broadcast query or multicast query is used to locate a root nameserver.    
 
 To get a list of root nameservers and their IP addresses, type dig and see the answer section and additional sections. An A-type record shows an IPv4 address, while an AAAA-type record shows an IPv6 address.    
 
@@ -919,17 +918,17 @@ On Ubuntu or similar distro: [DNS config using BIND](https://ubuntu.com/server/d
 
 ## Top Level Domain TLD    
 
-A Top-level Domain or TLD is the most right-end part of a domain name. e.g., TLD for godaddy.com is .com. 
+A Top-level Domain or TLD is the most right-end part of a domain name. e.g., TLD for godaddy.com is .com    
 
-There are gTLD (Generic Top Level) and ccTLD (Country Code Top Level Domain). 
+There are gTLD (Generic Top Level Domain) and ccTLD (Country Code Top Level Domain).    
 
-A gTLD is meant to describe the domain name's purpose. e.g., gTLD .com is for commercial entities, .edu is for education, and .gov is for the government. 
+A gTLD is meant to describe the domain name's purpose. e.g., gTLD .com is for commercial entities, .edu is for education, and .gov is for the government.    
 
-A ccTLD is meant to describe some country or geography. e.g., .in for sites hosted/based in India, .co.uk for sites based in the United Kingdom. 
+A ccTLD is meant to describe a country or geography. e.g., .in for sites hosted/based in India, .co.uk for sites based in the United Kingdom.     
 
-These days, there are too many new gTLDs like .bank, .sbi, .bharti, .biz, .coffee, .dell, etc. A full list of gTLDs is available on [IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) website.   
+These days, there are too many new gTLDs like .bank, .sbi, .bharti, .biz, .coffee, .dell, etc. A full list of gTLDs is available on the [IANA](https://data.iana.org/TLD/tlds-alpha-by-domain.txt) website.   
 
-Further, second-level domains are registered by organizations. When registering a domain name, the second-level domain name is limited to 63 characters + the TLD and can only use a-z, 0-9 and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations. The maximum length of a domain name is 253 characters, including multiple subdomain prefixes like abc.def.lmn.pqrs.example.com     
+Further, second-level domains are registered by organizations. When registering a domain name, the second-level domain name is limited to 63 characters + the TLD and can only use a-z, 0-9, and in-between hyphens (cannot start or end with hyphens or have consecutive hyphens). Subdomains added by domain owners have the same limitations. The maximum length of a domain name is 253 characters, including multiple subdomain prefixes like abc.def.lmn.pqrs.example.com     
 
 ----
 
@@ -939,8 +938,8 @@ Dig into DNS and query A (IP Address), SOA (Start of Authority - admin record), 
 
 Note:- Do not ignore DNS TTL values. Sys admin should set DNS TTL values appropriately. See a few [DNS TTL basics](https://www.varonis.com/blog/dns-ttl) and [SOA TTL values](https://ns1.com/resources/understanding-ttl-values-in-dns-records).    
 
-Note:- Before making a major change or to make a change effected presumably faster,   
-i) Lower the TTL of the concerned record to get it expired sooner,   
+Note:- Before making a major change, or to make a change that propagates presumably faster,   
+i) Lower the TTL of the concerned record to get it to expire sooner,   
 ii) make the change, and   
 iii) edit TTL to a suitable value in the next 48-72 hours.    
 
@@ -984,7 +983,7 @@ iitjammu.ac.in.		7174	IN	MX	3 ASPMX.L.GOOGLE.COM.
 
 ----
 
-Use dig to query hostname IP address using public DNS, a faster way.    
+Use dig to query the hostname IP address using public DNS, a faster way.    
 ```
 $ dig @8.8.8.8 iitjammu.ac.in
 
@@ -1012,9 +1011,12 @@ iitjammu.ac.in.		8599	IN	A	14.139.53.140
 ---- 
 
 Use dig to find the DNS trace leading to a hostname (much like traceroute).    
-Pay attention to root nameservers, [DNS registrar](https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name-registrar/), and intermediate authoritative servers.  
-This information is in the public domain. DNS is a global public directory of public IPs and hostnames.   
-We will see in the later section another iterative way to reach the same answer - the IP address of a domain name iitjammu.ac.in.   
+
+Pay attention to root nameservers, [DNS registrar](https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name-registrar/), and intermediate authoritative servers.    
+
+This information is in the public domain. DNS is a global public directory of IP addresses and hostnames.    
+
+We will see in the later section another iterative way to reach the same answer - the IP address of a domain name, iitjammu.ac.in.   
 
 ```
 $ dig +trace iitjammu.ac.in
@@ -1044,7 +1046,7 @@ in.			172800	IN	NS	ns5.registry.in.
 in.			172800	IN	NS	ns6.registry.in.
 in.			86400	IN	DS	54739 8 1 2B5CA455A0E65769FF9DF9E75EC40EE1EC1CDCA9
 in.			86400	IN	DS	54739 8 2 9F122CFD6604AE6DEDA0FE09F27BE340A318F06AFAC11714A73409D4 3136472C
-in.			86400	IN	RRSIG	DS 8 1 86400 20210225050000 20210212040000 42351 . lgk6+SUs00ldOZQLKKvskdt9680VM6ShM5aFmpp+LNsrHzMIFufwQ592 wOqMOxRcdpvjf6W3PvNNZ1SYeWj3ETBZAwRUicNbfaLAv3aVjpO/Rjke VkHt8h8b5AUrFqG3wPbmmYegESbdbg1MphFovL/LP/0b+HW1/RKcX1Wj OPHmwF9VTrbFovqxULB0M5pTnNqisLK3nYYFLLnrNVvhlyo+vFkmMY3/ ZYQCt0a+KlgS5efJEuKCAoxruICkOFh9fbCWiJtKGfYcKbNgfA4kZMe1 HzE1V9+OG/ctnwCJNdFyGP2hs4z1K8zPwJwBNFZa6d54VpCDHLbWgR2c gRQ19w==
+in.			86400	IN	RRSIG	DS 8 1 86400 20210225050000 20210212040000 42351. lgk6+SUs00ldOZQLKKvskdt9680VM6ShM5aFmpp+LNsrHzMIFufwQ592 wOqMOxRcdpvjf6W3PvNNZ1SYeWj3ETBZAwRUicNbfaLAv3aVjpO/Rjke VkHt8h8b5AUrFqG3wPbmmYegESbdbg1MphFovL/LP/0b+HW1/RKcX1Wj OPHmwF9VTrbFovqxULB0M5pTnNqisLK3nYYFLLnrNVvhlyo+vFkmMY3/ ZYQCt0a+KlgS5efJEuKCAoxruICkOFh9fbCWiJtKGfYcKbNgfA4kZMe1 HzE1V9+OG/ctnwCJNdFyGP2hs4z1K8zPwJwBNFZa6d54VpCDHLbWgR2c gRQ19w==
 ;; Received 795 bytes from 199.7.91.13#53(d.root-servers.net) in 279 ms
 
 iitjammu.ac.in.		3600	IN	NS	ns2.iitjammu.ac.in.
@@ -1063,7 +1065,7 @@ iitjammu.ac.in.		8600	IN	NS	ns3.iitjammu.ac.in.
 
 Let's tinker more!    
 
-You may have heard of recursive and iterative DNS queries. From your system to the nearest local DNS server, or authoritative DNS nameserver queries are recursive - you are bound to get a DNS reply/answer. In practice, a local DNS server or authoritative DNS nameserver makes iterative queries from all the way up the root server to-> top-level-domain nameserver to-> next-level DNS registrar where your domain name is registered. Try this iterative DNS query thing:    
+You may have heard of recursive and iterative DNS queries. From your system to the nearest local DNS server, or authoritative DNS nameserver, queries are recursive - you are bound to get a DNS reply/answer. In practice, a local DNS server or authoritative DNS nameserver makes iterative queries from all the way up the root server to-> top-level-domain nameserver to-> next-level DNS registrar where your domain name is registered. Try this iterative DNS query thing:    
 
 We ask a.root-servers.net (one of the 13 root DNS servers in the entire DNS hierarchy):   
 Notice the sections in the output:   
@@ -1112,9 +1114,9 @@ ns2.registry.in.        172800  IN      AAAA    2001:dcd:2::12
 ;; MSG SIZE  rcvd: 424
 
 ```
-Dearest root server **a** did not tell us the IP address of our domain. It also indicated that recursive query is not entertained. 
+Dearest root server **a** did not tell us the IP address of our domain. It also indicated that a recursive query is not entertained. 
 
-However, the root server **a** did return the TLD registrar for **in** domain (see TLD suffix in the domain name) and IP addresses to find those TLD registrars - as authoritative DNS server in AUTHORITY SECTION. Notice the ADDITIONAL SECTION for IP addresses.     
+However, the root server **a** did return the TLD registrar for **in** domain (see TLD suffix in the domain name) and IP addresses to find those TLD registrars - as an authoritative DNS server in the AUTHORITY SECTION. Notice the ADDITIONAL SECTION for IP addresses.     
 
 Further, let us ask the TLD in registrar ns1.registry.in:     
 
@@ -1199,7 +1201,7 @@ An illustration on [Life of a DNS query](https://github.com/rks101/egnet/blob/ma
 
 ----
 
-DNS Software: What software DNS server is using?    
+DNS Software: What software is the DNS server using?    
 Dig Dyno for version.bind, chaos class, and TXT record type; see the answer section.     
 
 ```
