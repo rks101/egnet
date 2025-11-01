@@ -28,7 +28,8 @@ Disclosure: The output shown for the utilities mentioned below is compiled for i
       * [The One with DNS root nameservers](#the-one-with-dns-root-nameservers) 
       * [`dig` into DNS](#dig-into-dns) 
       * [Monitor Network](#monitor-network) 
-      * [Know sub-domains](#know-sub\-domains) 
+      * [Know sub-domains](#know-sub\-domains)
+      * [DNS and Firewall](#dns-and-firewall) 
       * [Email](#email) 
       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
       * [The One with LDAP](#the-one-with-ldap)
@@ -1462,6 +1463,18 @@ $ dnsrecon -t axfr -d iitjammu.ac.in
 ```
 
 ---- 
+
+## DNS and Firewall 
+
+Sometimes DNS and firewall/WAF can make things complicated.    
+
+DNS Traffic Dropped as Threat Due to iCloud Private Relay Domains[https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA14u000000PRR2CAO]    
+- Users may experience connectivity issues when browsing or using apps that rely on Private Relay.   
+- The firewall categorizes the domains as Proxy Avoidance and Anonymizers and drops the traffic.
+Resolution: Add an exception for Private Relay domain names, or at the client side - disable Private Relay.   
+
+----
+
 
 ## Email  
 
