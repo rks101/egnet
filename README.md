@@ -1816,7 +1816,7 @@ For Disaster Recovery (DR), first, it is necessary to re-architect and design th
 
 ## The Privacy Conundrum    
 
-From l0pht testifying in court in 1999, to modern day-light robbery of our personal data by mobile Apps, to desire to automate and integrate everything into one identifier - there are several daily-activities and attack surfaces wherein our data privacy is at stake.   
+From l0pht testifying in court in 1999, to modern-day light robbery of our personal data by mobile Apps, to the desire to automate and integrate everything into one identifier - there are several daily activities and attack surfaces wherein our data privacy is at stake.   
 
 More information can be found on my repository [isdp](https://github.com/rks101/isdp)     
 
