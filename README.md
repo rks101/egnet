@@ -272,8 +272,8 @@ IP4.ROUTE[1]:                           dst = 10.10.163.0/24, nh = 0.0.0.0, mt >
 IP4.ROUTE[2]:                           dst = 0.0.0.0/0, nh = 10.10.163.1, mt =>
 IP4.DNS[1]:                             14.139.53.132
 IP4.DNS[2]:                             14.139.53.133
-IP4.DOMAIN[1]:                          iitjammu.ac.in
-IP4.SEARCHES[1]:                        iitjammu.ac.in
+IP4.DOMAIN[1]:                          riit.ac.in
+IP4.SEARCHES[1]:                        riit.ac.in
 IP6.ADDRESS[1]:                         fe80::c895:8320:5054:d3b8/64
 IP6.GATEWAY:                            --
 IP6.ROUTE[1]:                           dst = fe80::/64, nh = ::, mt = 1024
@@ -663,9 +663,9 @@ A packet capture file from tcpdump can be analyzed using Wireshark.
 Network Mapper `nmap` can be used to study networks and ports (services) that are open, closed, filtered, or functional.    
 
 ```
-$ nmap -p 1-1024 eg.iitjammu.ac.in  
+$ nmap -p 1-1024 eg.riit.ac.in  
 Starting Nmap 7.80 ( https://nmap.org ) at 2024-03-13 20:27 IST
-Nmap scan report for eg.iitjammu.ac.in (13.126.157.211)
+Nmap scan report for eg.riit.ac.in (13.126.157.211)
 Host is up (0.050s latency).
 rDNS record for 13.126.157.211: ec2-13-126-157-211.ap-south-1.compute.amazonaws.com
 Not shown: 1022 filtered ports
@@ -677,9 +677,9 @@ Nmap done: 1 IP address (1 host up) scanned in 8.66 seconds
 ```
 
 ```
-$ nmap -A -T4 eg.iitjammu.ac.in  
+$ nmap -A -T4 eg.riit.ac.in  
 Starting Nmap 7.80 ( https://nmap.org ) at 2024-03-13 20:36 IST
-Nmap scan report for eg.iitjammu.ac.in (13.126.157.211)
+Nmap scan report for eg.riit.ac.in (13.126.157.211)
 Host is up (0.052s latency).
 rDNS record for 13.126.157.211: ec2-13-126-157-211.ap-south-1.compute.amazonaws.com
 Not shown: 998 filtered ports
@@ -693,8 +693,8 @@ PORT    STATE SERVICE VERSION
 |_      httponly flag not set
 |_http-server-header: Apache
 |_http-title: E-Governance
-| ssl-cert: Subject: commonName=eg.iitjammu.ac.in
-| Subject Alternative Name: DNS:eg.iitjammu.ac.in, DNS:www.eg.iitjammu.ac.in
+| ssl-cert: Subject: commonName=eg.riit.ac.in
+| Subject Alternative Name: DNS:eg.riit.ac.in, DNS:www.eg.riit.ac.in
 | Not valid before: 2023-10-03T05:31:25
 |_Not valid after:  2024-10-27T10:53:42
 
@@ -1694,17 +1694,17 @@ openssl s_client -connect server:port -tls1_2
 ```    
 
 ```
-$ openssl s_client -connect eg.iitjammu.ac.in:443 -tls1_2
+$ openssl s_client -connect eg.riit.ac.in:443 -tls1_2
 CONNECTED(00000003)
 depth=2 C = US, ST = Arizona, L = Scottsdale, O = "GoDaddy.com, Inc.", CN = Go Daddy Root Certificate Authority - G2
 verify return:1
 depth=1 C = US, ST = Arizona, L = Scottsdale, O = "GoDaddy.com, Inc.", OU = http://certs.godaddy.com/repository/, CN = Go Daddy Secure Certificate Authority - G2
 verify return:1
-depth=0 CN = eg.iitjammu.ac.in
+depth=0 CN = eg.riit.ac.in
 verify return:1
 ---
 **Certificate chain** 
- 0 s:CN = eg.iitjammu.ac.in
+ 0 s:CN = eg.riit.ac.in
    i:C = US, ST = Arizona, L = Scottsdale, O = "GoDaddy.com, Inc.", OU = http://certs.godaddy.com/repository/, CN = Go Daddy Secure Certificate Authority - G2
    a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
    v:NotBefore: Oct  1 07:06:43 2022 GMT; NotAfter: Oct 27 10:53:42 2023 GMT
@@ -1728,7 +1728,7 @@ MIblahblahblahvsgfsgdfgdfgdghdhddhgdfgnfgdhfgfsgdfhhhdhdfnrjtukui
 dshfjdshfssgfsjgjgsjfblahblahblahpakpakpakakpakpakpakakddsjldkd/w
 pakpakpakakpakpakpakak==
 -----END CERTIFICATE-----
-subject=CN = eg.iitjammu.ac.in
+subject=CN = eg.riit.ac.in
 issuer=C = US, ST = Arizona, L = Scottsdale, O = "GoDaddy.com, Inc.", OU = http://certs.godaddy.com/repository/, CN = Go Daddy Secure Certificate Authority - G2
 ---
 No client certificate CA names sent
