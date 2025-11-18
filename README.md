@@ -1,9 +1,9 @@
 # egnet
-egnet => pronounced as "easy net" shows some tools or utilities for debugging and troubleshooting network connections, adapters, devices, etc., DNS, and other sysadmin-related self-notes.    
+egnet => pronounced as "easy net" provides tools and utilities for debugging and troubleshooting network connections, adapters, devices, DNS, and other sysadmin-related tasks.    
 
-These notes first came out of my habit of writing them down in one place and referencing them later, anytime, anywhere. Later, I got involved more while answering some questions often, and started asking people to refer to these notes.    
+These notes first emerged from my habit of writing them down in one place and referencing them later, anytime, anywhere. Later, I became more involved by answering questions frequently and started asking people to refer to these notes.    
 
-Disclosure: The output shown for the utilities mentioned below is compiled for illustration purposes only. You may not find all the details in your lab/office/dormitory.   
+Disclosure: The output shown for the utilities mentioned below is compiled for learning purposes. Generally, this information is available in the public domain.  You may not find all the details in your lab/office/dormitory.   
 
    * [egnet](#egnet)
       * [Introductory Concepts](#introductory-concepts)
@@ -71,7 +71,7 @@ It's good to know your network adapters: product, provider, logical names, MAC, 
 Knowledge of adapters and vendors can help with device driver-related issues or updating drivers.   
 The network adapter's logical name is visible in the ip command output.   
 
-Sample output-1 with ethernet (Realtek) and Wireless (Intel)     
+Sample output-1 with Ethernet (Realtek) and Wireless (Intel)     
 ```
 $ lshw -class network
   *-network                 
