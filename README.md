@@ -1559,6 +1559,21 @@ Malicious emails can be categorized as:
 Q. An email in Spam, passes all three SPF, DKIM, DMARK. Can it be still a Spam?     
 A. Absolutely possible. See the example Spam_all3passed.eml   
 
+
+There are two anti-phishing mnemonics written as S.T.O.P. Ask the following questions before acting on an email:   
+
+- **S**uspicious?
+- **T**elling me to click something?
+- **O**ffering me an amazing deal?
+- **P**ushing me to do something now?
+
+The second S.T.O.P. reminds users to follow the following instructions:   
+
+- **S**low down. Do not panic. Take a pause. Scammers run on your adrenaline.
+- **T**ype the address yourself. Don’t use the message’s link.
+- **O**pen nothing unexpected. Verify first.
+- **P**rove the sender. Check the real From address/number, not just the display name. Remember to read once more!   
+
 ---- 
 
 ## The One with LDAP 
