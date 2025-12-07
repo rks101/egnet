@@ -1545,7 +1545,7 @@ You can [add a brand logo to outgoing email with BIMI](https://support.google.co
 7. [Enable Mail Transfer Agent (MTA) Strict Transport Security (STS) and TLS reporting](https://support.google.com/a/answer/9276512) to improve email security and reporting.    
 
 
-**Spam / Phishing / Whaling / Smishing / Vishing**:   
+**Spam / Phishing / Whaling / Smishing / Vishing / Quishing **:   
 
 Malicious emails can be categorized as:    
 
@@ -1555,6 +1555,7 @@ Malicious emails can be categorized as:
 **Whaling** - emails targeting CXOs or high-position individuals (CEO, CFO, CTO - Fish to Whale) to seek sensitive information.    
 **Smishing** - phishing using text on mobile devices by targeting users with specially crafted text messages (SMS, chat).    
 **Vishing** - similar to smishing; instead of sending text, the attack vector is a voice call.    
+**quishing** - using QR codes for phishing    
 
 Q. An email in Spam, passes all three SPF, DKIM, DMARK. Can it be still a Spam?     
 A. Absolutely possible. See the example Spam_all3passed.eml   
