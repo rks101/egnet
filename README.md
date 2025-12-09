@@ -1494,18 +1494,18 @@ Resolution: Add an exception for Private Relay domain names, or at the client si
 
 * [SMTP](https://www.afternerd.com/blog/smtp/) - Email Transporter   
 
-* Have you ever wondered to have a CLI for Google Workplace to manage accounts? Here is a simple guide for [Getting started with Google Apps Manager (GAM)](https://www.tricent.com/blog/getting-started-with-gam)
+* Have you ever wondered about having a CLI for Google Workplace to manage accounts? Here is a simple guide for [Getting started with Google Apps Manager (GAM)](https://www.tricent.com/blog/getting-started-with-gam)
 
 * Google Apps Manager [GAM](https://github.com/GAM-team/GAM), [GAM Wiki](https://github.com/GAM-team/GAM/wiki/), and [GAM cheatsheet](https://gamcheatsheet.com/GAM%20Cheat%20Sheet%20A4.pdf)   
 * Email Client protocols and ports: [SMTP / IMAP / POP3](https://help.dreamhost.com/hc/en-us/articles/215612887-Email-client-protocols-and-port-numbers) - use secure versions.    
 
 * **Understand how emails can be or are being harvested**: <From-field> For quite some time, spammers have been sending unsolicited communication and targeting more general audiences using increasingly aggressive techniques to harvest e-mail addresses from the web, public digital-domains, institute webpages of faculty, staff, and administrative mailboxes, etc. E-mail addresses may also be harvested by e-mail viruses from browser caches and mail spools, and then diffused further in falsified From: lines. <app-profile> One more variant has been seen for such spam through impersonating WhatsApp profile or other mobile apps having access to your contacts, calendars and email apps. I liked and have paraphrased [arXiv email protection](https://info.arxiv.org/help/email-protection.html) text as backlinking.      
 
-**Lesson: Data-minimization - Avoid listing and sharing personal or official emails in bulk anywhere. Make it harder for spammers to harvest emails. Good-enough measures work! show email without domain suffix, using [ ], at, dot, images, etc. are better off than research on each possibility and not doing it.**
-**Privacy policies**: There is a need to work on privacy aspects for data collection. I liked structure of [HyperVerge's privacy policy](https://hyperverge.co/partner-privacy-policy/).     
+**Lesson: Data-minimization - Avoid listing and sharing personal or official emails in bulk anywhere. Make it harder for spammers to harvest emails. Good-enough measures work! Showing email without a domain suffix, using [ ], at, dot, images, etc., is better than researching each possibility and not doing it.**
+**Privacy policies**: There is a need to address privacy aspects related to data collection. Check the structure of [HyperVerge's privacy policy](https://hyperverge.co/partner-privacy-policy/).     
 
 * **[Don’t click on anything in an unsolicited email or text message.](https://www.forbes.com/sites/daveywinder/2025/02/09/most-sophisticated-gmail-attacks-ever-fbi-says-do-not-click-anything/)**     
-As AI-assisted phishing campaigns evolve, it is important that this dearly beloved tool of user messaging from decades is introduced with caution: pause and think before you click a link, especially in unsolicited emails, chat messages, SMS, etc.    
+As AI-assisted phishing campaigns evolve, it is essential that this dearly beloved tool of user messaging for decades is introduced with caution: pause and think before clicking a link, especially in unsolicited emails, chat messages, and SMS.    
 
 * **[Captcha scams - be careful when giving permissions or running commands](https://indianexpress.com/article/technology/tech-news-technology/fake-captcha-scams-how-im-not-a-robot-could-infect-your-device-10190466/)** 
 
@@ -1563,16 +1563,17 @@ A. Absolutely possible. See the example Spam_all3passed.eml
 
 There are two anti-phishing mnemonics written as S.T.O.P. Ask the following questions before acting on an email:   
 
-- **S**uspicious?
-- **T**elling me to click something?
-- **O**ffering me an amazing deal?
-- **P**ushing me to do something now?
+- **S**uspicious in any way?
+- **T**elling me to click something? press button? View or download the attachment? 
+- **O**ffering me an amazing deal? may be too good to believe? 
+- **P**ushing me to do something now? showing urgency? Tricking into missing out on an offer or loss? 
+[Reference: AllThingsSecured.com](https://www.allthingssecured.com/tips/email-phishing-scams-stop-method/)   
 
 The second S.T.O.P. reminds users to follow the following instructions:   
 
-- **S**low down. Do not panic. Take a pause. Scammers run on your adrenaline.
-- **T**ype the address yourself. Don’t use the message’s link.
-- **O**pen nothing unexpected. Verify first.
+- **S**low down. Do not panic. Take a pause. Scammers run on your adrenaline. 
+- **T**ype the address yourself. Don’t use the message’s link. 
+- **O**pen nothing unexpected. Verify first. 
 - **P**rove the sender. Check the real From address/number, not just the display name. Remember to read once more!   
 
 ---- 
