@@ -1528,7 +1528,7 @@ DKIM stands for DomainKeys Identified Mail and is used for the authentication of
 *DKIM can fail for anti-spam or content-filtering software that updates the subject in the header or parts of the email messages with a disclaimer. DKIM can fail for [replay attack](https://wordtothewise.com/2014/05/dkim-replay-attacks/) or [by chance](https://noxxi.de/research/breaking-dkim-on-purpose-and-by-chance.html).*    
 
 4. Domain-based Message Authentication, Reporting, and Conformance - [DMARC](https://support.google.com/a/answer/2466563?hl=en) and check [DMARK](https://www.dmarcanalyzer.com/dmarc/) records    
-DMARC, an open source standard, uses a concept called alignment to tie the result of two other open source standards,  SPF (a published list of servers that are authorized to send email on behalf of a domain) and DKIM (a tamper-evident domain seal associated with a piece of email), to the content of an email.    
+DMARC, an open source standard, uses a concept called alignment to tie the result of two other open source standards,  SPF (a published list of servers that are authorized to send email on behalf of a domain) and DKIM (a tamper-evident domain seal associated with a piece of email), to the content of an email. DMARC ensures the sender's domain matches the domains verified by SPF and DKIM. If the alignment fails, DMARC instructs the recipient server on how to handle the email based on a policy specified in the record.     
 *SPF or DKIM alone or both together are not sufficient to control spam. DMARC or ARC, combined with SPF and DKIM, is a good team to fight against spam.*    
 
 Sample yml files with "Show Original" option from mail client - adding soon    
