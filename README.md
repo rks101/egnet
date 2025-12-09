@@ -1523,15 +1523,17 @@ Sender Policy Framework (SPF) is used to authenticate the sender of an email. Wi
 SPF can verify the result as Pass, Neutral, None (Accept), SoftFail, PermError (Flag suspicious), or Fail, TempError (Reject).  
 SPF can fail for forwarded or redirected emails.   
 
-3. Domain Keys Identified Mail - [DKIM](https://support.google.com/a/answer/180504?hl=en&ref_topic=7564555) and check [DKIM](https://www.dmarcanalyzer.com/dkim/) records   
+2. Domain Keys Identified Mail - [DKIM](https://support.google.com/a/answer/180504?hl=en&ref_topic=7564555) and check [DKIM](https://www.dmarcanalyzer.com/dkim/) records   
 DKIM can fail for anti-spam or content-filtering software updating the subject in the header or parts of the email messages with a disclaimer. DKIM can fail for [replay attack](https://wordtothewise.com/2014/05/dkim-replay-attacks/) or [by chance](https://noxxi.de/research/breaking-dkim-on-purpose-and-by-chance.html).    
 
-4. Domain-based Message Authentication, Reporting, and Conformance - [DMARC](https://support.google.com/a/answer/2466563?hl=en) and check [DMARK](https://www.dmarcanalyzer.com/dmarc/) records   
+3. Domain-based Message Authentication, Reporting, and Conformance - [DMARC](https://support.google.com/a/answer/2466563?hl=en) and check [DMARK](https://www.dmarcanalyzer.com/dmarc/) records   
 SPF or DKIM alone or both together are not sufficient to control spam. DMARC or ARC, combined with SPF and DKIM, are together a good team to fight against spam.   
 
 Sample yml files with "Show Original" option from mail client - adding soon    
 
-4. [ARC Email authentication](https://support.google.com/a/answer/13198639)   
+4. Secure/Multipurpose Internet Mail Extensions (S/MIME) is a standard protocol for sending digitally signed and encrypted messages.    
+
+5. [ARC Email authentication](https://support.google.com/a/answer/13198639)   
 
 [What email headers can be spoofed?](https://www.quora.com/Is-it-possible-to-fake-every-line-in-an-email-header-I-know-it-is-possible-to-fake-some-lines-but-what-about-the-signed-by-and-mailed-by-lines-How-secure-is-SPF-and-DKIM-authentication)     
 
@@ -1540,7 +1542,7 @@ A visible 'Mailed-By' field in the email header indicates that the email was SPF
 
 **Lesson: You need SPF, DKIM, and DMARC record entries in your DNS. Learn how to add them; it's a simple one-time job. This is also applicable for bulk email sending services and newsletter services. e.g., Sendgrid mailer on-behalf bulk emails, Chipmunk on-behalf bulk emails. The onus is on DNS and Email administrators to ensure that intended readers can find and read emails in the Inbox; otherwise, it can impact intended communication or organizational branding.**    
 
-5. BIMI and VMC - additional reputation    
+6. BIMI and VMC - additional reputation    
 You can [add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), and for this, you need a [VMC](https://support.google.com/a/answer/10911320) with a trademarked logo.
 [Verified Emails from signed-by domain](https://support.google.com/mail/answer/13130196)     
 
