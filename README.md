@@ -1539,8 +1539,10 @@ Sample yml files with "Show Original" option from mail client - adding soon
 
 [What email headers can be spoofed?](https://www.quora.com/Is-it-possible-to-fake-every-line-in-an-email-header-I-know-it-is-possible-to-fake-some-lines-but-what-about-the-signed-by-and-mailed-by-lines-How-secure-is-SPF-and-DKIM-authentication)     
 
-[Signed-by and emailed-by in email header](https://www.online-tech-tips.com/computer-tips/worry-verification-emails-google/)    
+[Signed-by and Mailed-by in email header](https://www.online-tech-tips.com/computer-tips/worry-verification-emails-google/)    
 A visible 'Mailed-By' field in the email header indicates that the email was SPF-authenticated. A visible 'Signed-By' field in the email header indicates that the email was DKIM-signed.    
+
+[Authentication Methods](https://support.google.com/a/answer/10583557)   
 
 **Lesson: You need SPF, DKIM, and DMARC record entries in your DNS. Learn how to add them; it's a simple one-time job. This is also applicable for bulk email sending services and newsletter services. e.g., Sendgrid mailer on-behalf bulk emails, Chipmunk on-behalf bulk emails. The onus is on DNS and Email administrators to ensure that intended readers can find and read emails in the Inbox; otherwise, it can impact intended communication or organizational branding.**    
 
