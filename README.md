@@ -1481,7 +1481,7 @@ Resolution: Add an exception for Private Relay domain names, or at the client si
 * Gmail: [dots in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) do not matter for @gmail.com domain. Where else do you see this in action? IRCTC emails!  
 * Gmail: [plus something in username](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) can be cool for @gmail.com domain.  
 * Auto-forward email: [username+caf@domain](https://support.google.com/mail/thread/25788054/auto-forward-mails-are-sent-with-username-caf-domain-instead-of-username-domain)   
-
+* [Send emails from a different address or alias](https://support.google.com/mail/answer/22370)   
 * [Add a brand logo to outgoing email with BIMI](https://support.google.com/a/answer/10911320), you need a [VMC](https://support.google.com/a/answer/10911320) with trademarked logo.     
 
 * [10,000 email accounts limit in GSuite/Workplace](https://owasp.org/blog/2023/03/23/gsuite-account-cleanup.html). After a while, someone has to invest in it.    
@@ -1558,7 +1558,7 @@ You can [add a brand logo to outgoing email with BIMI](https://support.google.co
 Malicious emails can be categorized as:    
 
 **Spam** - unsolicited junk emails sent in bulk to many harvested email recipients.    
-**Phishing** - emails sent to targets purporting to originate from a trusted entity (spoofed emails) to lure individuals into clicking links, downloading attachments, or providing sensitive information, like bank account or transaction details. [Phising](https://attack.mitre.org/techniques/T1566/) and [Phishing for Information](https://attack.mitre.org/techniques/T1598/) are different.     
+**Phishing** - emails sent to targets purporting to originate from a trusted entity (spoofed emails) to lure individuals into clicking links, downloading attachments, or providing sensitive information, like bank account or transaction details. [Phishing](https://attack.mitre.org/techniques/T1566/) and [Phishing for Information](https://attack.mitre.org/techniques/T1598/) are different.     
 **Spear phishing** - emails targeting specific individuals or organizations seeking sensitive information, not random email recipients.    
 **Whaling** - emails targeting CXOs or high-position individuals (CEO, CFO, CTO - Fish to Whale) to seek sensitive information.    
 **Smishing** - phishing using text on mobile devices by targeting users with specially crafted text messages (SMS, chat).    
