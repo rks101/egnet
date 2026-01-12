@@ -1584,6 +1584,9 @@ The second S.T.O.P. reminds users to follow the following instructions:
 - **O**pen nothing unexpected. Verify first. 
 - **P**rove the sender. Check the real From address/number, not just the display name. Remember to read once more!   
 
+At times, "unsubscribe" links can be a trap to harvest legit emails. Check the link text before clicking.    
+**Avoid** "Accept All" cookies on web browsers. Use functional cookies only or reject all, as options are available.    
+
 ---- 
 
 ## The One with LDAP 
