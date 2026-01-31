@@ -20,7 +20,7 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
       * [Simple web server](#simple-web-server)
       * [HTTP versions](#http-versions)
       * [Get files using `wget`](#get-files-using-wget)
-      * [IP](#ip)
+      * [IP Address](#ip-address)
       * [The One with Wireshark](#the-one-with-wireshark)
       * [`netstat`](#netstat)
       * [`nmap`](#nmap)
@@ -614,7 +614,7 @@ wget --mirror --convert-links --adjust-extension --page-requisites --no-parent h
 
 ----
 
-## IP    
+## IP Address    
 
 [Is leaking or revealing IP a real problem?](https://www.youtube.com/watch?v=MS7WRuzNYDc)    
 
