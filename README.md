@@ -20,6 +20,7 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
       * [Simple web server](#simple-web-server)
       * [HTTP versions](#http-versions)
       * [Get files using `wget`](#get-files-using-wget)
+      * [IP](#ip)
       * [The One with Wireshark](#the-one-with-wireshark)
       * [`netstat`](#netstat)
       * [`nmap`](#nmap)
@@ -610,6 +611,14 @@ You can download files or documentation with many files using **wget**. This is 
 ```
 wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages  
 ```
+
+----
+
+## IP    
+
+[Is leaking or revealing IP a real problem?](https://www.youtube.com/watch?v=MS7WRuzNYDc)    
+
+What exactly does a VPN do?    
 
 ---- 
 
