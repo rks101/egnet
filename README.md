@@ -1858,3 +1858,9 @@ From l0pht testifying in court in 1999, to modern-day light robbery of our perso
 More information can be found on my repository [isdp](https://github.com/rks101/isdp)     
 
 ----
+
+## History bytes 
+
+[Kanwal Rekhi founded Excelan in 1982, which commercialized Ethernet](https://historyofcomputercommunications.info/interviews/Kanwal-Rekhi/)    
+
+----
