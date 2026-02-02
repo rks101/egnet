@@ -1863,4 +1863,6 @@ More information can be found on my repository [isdp](https://github.com/rks101/
 
 [Kanwal Rekhi founded Excelan in 1982, which commercialized Ethernet](https://historyofcomputercommunications.info/interviews/Kanwal-Rekhi/)    
 
+[Circuits Packets and Protocols - 1968-1988](https://circuitspacketsandprotocols.com/)   
+
 ----
