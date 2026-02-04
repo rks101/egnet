@@ -1499,9 +1499,11 @@ Resolution: Add an exception for Private Relay domain names, or at the client si
 
 * [Gmail sending limits in Google Workspace](https://support.google.com/a/answer/166852)   
 
-* [Enable MTA-STS and TLS reporting](https://support.google.com/a/answer/9276512) to improve email security and reporting. 
+* [Enable MTA-STS and TLS reporting](https://support.google.com/a/answer/9276512) to improve email security and reporting.   
 
 * [SMTP](https://www.afternerd.com/blog/smtp/) - Email Transporter   
+
+* [How to Sync Google Calendars with another person](https://www.clrn.org/how-to-sync-google-calendars-with-another-person/) - take care of settings, and you define edit permissions on calendars shared.    
 
 * Have you ever wondered about having a CLI for Google Workplace to manage accounts? Here is a simple guide for [Getting started with Google Apps Manager (GAM)](https://www.tricent.com/blog/getting-started-with-gam)
 
