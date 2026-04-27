@@ -976,6 +976,12 @@ f.root-servers.net.     7173    IN      AAAA    2001:500:2f::f
 ;; MSG SIZE  rcvd: 811
 ```
 
+Check these informative pages: [b.root-servers.org home](https://b.root-servers.org/) handling 5 billion queries a day, [a.root-servers.org metrics](https://a.root-servers.org/metrics), and [root-servers.org - map of root nameservers](https://root-servers.org/).    
+
+Q. There are countably finite 13 root nameservers (from a to m) run by 12 operator entities, and there are 2000+ instances of them by April 2026.   
+So, how do the billions of queries per day to root name servers route? This must be interesting!    
+A. In the class.   
+
 ----
 
 There are some privately hosted **Public DNS Servers** so that everyone does not need a local DNS server:     
