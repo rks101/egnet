@@ -24,6 +24,7 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
       * [The One with Wireshark](#the-one-with-wireshark)
       * [`netstat`](#netstat)
       * [`nmap`](#nmap)
+      * [`nc` netcat](#nc-netcat)
       * [NS Lookup](#ns-lookup) 
       * [Resolve DNS](#resolve-dns) 
       * [The One with DNS root nameservers](#the-one-with-dns-root-nameservers) 
@@ -759,6 +760,27 @@ Pre-scan script results:
 WARNING: No targets were specified, so 0 hosts scanned.
 Nmap done: 0 IP addresses (0 hosts up) scanned in 10.16 seconds
 ```
+
+----
+
+## nc netcat 
+
+`nc` or netcat can be used to open arbitrary TCP and UDP connections and listeners. At times, while deploying exploits, nc can be a lifesaver for opening reverse shells and gaining root access on misconfigured systems.    
+
+Here is a simple netcat-based (nat-khat) client and server from the old `man` himself:    
+
+On the server side:    
+```
+             $ rm -f /tmp/f; mkfifo /tmp/f
+             $ cat /tmp/f | /bin/sh -i 2>&1 | nc -l 127.0.0.1 1234 > /tmp/f
+```
+On the client side:    
+```
+             $ nc localhost 1234
+             $ (shell prompt from localhost)
+```
+
+TODO: add examples demonstrated in the class and links to TryHackMe rooms for reverse shells.     
 
 ----
 
