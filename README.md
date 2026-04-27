@@ -769,12 +769,12 @@ Nmap done: 0 IP addresses (0 hosts up) scanned in 10.16 seconds
 
 Here is a simple netcat-based (nat-khat) client and server from the old `man` himself:    
 
-On the server side:    
+On the server side (a named FIFO pipe opens bash interactively to listen on a port):    
 ```
              $ rm -f /tmp/f; mkfifo /tmp/f
              $ cat /tmp/f | /bin/sh -i 2>&1 | nc -l 127.0.0.1 1234 > /tmp/f
 ```
-On the client side:    
+On the client side (connect to the port announced or known):    
 ```
              $ nc localhost 1234
              $ (shell prompt from localhost)
