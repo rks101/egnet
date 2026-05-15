@@ -40,7 +40,8 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
       * [The One with SSL/TLS Certificates](#ssl-tls-certificates)
       * [QUIC](#quic)   
       * [The One with Disaster Recovery](#the-one-with-disaster-recovery)
-      * [The One with VPN](#the-one-with-vpn) 
+      * [The One with VPN](#the-one-with-vpn)
+      * [The One with Blocking IP](#the-one-with-blocking-ip)
       * [The Privacy Conundrum](#The-Privacy-Conundrum)
 
 
@@ -1881,6 +1882,21 @@ For Disaster Recovery (DR), first, it is necessary to re-architect and design th
 [Linux VPN Myths](https://linuxsecurity.com/features/common-linux-vpn-myths-busted)    
 
 [How secure is Linux?](https://linuxsecurity.com/features/how-secure-is-linux) Do not miss The Bottom Line    
+
+----
+
+## The One with Blocking IP 
+
+Suppose your public IP is 14.139.53.130 or something like that, and you wish to check if this public IP of yours is blocked or not while you browse websites for information, and the page is not loading, it just tries and gives up.    
+
+Reason for listing - Net 14.139.0.0/16 is UCEPROTECT-Level2 listed because 167 impacts are seen from NKN-CORE-NW NKN Core Network, IN/AS55824 there. See:
+[UCE Protect Network](https://www.uceprotect.net/en/rblcheck.php?ipr=14.139.53.130) and check IP against the blocked IP list and any other recommendations.       
+
+[My public IP](https://ipv4.icanhazip.com/), [link2](https://labs.sucuri.net/myip.php)      
+
+[Why is your public IP is blocked](https://blog.sucuri.net/2023/06/why-your-ip-address-is-blocked-how-to-fix-it.html)     
+
+[Is it blocked right now?](https://www.isitdownrightnow.com/iitjammu.ac.in.html)   
 
 ----
 
