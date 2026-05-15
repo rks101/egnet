@@ -1898,6 +1898,9 @@ Reason for listing - Net 14.139.0.0/16 is UCEPROTECT-Level2 listed because 167 i
 
 [Is it blocked right now?](https://www.isitdownrightnow.com/iitjammu.ac.in.html)   
 
+[Website Down or IP Blocked](https://dev.to/nemanja_falb_e0e451d06be0/access-blocked-vs-website-down-how-to-tell-the-difference-isp-firewall-geo-blocking-explained-7ip)    
+
+
 ----
 
 ## The Privacy Conundrum    
