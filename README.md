@@ -42,6 +42,7 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
       * [The One with Disaster Recovery](#the-one-with-disaster-recovery)
       * [The One with VPN](#the-one-with-vpn)
       * [The One with Blocking IP](#the-one-with-blocking-ip)
+      * [HPC](#hpc)
       * [The Privacy Conundrum](#The-Privacy-Conundrum)
 
 
@@ -1900,6 +1901,16 @@ Reason for listing - Net 14.139.0.0/16 is UCEPROTECT-Level2 listed because 167 i
 
 [Website Down or IP Blocked](https://dev.to/nemanja_falb_e0e451d06be0/access-blocked-vs-website-down-how-to-tell-the-difference-isp-firewall-geo-blocking-explained-7ip)    
 
+
+----
+
+## HPC    
+
+High Performance Computing facility changes the game for computing requirements.   
+
+[PARAM Rudra @ IITB](https://iitb-3f2330.gitlab.io/)     
+
+[NSM India - PARAM series supercomputers and others](https://nsmindia.in/infrastructure/nsm-systems/)    
 
 ----
 
