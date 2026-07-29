@@ -1867,8 +1867,12 @@ CPUINFO: OPENSSL_ia32cap=0x7ffaf3bfffebffff:0x18c05fdef3bfa7eb
 
 Authentication is usually done for an account (that may be a user, device, or service) using either password/passphrase or a certificate file at client side.    
 
-Q. What is basic authentication?     
-A.     
+<details>
+	<summary>Q. What is basic authentication?</summary>
+	<p>
+A. Basic authentication header was used in HTTP requests to provide a username and password as encoded string for authentication. It is formatted as Authorization: Basic <credentials>, where <credentials> is the Base64 encoding of the username and password joined by a colon (username:password). This text is only Base64 encoded string (containing A-Z,a-z,0-9,+,/,==) and no encryption is used.    
+	</p>
+</details>
 
 <details>
 	<summary>Q. What is 802.1x authentication?</summary>
@@ -1878,8 +1882,12 @@ Not all devices may support 802.1x such as printers, cameras, wireless/cordless 
 	</p>
 </details>
 
-Q. What is AAA server?    
-A. Centralized Authentication, Authorization, and Accounting for user access to network resources.    
+<details>
+	<summary>Q. What is AAA server?</summary>
+	<p>
+A. Centralized Authentication, Authorization, and Accounting for user access to network resources.    		
+	</p>
+</details>      
 
 <details>
 	<summary>Q. What is eduroam?</summary>
