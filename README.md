@@ -1870,21 +1870,32 @@ Authentication is usually done for an account (that may be a user, device, or se
 Q. What is basic authentication?     
 A.     
 
-Q. What is 802.1x authentication?     
+<details>
+	<summary>Q. What is 802.1x authentication?</summary>
+	<p>
 A. IEEE 802.1x is a standard for port-based network access control (P-NAC) for devices connecting to a LAN or wireless LAN (WLAN). 802.1x has three parties: Supplicant (a client/requester), Authenticator (Network device/access controller), and Authentication Server (RADIUS). [More gyan](https://en.wikipedia.org/wiki/IEEE_802.1X).     
-Not all devices may support 802.1x such as printers, cameras, wireless/cordless phone, sensors, TV or smart displays.    
+Not all devices may support 802.1x such as printers, cameras, wireless/cordless phone, sensors, TV or smart displays.  		
+	</p>
+</details>
 
 Q. What is AAA server?    
 A. Centralized Authentication, Authorization, and Accounting for user access to network resources.    
 
-Q. What is eduroam?    
-A. eduroam, an international wireless roaming service, mandates the use of 802.1X authentication when providing network access to guests/visitors visiting from other eduroam-enabled institutions. Users are authenticated with credentials from their home institution, regardless of the location of the eduroam access point. Authorization to access the Internet and other resources are handled by the visited institution. Users do not have to pay to use eduroam. This is as good as to see Prof Siva from IIT Bombay visiting CMI, Chennai or University of Illinois-UC, Chicago and using LDAP credentials from his home institution and feel as good as in home network (yes, with a VPN).     
+<details>
+	<summary>Q. What is eduroam?</summary>
+	<p>
+A. eduroam, an international wireless roaming service, mandates the use of 802.1X authentication when providing network access to guests/visitors visiting from other eduroam-enabled institutions. Users are authenticated with credentials from their home institution, regardless of the location of the eduroam access point. Authorization to access the Internet and other resources are handled by the visited institution. Users do not have to pay to use eduroam. This is as good as to see Prof Siva from IIT Bombay visiting CMI, Chennai or University of Illinois-UC, Chicago and using LDAP credentials from his home institution and feel as good as in home network (yes, with a VPN).     		
+	</p>
+</details>
+
 
 [Security risks and alternatives of PEAP MSCHAPv2](https://securew2.com/blog/security-analysis-of-peap-mschapv2)      
 
 [An argument for EAP-TLS v/s EAP-TTLS/PAP](https://securew2.com/blog/eap-tls-vs-eap-ttls-pap)     
 
-Terms:     
+<details>
+	<summary>Terms</summary>
+	<p>
 EAP: Extensible Authentication Protocol     
 TLS: Transport Layer Security (provides cryptographic guaranty/mechanism for secure communication over network)    
 SSL: Secure Socket Layer (precursor to TLS)     
@@ -1893,7 +1904,9 @@ TTLS: Tunneled Transport Layer Security
 PAP: Password Authentication Protocol     
 PEAP: Protected Extensible Authentication Protocol     
 MS-CHAP: Microsoft Challenge-Handshake Authentication Protocol    
-RADIUS: Remote Authentication Dial-In User Service (centralized AAA server)     
+RADIUS: Remote Authentication Dial-In User Service (centralized AAA server)     		
+	</p>
+</details>
 
 ---- 
 
