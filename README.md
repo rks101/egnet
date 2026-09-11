@@ -37,7 +37,7 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
       * [The One with LDAP](#the-one-with-ldap)
       * [The One with RADIUS](#the-one-with-radius)
       * [The One with Security](#the-one-with-security) 
-      * [The One with SSL/TLS Certificates](#the-one-with-ssl-tls-certificates)
+      * [The One with TLS Certificates](#the-one-with-tls-certificates)
       * [The One with Authentication](#the-one-with-authentication)
       * [QUIC](#quic)   
       * [The One with Disaster Recovery](#the-one-with-disaster-recovery)
@@ -1672,7 +1672,7 @@ Exception: In the context of formal verification of models, safety property asse
 
 ---- 
 
-## SSL TLS Certificates 
+## The One with TLS Certificates   
 
 [TLS v1.3](https://sectigostore.com/blog/tls-version-1-3-what-to-know-about-the-latest-tls-version/), [TLS v1.3 RFC](https://datatracker.ietf.org/doc/html/rfc8446) released in August 2018    
 
