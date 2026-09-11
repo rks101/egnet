@@ -1764,7 +1764,14 @@ Using `openssl` for SSL/TLS certificates
 e.g., check if a remote server uses TLSv1.2 - if you get the certificate chain back, it's all good.    
 ```
 openssl s_client -connect server:port -tls1_2 
-```    
+```
+or use to get enabled TLS and ciphersuites:    
+```
+openssl s_client -connect server:443
+openssl s_client -connect server:443 -ciphersuites TLS_AES_128_GCM_SHA256 
+```
+You can specify these values TLS after server:port are: -ssl3, -tls1, -tls1_1, -tls1_2, -tls1_3    
+
 
 ```
 $ openssl s_client -connect eg.riit.ac.in:443 -tls1_2
