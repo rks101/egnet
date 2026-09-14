@@ -108,12 +108,12 @@ $ lshw -class network
        capabilities: pm msi pciexpress bus_master cap_list ethernet physical wireless
        configuration: broadcast=yes driver=iwlwifi driverversion=5.4.0-65-generic firmware=36.77d01142.0 ip=10.10.28.48 latency=0 link=yes multicast=yes wireless=IEEE 802.11
        resources: irq:130 memory:df000000-df001fff
-
 ```
 
 Sample output-2 with WiFi 6.0 and Ethernet interface   
 ```
-$ lshw -class network
+$ sudo lshw -class network 
+[sudo: authenticate] Password: ********
   *-network:0               
        description: Wireless interface
        product: Wi-Fi 6 AX201                   <== Wi-Fi 6.0 - IEEE 802.11ax, 2x2 Antenna 
@@ -125,12 +125,13 @@ $ lshw -class network
        serial: 50:84:92:66:40:36
        width: 64 bits
        clock: 33MHz
-       capabilities: bus_master cap_list ethernet physical wireless
-       configuration: broadcast=yes driver=iwlwifi driverversion=6.5.0-17-generic firmware=77.2df8986f.0 QuZ-a0-hr-b0-77.u ip=172.18.4.99 latency=0 link=yes multicast=yes wireless=IEEE 802.11
+       capabilities: pm msi pciexpress msix bus_master cap_list ethernet physical wireless
+       configuration: broadcast=yes driver=iwlwifi driverversion=7.0.0-31-generic firmware=77.f39cc7f9.0 QuZ-a0-hr-b0-77.u ip=192.168.1.5 latency=0 link=yes multicast=yes wireless=IEEE 802.11
        resources: iomemory:600-5ff irq:16 memory:6055294000-6055297fff
+
   *-network:1
        description: Ethernet interface
-       product: Ethernet Connection (13) I219-V    <== Ethernet interface (Intel) 
+       product: Ethernet Connection (13) I219-V
        vendor: Intel Corporation
        physical id: 1f.6
        bus info: pci@0000:00:1f.6
@@ -140,12 +141,50 @@ $ lshw -class network
        capacity: 1Gbit/s
        width: 32 bits
        clock: 33MHz
-       capabilities: bus_master cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
-       configuration: autonegotiation=on broadcast=yes driver=e1000e driverversion=6.5.0-17-generic firmware=0.8-4 latency=0 link=no multicast=yes port=twisted pair
-       resources: irq:190 memory:a6100000-a611ffff
+       capabilities: pm msi bus_master cap_list ethernet physical tp 10bt 10bt-fd 100bt 100bt-fd 1000bt-fd autonegotiation
+       configuration: autonegotiation=on broadcast=yes driver=e1000e driverversion=7.0.0-31-generic firmware=0.8-4 latency=0 link=no multicast=yes port=twisted pair
+       resources: irq:191 memory:a6100000-a611ffff
 ```
 
 [Different WiFi Standards and Data Rates](https://www.intel.com/content/www/us/en/support/articles/000005725/wireless/legacy-intel-wireless-products.html)     
+
+lspci can be used to see WiFi or ethernet driver information:    
+```
+$ lspci | egrep -i --color 'wi-fi|net'
+0000:00:14.3 Network controller: Intel Corporation Wi-Fi 6 AX201 (rev 20)
+0000:00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (13) I219-V (rev 20)
+
+$ lspci -vv -s 0000:00:14.3
+0000:00:14.3 Network controller: Intel Corporation Wi-Fi 6 AX201 (rev 20)
+	Subsystem: Intel Corporation Device 4070
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0
+	Interrupt: pin A routed to IRQ 16
+	IOMMU group: 9
+	Region 0: Memory at 6055294000 (64-bit, non-prefetchable) [size=16K]
+	Capabilities: <access denied>
+	Kernel driver in use: iwlwifi
+	Kernel modules: iwlwifi
+
+$ lspci -vv -s 0000:00:1f.6
+0000:00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (13) I219-V (rev 20)
+	Subsystem: Dell Device 0a20
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0
+	Interrupt: pin A routed to IRQ 191
+	IOMMU group: 15
+	Region 0: Memory at a6100000 (32-bit, non-prefetchable) [size=128K]
+	Capabilities: <access denied>
+	Kernel driver in use: e1000e
+	Kernel modules: e1000e
+```
+
+For other hardware, using lspci, see the bus info, kernel driver and kernel module:    
+```
+lspci -k | more 
+```
 
 ---- 
 
