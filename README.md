@@ -501,6 +501,8 @@ iw dev <wlp0s20f3> link    <== show link details of wireless device
 sudo iw dev <wlp0s20f3> scan 
 ```
 
+Use wavemon (monitoring) and nmcli (network management) for more details.     
+
 ----
 
 ## `iwlist`    
