@@ -491,6 +491,16 @@ enp2s0    no wireless extensions.
 gpd0      no wireless extensions.
 ```
 
+Starting with Ubuntu 26.04, iwconfig is no longer installed or available for installation. Use iw instead.    
+
+```
+apt show iw    
+iw list    
+iw dev        <== list wireless interfaces    
+iw dev <wlp0s20f3> link    <== show link details of wireless device   
+sudo iw dev <wlp0s20f3> scan 
+```
+
 ----
 
 ## `iwlist`    
