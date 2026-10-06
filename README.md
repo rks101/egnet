@@ -61,7 +61,7 @@ You do not need to be a Computer Scientist or Computer Engineering graduate to u
 
 ## PoE    
 
-Power over Ethernet or PoE can provide DC power over Ethernet cables - power and network over a single wire! It's cost-effective. PoE is used for Access Points (APs), IP cameras, and phones. Please look at them and notice that they are without a separate power adapter.  The switch should have PoE ports enabled.    
+Power over Ethernet or PoE devices or interface can provide DC power over Ethernet cables - power and network over a single wire! It's cost-effective. PoE is used for Access Points (APs), IP cameras, and phones. Please look at them and notice that they are without a separate power adapter.  The switch should have PoE ports enabled.    
 
 [What is PoE?](https://notes.networklessons.com/poe-what-is-it)    
 
