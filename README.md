@@ -7,6 +7,7 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
 
    * [egnet](#egnet)
       * [Introductory Concepts](#introductory-concepts)
+      * [Campus Network Infrastructure](#Campus-Network-Infrastructure)
       * [PoE](#poe)   
       * [Network Adapters](#network-adapters)
       * [Storage Controllers and Drives](#storage-controllers-and-drives)
@@ -56,6 +57,18 @@ If you are more comfortable reading a paper book like me, see books - [Computer 
 If you are a senior undergrad/postgrad student, you should explore [Reproducing Networking Research](https://reproducingnetworkresearch.wordpress.com/) blog and [paper](https://web.stanford.edu/class/cs244/papers/learning-networking-research-by-reproducing.pdf), and [Some course topics with guests](https://web.stanford.edu/class/cs244/). Visit [Barefoot](https://barefootnetworks.com/resources/worlds-fastest-most-programmable-networks/) in the age of programmable networks.    
 
 You do not need to be a Computer Scientist or Computer Engineering graduate to understand and appreciate these topics 😅   
+
+---- 
+
+## Campus Network Infrastructure 
+
+Understand your Campus Network Infrastructure to appreciate how internet and allied services come to your home, office, or hostel.    
+
+Service Provider    
+|   
+|   
+|   
+campus (home, office, hostel)    
 
 ---- 
 
