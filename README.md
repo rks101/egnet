@@ -46,6 +46,7 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
       * [The One with Blocking IP](#the-one-with-blocking-ip)
       * [HPC](#hpc)
       * [The Privacy Conundrum](#The-Privacy-Conundrum)
+      * [Movies](#movies)
 
 
 ## Introductory Concepts 
@@ -2056,3 +2057,15 @@ More information can be found on my repository [isdp](https://github.com/rks101/
 [Circuits Packets and Protocols - 1968-1988](https://circuitspacketsandprotocols.com/)   
 
 ----
+
+## Movies 
+
+[The Warriors of the Net](https://www.youtube.com/watch?v=RhvKm0RdUY0)    
+[lopht - 7 hackers testifying at US Senate](https://www.youtube.com/watch?v=VVJldn_MmMY)    
+[How Internet works via submarine cables](https://www.youtube.com/watch?v=6epiGBMXBDs)     
+[How OFC carry light?](https://www.youtube.com/watch?v=G1Ke-H8I1uk)    
+
+
+
+
+---- 
