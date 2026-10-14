@@ -29,7 +29,9 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
       * [NS Lookup](#ns-lookup) 
       * [Resolve DNS](#resolve-dns) 
       * [The One with DNS root nameservers](#the-one-with-dns-root-nameservers) 
-      * [`dig` into DNS](#dig-into-dns) 
+      * [`dig` into DNS](#dig-into-dns)
+      * [DNS Cache](#dns-cache)
+      * [New domain](#new-domain)
       * [Monitor Network](#monitor-network) 
       * [Know sub-domains](#know-sub\-domains)
       * [DNS and Firewall](#dns-and-firewall) 
@@ -1384,9 +1386,21 @@ version.bind.		0	CH	NS	version.bind.
 
 ----
 
+## DNS Cache   
+
 [**DNS Cache**](https://www.keycdn.com/support/dns-cache)    
 
 [View and flush DNS Cache on Linux](https://www.makeuseof.com/view-and-flush-dns-cache-on-linux/), [link2](https://unix.stackexchange.com/questions/28553/how-to-read-the-local-dns-cache-contents)     
+
+Q. Who has more entries in the DNS zone file - a root server, a TLD server, or a authoritative server?    
+A. A **TLD server** has the most entries, by a wide margin.   
+
+Detailed answer:    
+**Root server**: There are 13 root servers. The root zone is small. It only holds delegations for the top-level domains (.com, .net, .org, .in, .cn, .ru, and so on), which come to roughly 1,500 TLDs. Each has a few NS records, glue A/AAAA records, and DS records for DNSSEC, so the whole zone is only a few thousand records.   
+**TLD server**: Top-Level Domain server holds a delegation (NS records, plus glue A/AAAA and DS records where needed) for every registered domain under it. The .com zone has well over 150 million registered domains, so its zone file is enormous, with hundreds of millions of records.    
+**Authoritative server** (for a single domain): The zone for something like example.com or iitb.ac.in usually has only a handful to a few hundred records (A, AAAA, SOA, NS, MX, TXT, CNAME, and so on). Large organizations can have more, but it's nowhere near TLD scale.    
+
+The root servers point to the TLDs, the TLDs point to every domain's authoritative servers, and the authoritative servers hold the actual answers for their own domains.    
 
 ----
 
