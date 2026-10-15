@@ -21,8 +21,10 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
        * [`dstat`](#dstat)
      * PART-2 
        * [Simple web server](#simple-web-server)
-       * [HTTP versions](#http-versions)
+       * [Remote login using `ssh`](#remote-login-using-ssh)
+       * [Transfer files using Secure Copy `scp`](#transfer-files-using-secure-copy-scp)
        * [Get files using `wget`](#get-files-using-wget)
+       * [HTTP versions](#http-versions)
        * [IP Address](#ip-address)
        * [The One with Wireshark](#the-one-with-wireshark)
        * [`netstat`](#netstat)
@@ -641,25 +643,83 @@ $ dstat -n
 
 PART-2    
 
-
 ## Simple web server
 
-One-line web server => a great and simple way to show files from a directory or local share.   
+Python provides a one-line HTTP web server and this is one simple way to show files from a directory or local share.   
 
-Note the directory you start this server from and the content you want to share locally.   
+Note: a) the directory you execute the command from and its sub directories and files are visible, and b) there is no authentication to access this page. Only IP address and web server port are needed.    
+
 ```
 $ python3 -m http.server 
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 127.0.0.1 - - [03/Feb/2021 23:33:21] "GET / HTTP/1.1" 200 -
-127.0.0.1 - - [03/Feb/2021 23:33:31] "GET /myvideos/ HTTP/1.1" 200 -http://127.0.0http://127.0.0.1:8000/Downloads/http://127.0.0.1:8000/Downloads/http://127.0.0.1:8000/Downloads/.1:8000/Downloads/
+127.0.0.1 - - [03/Feb/2021 23:33:31] "GET /myvideos/ HTTP/1.1" 200 -
 127.0.0.1 - - [03/Feb/2021 23:33:36] "GET /Downloads/ HTTP/1.1" 200 -
-^C                                    <== to stop the HTTP server
+^C 
 Keyboard interrupt received, exiting.
 ```
 
-The web server started above can be opened in a web browser: http://0.0.0.0:8000/   
+The web server started above can be opened in a web browser: http://0.0.0.0:8000/ (on the same system) or ip_address:8000 on other systems as well. This page can be opened before you close the server using Ctrl+C.   
 
-This page can be opened before you close the server using Ctrl+C.  
+Note: In case you are struggling to connect to this web server to access files from another system, check your wired/wireless network or the VLAN you are on. It is likely that in a segmented network, users may not access the resources shared by this http web server.   
+
+----
+
+## Remote login using ssh    
+
+One can log in to a Linux system using   
+- local login on a desktop/laptop/server using a username and password. Most convenient :) 
+- local login using a bootable USB drive for install/repair.
+- remote login using a GUI on VM/server using a username and password. This is slow and rare. 
+- remote login using a console/terminal on VM/server. Most preferred. 
+
+To log in to a server or virtual machine remotely from your own Linux system, you can use ssh:    
+```
+ssh remote_username@remote_server_ip_or_name
+```
+
+SSH using a pem file:    
+```
+ssh -i filename.pem remote_username@remote_server_ip_or_name   
+```
+
+SSH ignores a private key file (.pem file) if it is accessible to others. You may need to change the permissions of the pem file (600 or 400) to remove access for other users and to remove the error: "Permissions 0664 for 'filename.pem' are too open."    
+```
+chmod 400 filename.pem  
+```
+
+The default port number to use SSH is 22; this port number can be changed at server side in /etc/ssh/sshd_config for Port config.   
+
+----
+
+## Transfer files using Secure Copy scp   
+
+Using Secure Copy or SCP, we can transfer files to and from local to remote systems. Underneath, scp uses SSH for authentication and encryption.    
+
+```
+scp SOURCE DESTINATION    
+
+scp  path-of-local-file-or-dir  user@remote-system:/path-to-remote-file-or-dir    
+
+scp  user@remote-system:/path-of-remote-file-dir  path-of-local-file-or-dir
+
+scp -i filename.pem path-of-local-file-or-dir  user@remote-system:/path-to-remote-file-or-dir
+
+scp -i filename.pem user@remote-system:/path-of-remote-file-dir  path-of-local-file-or-dir
+```
+
+While writing to the target location, make sure there is no file with the same name. It may get overwritten.   
+
+----
+
+## Get files using wget 
+
+You can download files or documentation with many files using **wget**. This is very much like your own web-doc-ripper!   
+
+```
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages  
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://permission.site    
+```
 
 ----
 
@@ -680,16 +740,6 @@ HTTP Versions over the years:
 **HTTP/3**: In IETF Draft status. Built on QUIC (Quick UDP Internet Connections) instead of TCP to allow quick handshake and to handle latency issues for slow connections. No more HTTP or HTTPS and redirects; every connection is encrypted.     
 
 Reference: [HTTP/0.9 from scratch](https://kmcd.dev/posts/http0.9-from-scratch/) | [HTTP versions](https://www.baeldung.com/cs/http-versions)   
-
-----
-
-## Get files using wget 
-
-You can download files or documentation with many files using **wget**. This is very much like your own web-doc-ripper!   
-
-```
-wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://developer.android.com/reference/packages  
-```
 
 ----
 
