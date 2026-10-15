@@ -6,50 +6,55 @@ These notes first emerged from my habit of writing them down in one place and re
 Disclosure: The output shown for the utilities mentioned below is compiled for learning purposes. Generally, this information is available in the public domain.  You may not find all the details in your lab/office/dormitory.   
 
    * [egnet](#egnet)
-      * [Introductory Concepts](#introductory-concepts)
-      * [Campus Network Infrastructure](#Campus-Network-Infrastructure)
-      * [PoE](#poe)   
-      * [Network Adapters](#network-adapters)
-      * [Storage Controllers and Drives](#storage-controllers-and-drives)
-      * [`ifconfig`](#ifconfig)
-      * [`nmcli`](#nmcli)
-      * [`ip`](#ip)
-      * [`ipcalc`](#ipcalc)
-      * [`iwconfig`](#iwconfig)
-      * [`iwlist` know wireless interface](#iwlist)
-      * [`dstat`](#dstat)
-      * [Simple web server](#simple-web-server)
-      * [HTTP versions](#http-versions)
-      * [Get files using `wget`](#get-files-using-wget)
-      * [IP Address](#ip-address)
-      * [The One with Wireshark](#the-one-with-wireshark)
-      * [`netstat`](#netstat)
-      * [`nmap`](#nmap)
-      * [`nc` netcat](#nc-netcat)
-      * [NS Lookup](#ns-lookup) 
-      * [Resolve DNS](#resolve-dns) 
-      * [The One with DNS root nameservers](#the-one-with-dns-root-nameservers) 
-      * [`dig` into DNS](#dig-into-dns)
-      * [DNS Cache](#dns-cache)
-      * [New domain](#new-domain)
-      * [Monitor Network](#monitor-network) 
-      * [Know sub-domains](#know-sub\-domains)
-      * [DNS and Firewall](#dns-and-firewall) 
-      * [Email](#email) 
-      * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
-      * [The One with LDAP](#the-one-with-ldap)
-      * [The One with RADIUS](#the-one-with-radius)
-      * [The One with Security](#the-one-with-security) 
-      * [The One with TLS Certificates](#the-one-with-tls-certificates)
-      * [The One with Authentication](#the-one-with-authentication)
-      * [QUIC](#quic)   
-      * [The One with Disaster Recovery](#the-one-with-disaster-recovery)
-      * [The One with VPN](#the-one-with-vpn)
-      * [The One with Blocking IP](#the-one-with-blocking-ip)
-      * [HPC](#hpc)
-      * [The Privacy Conundrum](#The-Privacy-Conundrum)
-      * [Movies](#movies)
+     * PART-1 
+       * [Introductory Concepts](#introductory-concepts)
+       * [Campus Network Infrastructure](#Campus-Network-Infrastructure)
+       * [PoE](#poe)   
+       * [Network Adapters](#network-adapters)
+       * [Storage Controllers and Drives](#storage-controllers-and-drives)
+       * [`ifconfig`](#ifconfig)
+       * [`nmcli`](#nmcli)
+       * [`ip`](#ip)
+       * [`ipcalc`](#ipcalc)
+       * [`iwconfig`](#iwconfig)
+       * [`iwlist` know wireless interface](#iwlist)
+       * [`dstat`](#dstat)
+     * PART-2 
+       * [Simple web server](#simple-web-server)
+       * [HTTP versions](#http-versions)
+       * [Get files using `wget`](#get-files-using-wget)
+       * [IP Address](#ip-address)
+       * [The One with Wireshark](#the-one-with-wireshark)
+       * [`netstat`](#netstat)
+       * [`nmap`](#nmap)
+       * [`nc` netcat](#nc-netcat)
+       * [NS Lookup](#ns-lookup) 
+       * [Resolve DNS](#resolve-dns) 
+       * [The One with DNS root nameservers](#the-one-with-dns-root-nameservers) 
+       * [`dig` into DNS](#dig-into-dns)
+       * [DNS Cache](#dns-cache)
+       * [New domain](#new-domain)
+       * [Monitor Network](#monitor-network) 
+       * [Know sub-domains](#know-sub\-domains)
+       * [DNS and Firewall](#dns-and-firewall) 
+       * [Email](#email) 
+       * [The One with SPF, DKIM and DMARK](#the-one-with-spf-dkim-and-dmark)
+       * [The One with LDAP](#the-one-with-ldap)
+       * [The One with RADIUS](#the-one-with-radius)
+     * PART-3
+       * [The One with Security](#the-one-with-security) 
+       * [The One with TLS Certificates](#the-one-with-tls-certificates)
+       * [The One with Authentication](#the-one-with-authentication)
+     * PART-4
+       * [QUIC](#quic)   
+       * [The One with Disaster Recovery](#the-one-with-disaster-recovery)
+       * [The One with VPN](#the-one-with-vpn)
+       * [The One with Blocking IP](#the-one-with-blocking-ip)
+       * [HPC](#hpc)
+       * [The Privacy Conundrum](#The-Privacy-Conundrum)
+       * [Movies](#movies)
 
+PART-1    
 
 ## Introductory Concepts 
 
@@ -633,6 +638,9 @@ $ dstat -n
 ```
 
 ----
+
+PART-2    
+
 
 ## Simple web server
 
@@ -1740,6 +1748,9 @@ Relevant posts:
 
 ---- 
 
+PART-3    
+
+
 ## The One with Security 
 
 Some [security-related primer](http://intronetworks.cs.luc.edu/current/html/security.html) and [SSH and TLS](http://intronetworks.cs.luc.edu/current/html/publickey.html#ssh-and-tls)   
@@ -2003,6 +2014,9 @@ RADIUS: Remote Authentication Dial-In User Service (centralized AAA server)
 </details>
 
 ---- 
+
+PART-4    
+
 
 ## QUIC 
 
