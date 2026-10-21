@@ -9,13 +9,15 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
      * PART-1 
        * [Introductory Concepts](#introductory-concepts)
        * [Campus Network Infrastructure](#Campus-Network-Infrastructure)
-       * [PoE](#poe)   
-       * [Network Adapters](#network-adapters)
-       * [Storage Controllers and Drives](#storage-controllers-and-drives)
+       * [Know Network Hardware](#Know-Network-Hardware)
+         * [PoE](#poe)   
+         * [Network Adapters](#network-adapters)
+         * [Storage Controllers and Drives](#storage-controllers-and-drives)
        * [The One with IP](#The-One-with-IP)
          * [`ifconfig`](#ifconfig)
          * [`ip`](#ip)
          * [`ipcalc`](#ipcalc)
+         * [IP Address and Privacy](#IP-Address-and-Privacy)
        * [Network Management](#Network-Management)
          * [`nmcli`](#nmcli)
          * [`dstat`](#dstat)
@@ -29,7 +31,6 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
        * [Transfer files using Secure Copy `scp`](#transfer-files-using-secure-copy-scp)
        * [Get files using `wget`](#get-files-using-wget)
        * [HTTP versions](#http-versions)
-       * [IP Address](#ip-address)
        * [The One with Wireshark](#the-one-with-wireshark)
        * [`netstat`](#netstat)
        * [`nmap`](#nmap)
@@ -86,7 +87,9 @@ campus (home, office, hostel)
 
 ---- 
 
-## PoE    
+## Know Network Hardware    
+
+### PoE    
 
 Power over Ethernet or PoE devices or interface can provide DC power over Ethernet cables - power and network connectivity over a single wire! It's cost-effective. PoE is used for wireless Access Points (APs), IP cameras, VoIP phones, and IoT devices. Please look at them and notice that they are without a separate power adapter.  The network switch should have PoE ports enabled.    
 
@@ -98,7 +101,8 @@ Power over Ethernet or PoE devices or interface can provide DC power over Ethern
 
 ---- 
 
-## Network Adapters
+###  Network Adapters
+
 It's good to know your network adapters: product, provider, logical names, MAC, capacity in Mbps or Gbps, capabilities, etc.   
 Knowledge of adapters and vendors can help with device driver-related issues or updating drivers.   
 The network adapter's logical name is visible in the ip command output.   
@@ -215,7 +219,7 @@ lspci -k | more
 
 ---- 
 
-## Storage Controllers and Drives    
+### Storage Controllers and Drives    
 
 To list drives and storage controllers, use lshw with class disk and storage. The sample output below shows RAID, SATA, NVMe controllers, and NVMe SSD disk.    
 
@@ -414,6 +418,16 @@ Hosts/Net: 254                   Class A, Private Internet
 ```
 
 The graphical counterpart of `ipcalc` is `ipqalc` 
+
+----
+
+### IP Address and Privacy   
+
+[Is leaking or revealing IP a real problem?](https://www.youtube.com/watch?v=MS7WRuzNYDc)    
+
+What exactly does a VPN do?    
+
+What does a Tor (The Onion Router) do?    
 
 ----
 
@@ -759,14 +773,6 @@ HTTP Versions over the years:
 Reference: [HTTP/0.9 from scratch](https://kmcd.dev/posts/http0.9-from-scratch/) | [HTTP versions](https://www.baeldung.com/cs/http-versions)   
 
 ----
-
-## IP Address    
-
-[Is leaking or revealing IP a real problem?](https://www.youtube.com/watch?v=MS7WRuzNYDc)    
-
-What exactly does a VPN do?    
-
----- 
 
 ## The One with Wireshark 
 
