@@ -419,7 +419,7 @@ The graphical counterpart of `ipcalc` is `ipqalc`
 
 ## Network Management 
 
-### nmcli 
+### `nmcli` 
 
 We can use nmcli command to get the status of all network connections - wired, wireless, and any other logical interfaces:   
 
@@ -500,7 +500,7 @@ Wired connection 1            90c3df94-7333-30d5-a3e4-020734106b9c  ethernet  --
 
 ---- 
 
-### dstat   
+### `dstat`   
 
 Use **dstat** - a tool for generating system resource statistics such as CPU usage, disk read/write, network data received/sent, etc. To exit type Ctrl+C.    
 ```
@@ -649,9 +649,11 @@ wlp0s20f3  unknown transmit-power information.
 
 ----
 
-### `wavemon` - Wireless network monitor 
+### `wavemon` 
 
-[screengrab of wavemon in action]()
+Wavemon is NCurses-based Wireless network monitor and shows output updated in realtime.    
+
+[screengrab of wavemon in action](https://github.com/rks101/eglinux/blob/main/docs/wavemon_home.png)
 
 ----
 
