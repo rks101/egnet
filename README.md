@@ -17,6 +17,7 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
          * [`ifconfig`](#ifconfig)
          * [`ip`](#ip)
          * [`ipcalc`](#ipcalc)
+         * [`iptraf` IP Traffic Monitor](#iptraf)
          * [IP Address and Privacy](#IP-Address-and-Privacy)
        * [Network Management](#Network-Management)
          * [`nmcli`](#nmcli)
@@ -419,6 +420,34 @@ Hosts/Net: 254                   Class A, Private Internet
 
 The graphical counterpart of `ipcalc` is `ipqalc` 
 
+----
+
+### `iptraf` IP Traffic Monitor   
+
+```
+$ sudo iptraf
+
+iptraf-ng 1.2.1
+
+                                    ┌─────────────────────────────────┐
+                                    │ IP traffic monitor              │
+                                    │ General interface statistics    │
+                                    │ Detailed interface statistics   │
+                                    │ Statistical breakdowns...       │
+                                    │ LAN station monitor             │
+                                    │─────────────────────────────────│
+                                    │ Filters...                      │
+                                    │─────────────────────────────────│
+                                    │ Configure...                    │
+                                    │─────────────────────────────────│
+                                    │ About...                        │
+                                    │─────────────────────────────────│
+                                    │ Exit                            │
+                                    └─────────────────────────────────┘
+
+ Displays current IP traffic information
+ Up/Down-Move selector  Enter-execute
+```
 ----
 
 ### IP Address and Privacy   
