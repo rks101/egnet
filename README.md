@@ -12,13 +12,17 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
        * [PoE](#poe)   
        * [Network Adapters](#network-adapters)
        * [Storage Controllers and Drives](#storage-controllers-and-drives)
-       * [`ifconfig`](#ifconfig)
-       * [`nmcli`](#nmcli)
-       * [`ip`](#ip)
-       * [`ipcalc`](#ipcalc)
-       * [`iwconfig`](#iwconfig)
-       * [`iwlist` know wireless interface](#iwlist)
-       * [`dstat`](#dstat)
+       * [The One with IP](#The-One-with-IP)
+         * [`ifconfig`](#ifconfig)
+         * [`ip`](#ip)
+         * [`ipcalc`](#ipcalc)
+       * [Network Management](#Network-Management)
+         * [`nmcli`](#nmcli)
+         * [`dstat`](#dstat)
+       * [Know Wireless Interface](#Know-Wireless-Interface)
+         * [`iwconfig`](#iwconfig)
+         * [`iwlist`](#iwlist)
+         * [`wavemon`](#wavemon)
      * PART-2 
        * [Simple web server](#simple-web-server)
        * [Remote login using `ssh`](#remote-login-using-ssh)
@@ -72,7 +76,7 @@ You do not need to be a Computer Scientist or Computer Engineering graduate to u
 
 ## Campus Network Infrastructure 
 
-Understand your Campus Network Infrastructure to appreciate how internet and allied services come to your home, office, or hostel.    
+Understand your Campus Network Infrastructure to appreciate how internet and allied services come to your hostel, home, or office.    
 
 Service Provider    
 |   
@@ -101,7 +105,7 @@ The network adapter's logical name is visible in the ip command output.
 
 Sample output-1 with Ethernet (Realtek) and Wireless (Intel)     
 ```
-$ lshw -class network
+$ sudo lshw -class network
   *-network                 
        description: Ethernet interface
        product: RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
@@ -284,7 +288,9 @@ $ lshw -class disk -class storage
 
 ----
 
-## `ifconfig`   
+## The One with IP   
+
+### `ifconfig`   
 
 `ifconfig` can be used to show and manage the network interface. Caution: this has been replaced by ip.   
 The logical name of the interface corresponds to the Network adapter's logical name in `lshw` output.   
@@ -319,7 +325,101 @@ wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ```
 ----
 
-## nmcli 
+### `ip`   
+
+ip - to show and manage network interface and devices. This has replaced ifconfig command.   
+Ask "man" for objects addr, link, neigh, route, maddress, vrf, etc.  
+
+The logical name of the interface corresponds to the Network adapter's logical name in lshw output.  
+The output below is compiled for illustration purposes only. You may not find all details in your lab/office/dungeon.  
+```
+$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether 54:bf:64:0d:d4:cc brd ff:ff:ff:ff:ff:ff
+3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 34:41:5d:b4:ce:ea brd ff:ff:ff:ff:ff:ff
+    inet 192.168.105.214/16 brd 192.168.255.255 scope global dynamic noprefixroute wlp3s0
+       valid_lft 16074sec preferred_lft 16074sec
+    inet6 fe80::2e9f:e4c6:8841:f732/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: gpd0: <POINTOPOINT,MULTICAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 500
+    link/none 
+
+
+$ ip -all link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+    link/ether 54:bf:64:0d:d4:cc brd ff:ff:ff:ff:ff:ff
+3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+    link/ether 34:41:5d:b4:ce:ea brd ff:ff:ff:ff:ff:ff
+4: gpd0: <POINTOPOINT,MULTICAST,NOARP> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 500
+    link/none 
+
+
+$ ip neigh
+192.168.0.1 dev wlp3s0 lladdr 88:b1:e1:28:6f:e1 REACHABLE
+
+
+$ ip route
+default via 192.168.0.1 dev wlp3s0 proto dhcp metric 600 
+169.254.0.0/16 dev wlp3s0 scope link metric 1000 
+192.168.0.0/16 dev wlp3s0 proto kernel scope link src 192.168.105.214 metric 600 
+```
+The above ip options are available on modern switching and routing hardware supporting Software Defined Networking (SDN).   
+
+**WHOIS lookup**  At times, it may be interesting to look up whose ip address it is - while analyzing server logs or email yml files for a possible spammer, etc. You can use [WHOIS Look up](https://www.whatismyip.com/ip-whois-lookup/) or [Arin](https://www.arin.net/). [IPv4 blocks cleared](https://www.arin.net/resources/guide/ipv4/blocks_cleared/) can be seen on Arin.      
+
+---- 
+
+### `ipcalc`   
+
+Note:-    
+1. Classful addressing was used well before 1993 with Class A, B, C, D (Multi-cast), and E (reserved) IP addresses of 32 bits. Class A, B, and C had 8, 16, and 24 bits for the network part and the remaining bits for host iP addresses. To accommodate the need to assign IP addresses for a flexible number of hosts and to manage them efficiently, Classless Inter-Domain Routing (CIDR) notation or /n notation came into existence.    
+2. There are three ranges of special private addresses (that are not used to host a service publicly):    
+10.x.x.x, 172.16.x.x -to- 172.31.x.x and 192.168.x.x    or better in CIDR notation 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16    
+3. Localhost or loopback address: 127.0.0.0/8 or 127.0.0.1 is used for testing locally on a system. It is configured in software such that it does not leave the network adapter buffers. It is used to test local servers or services deployed. e.g., 127.0.0.1:8000 (when some service is running on port 8000)     
+4. Three private address ranges (all IPs in them) are not routed outside the local network because if response packets are routed back to these IPs, the router would not know not whom to forward to. In such cases, network address translation (NAT) is required.     
+
+You can learn a few things with `ipcalc` on IP addressing.      
+
+```
+$ ipcalc 192.168.0.1/24
+Address:   192.168.0.1          11000000.10101000.00000000. 00000001
+Netmask:   255.255.255.0 = 24   11111111.11111111.11111111. 00000000
+Wildcard:  0.0.0.255            00000000.00000000.00000000. 11111111
+=>
+Network:   192.168.0.0/24       11000000.10101000.00000000. 00000000
+HostMin:   192.168.0.1          11000000.10101000.00000000. 00000001
+HostMax:   192.168.0.254        11000000.10101000.00000000. 11111110
+Broadcast: 192.168.0.255        11000000.10101000.00000000. 11111111
+Hosts/Net: 254                   Class C, Private Internet
+
+$ ipcalc 10.10.50.1/24
+Address:   10.10.50.1           00001010.00001010.00110010. 00000001
+Netmask:   255.255.255.0 = 24   11111111.11111111.11111111. 00000000
+Wildcard:  0.0.0.255            00000000.00000000.00000000. 11111111
+=>
+Network:   10.10.50.0/24        00001010.00001010.00110010. 00000000
+HostMin:   10.10.50.1           00001010.00001010.00110010. 00000001
+HostMax:   10.10.50.254         00001010.00001010.00110010. 11111110
+Broadcast: 10.10.50.255         00001010.00001010.00110010. 11111111
+Hosts/Net: 254                   Class A, Private Internet
+```
+
+The graphical counterpart of `ipcalc` is `ipqalc` 
+
+----
+
+## Network Management 
+
+### nmcli 
 
 We can use nmcli command to get the status of all network connections - wired, wireless, and any other logical interfaces:   
 
@@ -400,100 +500,36 @@ Wired connection 1            90c3df94-7333-30d5-a3e4-020734106b9c  ethernet  --
 
 ---- 
 
-## `ip`   
+### dstat   
 
-ip - to show and manage network interface and devices. This has replaced ifconfig command.   
-Ask "man" for objects addr, link, neigh, route, maddress, vrf, etc.  
-
-The logical name of the interface corresponds to the Network adapter's logical name in lshw output.  
-The output below is compiled for illustration purposes only. You may not find all details in your lab/office/dungeon.  
+Use **dstat** - a tool for generating system resource statistics such as CPU usage, disk read/write, network data received/sent, etc. To exit type Ctrl+C.    
 ```
-$ ip addr
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host 
-       valid_lft forever preferred_lft forever
-2: enp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
-    link/ether 54:bf:64:0d:d4:cc brd ff:ff:ff:ff:ff:ff
-3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
-    link/ether 34:41:5d:b4:ce:ea brd ff:ff:ff:ff:ff:ff
-    inet 192.168.105.214/16 brd 192.168.255.255 scope global dynamic noprefixroute wlp3s0
-       valid_lft 16074sec preferred_lft 16074sec
-    inet6 fe80::2e9f:e4c6:8841:f732/64 scope link noprefixroute 
-       valid_lft forever preferred_lft forever
-4: gpd0: <POINTOPOINT,MULTICAST,NOARP> mtu 1500 qdisc noop state DOWN group default qlen 500
-    link/none 
-
-
-$ ip -all link
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-2: enp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
-    link/ether 54:bf:64:0d:d4:cc brd ff:ff:ff:ff:ff:ff
-3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
-    link/ether 34:41:5d:b4:ce:ea brd ff:ff:ff:ff:ff:ff
-4: gpd0: <POINTOPOINT,MULTICAST,NOARP> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 500
-    link/none 
-
-
-$ ip neigh
-192.168.0.1 dev wlp3s0 lladdr 88:b1:e1:28:6f:e1 REACHABLE
-
-
-$ ip route
-default via 192.168.0.1 dev wlp3s0 proto dhcp metric 600 
-169.254.0.0/16 dev wlp3s0 scope link metric 1000 
-192.168.0.0/16 dev wlp3s0 proto kernel scope link src 192.168.105.214 metric 600 
-
+$ dstat
+You did not select any stats, using -cdngy by default.
+--total-cpu-usage-- -dsk/total- -net/total- ---paging-- ---system--
+usr sys idl wai stl| read  writ| recv  send|  in   out | int   csw 
+ 27   8  64   0   0|5502B   24k|   0     0 |   0     0 | 649  1159 
+  2   1  96   1   0|   0    60k| 226B  234B|   0     0 |2176  3796 
+  3   1  96   0   0|   0     0 | 303B  405B|   0     0 |2150  3753 
+  3   1  95   0   0|   0     0 |1266B 1246B|   0     0 |2272  3889 
+  3   1  96   0   0|   0     0 | 984B  786B|   0     0 |2378  3952 ^C
 ```
-The above ip options are available on modern switching and routing hardware supporting Software Defined Networking (SDN).   
-
-**WHOIS lookup**  At times, it may be interesting to look up whose ip address it is - while analyzing server logs or email yml files for a possible spammer, etc. You can use [WHOIS Look up](https://www.whatismyip.com/ip-whois-lookup/) or [Arin](https://www.arin.net/). [IPv4 blocks cleared](https://www.arin.net/resources/guide/ipv4/blocks_cleared/) can be seen on Arin.      
-
----- 
-
-## `ipcalc`   
-
-Note:-    
-1. Classful addressing was used well before 1993 with Class A, B, C, D (Multi-cast), and E (reserved) IP addresses of 32 bits. Class A, B, and C had 8, 16, and 24 bits for the network part and the remaining bits for host iP addresses. To accommodate the need to assign IP addresses for a flexible number of hosts and to manage them efficiently, Classless Inter-Domain Routing (CIDR) notation or /n notation came into existence.    
-2. There are three ranges of special private addresses (that are not used to host a service publicly):    
-10.x.x.x, 172.16.x.x -to- 172.31.x.x and 192.168.x.x    or better in CIDR notation 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16    
-3. Localhost or loopback address: 127.0.0.0/8 or 127.0.0.1 is used for testing locally on a system. It is configured in software such that it does not leave the network adapter buffers. It is used to test local servers or services deployed. e.g., 127.0.0.1:8000 (when some service is running on port 8000)     
-4. Three private address ranges (all IPs in them) are not routed outside the local network because if response packets are routed back to these IPs, the router would not know not whom to forward to. In such cases, network address translation (NAT) is required.     
-
-You can learn a few things with `ipcalc` on IP addressing.      
-
+Only looking for network bytes received and sent =>  
 ```
-$ ipcalc 192.168.0.1/24
-Address:   192.168.0.1          11000000.10101000.00000000. 00000001
-Netmask:   255.255.255.0 = 24   11111111.11111111.11111111. 00000000
-Wildcard:  0.0.0.255            00000000.00000000.00000000. 11111111
-=>
-Network:   192.168.0.0/24       11000000.10101000.00000000. 00000000
-HostMin:   192.168.0.1          11000000.10101000.00000000. 00000001
-HostMax:   192.168.0.254        11000000.10101000.00000000. 11111110
-Broadcast: 192.168.0.255        11000000.10101000.00000000. 11111111
-Hosts/Net: 254                   Class C, Private Internet
-
-$ ipcalc 10.10.50.1/24
-Address:   10.10.50.1           00001010.00001010.00110010. 00000001
-Netmask:   255.255.255.0 = 24   11111111.11111111.11111111. 00000000
-Wildcard:  0.0.0.255            00000000.00000000.00000000. 11111111
-=>
-Network:   10.10.50.0/24        00001010.00001010.00110010. 00000000
-HostMin:   10.10.50.1           00001010.00001010.00110010. 00000001
-HostMax:   10.10.50.254         00001010.00001010.00110010. 11111110
-Broadcast: 10.10.50.255         00001010.00001010.00110010. 11111111
-Hosts/Net: 254                   Class A, Private Internet
+$ dstat -n
+-net/total-
+ recv  send
+   0     0 
+2439B  943B
+   0     0 
+  66B   94B
+ 261B  405B^C
 ```
-
-The graphical counterpart of `ipcalc` is `ipqalc` 
-
 ----
 
-## `iwconfig`   
+## Know Wireless Interface   
+
+### `iwconfig`   
 
 View and manage Wireless network settings, similar to ifconfig; this command is for wireless.  
 ```
@@ -528,7 +564,7 @@ Use wavemon (monitoring) and nmcli (network management) for more details.
 
 ----
 
-## `iwlist`    
+### `iwlist`    
 
 Work with wireless adapter settings and parameters (scanning, frequency, bitrate, power (on/off), transmit-power, auth) to get detailed wireless information from a wireless interface    
 
@@ -613,33 +649,12 @@ wlp0s20f3  unknown transmit-power information.
 
 ----
 
-## dstat   
+### `wavemon` - Wireless network monitor 
 
-Use **dstat** - a tool for generating system resource statistics such as CPU usage, disk read/write, network data received/sent, etc. To exit type Ctrl+C.    
-```
-$ dstat
-You did not select any stats, using -cdngy by default.
---total-cpu-usage-- -dsk/total- -net/total- ---paging-- ---system--
-usr sys idl wai stl| read  writ| recv  send|  in   out | int   csw 
- 27   8  64   0   0|5502B   24k|   0     0 |   0     0 | 649  1159 
-  2   1  96   1   0|   0    60k| 226B  234B|   0     0 |2176  3796 
-  3   1  96   0   0|   0     0 | 303B  405B|   0     0 |2150  3753 
-  3   1  95   0   0|   0     0 |1266B 1246B|   0     0 |2272  3889 
-  3   1  96   0   0|   0     0 | 984B  786B|   0     0 |2378  3952 ^C
-```
-Only looking for network bytes received and sent =>  
-```
-$ dstat -n
--net/total-
- recv  send
-   0     0 
-2439B  943B
-   0     0 
-  66B   94B
- 261B  405B^C
-```
+[screengrab of wavemon in action]()
 
 ----
+
 
 PART-2    
 
