@@ -17,7 +17,7 @@ Disclosure: The output shown for the utilities mentioned below is compiled for l
          * [`ifconfig`](#ifconfig)
          * [`ip`](#ip)
          * [`ipcalc`](#ipcalc)
-         * [`iptraf` IP Traffic Monitor](#iptraf)
+         * [`iptraf` IP Traffic Monitor](#iptraf-ip-traffic-monitor)
          * [IP Address and Privacy](#IP-Address-and-Privacy)
        * [Network Management](#Network-Management)
          * [`nmcli`](#nmcli)
