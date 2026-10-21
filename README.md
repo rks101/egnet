@@ -667,7 +667,7 @@ wlp0s20f3  unknown transmit-power information.
 
 Wavemon is NCurses-based Wireless network monitor and shows output updated in realtime.    
 
-[screengrab of wavemon in action](https://github.com/rks101/eglinux/blob/main/docs/wavemon_home.png)
+[screengrab of wavemon in action](https://github.com/rks101/egnet/blob/main/images/wavemon_home.png)
 
 ----
 
@@ -1054,7 +1054,7 @@ When you type a URL in a web browser and get a DNS_PROBE_FINISHED_NXDOMAIN error
 
 DNS remains one of the most interesting topics in networking.    
 
-Do you know that each DNS resolver always knows the IP addresses of DNS root nameservers? This is not a new thing; this has always been the case. This info is actually hardwired or [hardcoded into BIND-9](https://gitlab.isc.org/isc-projects/bind9/-/blame/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c#L37-80) (bind9/lib/dns/rootns.c). Look at this code; there are 13 DNS root nameservers, and the names are not case-sensitive. You can find A type DNS records for these 13 root nameservers named from a to m (as of Jan 2022).    
+Do you know that each DNS resolver always knows the IP addresses of DNS root nameservers? This is not a new thing; this has always been the case. This info is actually hardwired or [hardcoded into BIND-9](https://github.com/isc-projects/bind9/blob/main/lib/dns/rootns.c) (bind9/lib/dns/rootns.c). [Old link](https://gitlab.isc.org/isc-projects/bind9/blob/4c3b063ef8bd6e47b13c1dac3087daa1301a78ac/lib/dns/rootns.c) has moved to GitHub. Look at this code [root_ns array](https://github.com/rks101/egnet/blob/main/images/root_ns.png); there are 13 DNS root nameservers, and the names are not case-sensitive. You can find A type DNS records for these 13 root name servers named from a to m (as of Jan 2022).    
 
 [IANA](https://www.iana.org/) has listed the [root name servers](https://www.iana.org/domains/root/servers), and [DNS root hint and root zone files](https://www.iana.org/domains/root/files). [Map](https://www.google.com/maps/d/u/0/viewer?mid=1LcHEpzl-7RzziWzDa4h3BxJcbEo&hl=en&ll=24.71341537554179%2C36.13137070989961&z=2) of geographically distributed root name servers reachable using anycast - the same IP mapped to multiple DNS root servers - the one reachable first is returned in the DNS query's answer section.    
 
