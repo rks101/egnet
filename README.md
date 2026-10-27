@@ -997,7 +997,7 @@ TODO: add examples demonstrated in the class and links to TryHackMe rooms for re
 
 * [10,000 email accounts limit in GSuite/Workplace](https://owasp.org/blog/2023/03/23/gsuite-account-cleanup.html). After a while, someone has to invest in it.    
 
-* [Google Workplace pricing plans](https://workspace.google.com/intl/en_in/pricing.html). Things get costly with per-user per-month plans :(   
+* [Google Workplace pricing plans](https://workspace.google.com/intl/en_in/pricing.html). Things get costly with per-user per-month plans :( In 2026, sovereignty is the new playbook.    
 
 * [Gmail sending limits in Google Workspace](https://support.google.com/a/answer/166852)   
 
