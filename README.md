@@ -977,7 +977,14 @@ TODO: add examples demonstrated in the class and links to TryHackMe rooms for re
 
 ## Socket Programming    
 
+A socket is a file-like handle, identified by an IP address and a designated port, for talking to another machine.    
 
+TCP sockets call sequence looks like as follows:    
+Server: socket → bind → listen → accept → receive/send → close     
+Client: socket → connect → send/receive → close    
+
+A TCP server binds to an IP and port, listens to incoming requests, ready to provide service it is meant for.    
+Client connects to the server, server accepts connections from such clients to receive and send data. Subsequently server closes the connection and clients may do the same to clean up the buffers.    
 
 ---- 
 
