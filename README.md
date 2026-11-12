@@ -988,6 +988,33 @@ Client connects to the server, server accepts connections from such clients to r
 
 ---- 
 
+## Know Sockets 
+
+Using ss, you can view TCP, UDP sockets, connections that are open.    
+
+```
+$ ss -tunapl
+Netid     State      Recv-Q     Send-Q                                 Local Address:Port          Peer Address:Port     Process                                                                                                                  
+udp       UNCONN     0          0                                        224.0.0.251:5353               0.0.0.0:*         users:(("chrome",pid=8623,fd=162))                                                                                      
+udp       UNCONN     0          0                                            0.0.0.0:5353               0.0.0.0:*                                                                                                                                 
+udp       UNCONN     0          0                                         127.0.0.54:53                 0.0.0.0:*                                                                                                                                 
+udp       UNCONN     0          0                                      127.0.0.53%lo:53                 0.0.0.0:*                                                                                                                                 
+udp       UNCONN     0          0                                          127.0.0.1:323                0.0.0.0:*                                                                                                                                 
+udp       UNCONN     0          0                                            0.0.0.0:33614              0.0.0.0:*         users:(("chrome",pid=8623,fd=121))                                                                                      
+udp       UNCONN     0          0                                               [::]:5353                  [::]:*                                                                                                                                 
+udp       UNCONN     0          0                                                  *:33043                    *:*         users:(("chrome",pid=8623,fd=122))                                                                                      
+udp       UNCONN     0          0                                              [::1]:323                   [::]:*                                                                                                                                 
+udp       UNCONN     0          0              [fe81::4bd2:63eb:534e:c05a]%wlp0s20f3:546                   [::]:*                                                                                                                                 
+tcp       LISTEN     0          4096                                      127.0.0.54:53                 0.0.0.0:*                                                                                                                                 
+tcp       LISTEN     0          4096                                   127.0.0.53%lo:53                 0.0.0.0:*                                                                                                                                 
+tcp       LISTEN     0          4096                                       127.0.0.1:631                0.0.0.0:*                                                                                                                                 
+tcp       LISTEN     0          100                                          0.0.0.0:25                 0.0.0.0:*                                                                                                                                 
+tcp       LISTEN     0          4096                                       127.0.0.1:36221              0.0.0.0:*                                                                                                                                 
+tcp       LISTEN     0          100                                             [::]:25                    [::]:*                                                                                                                                 
+tcp       LISTEN     0          4096                                           [::1]:631                   [::]:*                               ```
+
+----
+
 ## DNS    
 
 [DNS](https://github.com/rks101/dns)  
